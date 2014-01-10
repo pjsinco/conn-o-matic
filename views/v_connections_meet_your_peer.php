@@ -11,7 +11,7 @@
     <input type="text" name="involved" id="involved"><br>
     <label for="reviewing">When reviewing a manuscript:</label>
     <input type="text" name="reviewing" id="reviewing"><br>
-    <input type="button" name="peer-preview" id="peer-preview-btn" value="Set">
+    <input type="submit" name="peer" id="peer" value="Set">
   </p>
 </fieldset>
 

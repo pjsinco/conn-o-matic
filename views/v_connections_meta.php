@@ -1,4 +1,4 @@
-<form action="" method="POST" accept-charset="utf-8">
+<form action="/connections/p_meta" method="POST" accept-charset="utf-8">
 <fieldset>
   <legend>Top matter</legend>
   <p><label class='title' for='edition'>Edition:</label>
@@ -20,7 +20,7 @@
       <option value='2014'>2014</option>
       <option value='2015'>2015</option>
     </select>
-    <input type="button" name="set" id="top-preview-btn" value="Set">
+    <input type="submit" value="Set">
   </p>
 </fieldset>
 </form>

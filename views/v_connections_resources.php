@@ -25,10 +25,7 @@
     <input type="text" name="resource5" id="resource5">
     <label for='link1'>Link:</label>
     <input type="text" name="link5" id="link5"><br>
-
-
-
-    <input type="button" name="resources-preview" id="resources-preview-btn" value="Preview">
+    <input type="submit" name="resources" id="resources" value="Set">
   </p>
 </fieldset>
 

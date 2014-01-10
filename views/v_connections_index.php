@@ -1,6 +1,5 @@
-<?=$top_matter;?>
+<h3><?=$edition;?> <?=$quarter;?> <?=$year;?></h3>
 <?=$lead_in;?>
-<?=$lead_in_kicker;?>
 <?=$main_body;?>
 <?=$online_poll;?>
 <?=$resources;?>
