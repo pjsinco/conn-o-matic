@@ -42,6 +42,7 @@ class connections_controller extends base_controller {
 
       $this->template->content->main_body = 
         View::instance('v_connections_main_body');
+      $this->template->content->main_body->id = $id;
 
       $this->template->content->online_poll = 
         View::instance('v_connections_online_poll');
@@ -106,10 +107,22 @@ class connections_controller extends base_controller {
     $id = DB::instance(DB_NAME)->insert_row('lead_in', $data);
   }
 
-  public function main_body() {
+  public function main_body($id) {
     $this->template->content = View::instance('v_connections_main_body');
 
     echo $this->template;
+  }
+
+  public function p_main_body($id) {
+    echo Debug::Dump($_POST);
+
+    $data = array(
+      'conn_id' => $_POST['id'],
+      'headline' => $_POST['headline'],
+      'main' => $_POST['main']
+    );
+
+    $id = DB::instance(DB_NAME)->insert_row('body', $data);
   }
 
   public function online_poll() {
