@@ -26,6 +26,22 @@ class connections_controller extends base_controller {
 	    	$client_files_body = Array("");
 	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
 	    	*/
+
+      $this->template->content->top_matter = 
+        View::instance('v_connections_top_matter');
+      $this->template->content->lead_in = 
+        View::instance('v_connections_lead_in');
+      $this->template->content->lead_in_kicker = 
+        View::instance('v_connections_lead_in_kicker');
+      $this->template->content->main_body = 
+        View::instance('v_connections_main_body');
+      $this->template->content->online_poll = 
+        View::instance('v_connections_online_poll');
+      $this->template->content->resources = 
+        View::instance('v_connections_resources');
+      $this->template->content->meet_your_peer = 
+        View::instance('v_connections_meet_your_peer');
+	      					     		
 	      					     		
 		# Render the view
 			echo $this->template;
