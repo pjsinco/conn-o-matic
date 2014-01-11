@@ -1,6 +1,7 @@
 <h3><?=$edition;?> <?=$quarter;?> <?=$year;?></h3>
-<?=$lead_in;?>
 <?=$main_body;?>
+<?//=$preview;?>
+
 <?=$online_poll;?>
 <?=$resources;?>
 <?=$meet_your_peer;?>

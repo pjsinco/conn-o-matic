@@ -60,8 +60,16 @@ class preview_controller extends base_controller {
     echo $this->template;
   }
 
-  public function main($id) {
-    $this->template->content = View::instance('v_preview_main');
+  public function body($id) {
+    $this->template->content = View::instance('v_preview_body');
+
+    $data = Helpers::get_issue($id);
+    //echo Debug::dump($data);
+    //echo Debug::dump($data['lead_in']);
+    $this->template->content->lead_in = $data['lead_in'];
+    $this->template->content->kicker = $data['kicker'];
+    $this->template->content->headline = $data['headline'];
+    $this->template->content->body = $data['body'];
 
     echo $this->template;
   }

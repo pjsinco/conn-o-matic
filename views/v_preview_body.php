@@ -3,17 +3,23 @@
                   <tbody>
                     <tr>
                       <td height="0" class="intro-first" width="380" bgcolor="#111f43">
-                        <p style="font-size: 14px; color: #fdc578; line-height: 22px; margin-top: 10px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;">We're on Twitter! Follow <em>The Journal of the American Osteopathic Association</em> (<em>JAOA</em>) on Twitter at <a href="https://twitter.com/TheJAOA" title="The JAOA (TheJAOA) on Twitter" style="color: #fdc578;">@TheJAOA</a> for updates, highlights, and conversations about the <em>JAOA</em> and osteopathic medical research.</p>
+                        <p style="font-size: 14px; color: #fdc578; line-height: 22px; margin-top: 10px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;">
+                          <?=$lead_in;?>
+                        </p>
                       </td>
                     </tr>
                     <tr>
                       <td height="0" class="intro-second" width="400" bgcolor="#b0c0ce">
-                        <p style="font-size: 14px; color: #111f43; line-height: 18px; font-weight: bold; margin-top: 3px; margin-right: 20px; margin-bottom: 6px; margin-left: 20px;">SCOPUS has released its SCImage journal rankings for 2012. <em>JAOA</em> rankings have gone up for the second year in a row. Check out the <em>JAOA</em>'s <a href="http://www.scimagojr.com/compare.php?j1=Journal+of+the+American+Osteopathic…j4=International+Journal+of+Osteopathic+Medicine&amp;un=journals&amp;inj=0" title="SJR - Compare journals" style="color: #111f43;">SCImago Journal &amp; Country ranking</a>. </p>
+                        <p style="font-size: 14px; color: #111f43; line-height: 18px; font-weight: bold; margin-top: 3px; margin-right: 20px; margin-bottom: 6px; margin-left: 20px;">
+                          <?=$kicker;?>
+                        </p>
                       </td>
                     </tr>
                     <tr>
                       <td height="0" width="400" bgcolor="#ffffff">
-                        <h2 style="color: #111f43; font-size: 15px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 10px;"></h2>
+                        <h2 style="color: #111f43; font-size: 15px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+                          <?=$headline;?>
+                        </h2>
                         <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;">Did you know the <em>JAOA</em> is interested in basic science articles? Here's what you can do to help increase such submissions:</p>
 
                         <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;"><strong>Explain</strong> to students and researchers outside of the osteopathic profession how their research may build on the evidence base of the osteopathic tenets.</p>

@@ -13,4 +13,4 @@
     </p>
   </fieldset>
 </form>
-
+<?=$preview;?>
