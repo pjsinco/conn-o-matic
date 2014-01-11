@@ -13,17 +13,18 @@ class form_controller extends base_controller {
 	-----------------------------------------------------------------*/
 	public function index($id) {	
 		
-		# Any method that loads a view will commonly start with this
-		# First, set the content of the template with a view file
-			$this->template->content = View::instance('v_form_index');
+      # Any method that loads a view will commonly start with this
+      # First, set the content of the template with a view file
+      $this->template->content = View::instance('v_form_index');
 			
-		# Now set the <title> tag
-			$this->template->title = APP_NAME;
+      # Now set the <title> tag
+      $this->template->title = APP_NAME;
 
       $issue = Helpers::get_issue($id);
-      $this->template->content->edition = $issue['edition'];
-      $this->template->content->quarter = $issue['quarter'];
-      $this->template->content->year = $issue['year'];
+      $this->template->content->issue = $issue;
+      //$this->template->content->edition = $issue['edition'];
+      //$this->template->content->quarter = $issue['quarter'];
+      //$this->template->content->year = $issue['year'];
 
       //$this->template->content->id = $id;
 	
@@ -36,44 +37,8 @@ class form_controller extends base_controller {
 	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
 	    	*/
 
-      /*
-       * lead_in
-       */
-      $this->template->content->main_body = 
-        View::instance('v_form_main_body');
-      $this->template->content->main_body->id = $id;
-      $this->template->content->main_body->preview = 
-        View::instance('v_preview_body');
-      $this->template->content->main_body->preview->lead_in =
-        $issue['lead_in'];
-      $this->template->content->main_body->preview->kicker =
-        $issue['kicker'];
-      $this->template->content->main_body->preview->headline =
-        $issue['headline'];
-      $this->template->content->main_body->preview->main_body =
-        $issue['main'];
-
-      /*
-       *online poll
-       */
-      $this->template->content->main_body->preview->poll = 
-        View::instance('v_preview_poll');
-      $this->template->content->main_body->preview->poll->question =
-        $issue['question'];
-      $this->template->content->main_body->preview->poll->link =
-        $issue['link'];
-    
-      
-
-      $this->template->content->resources = 
-        View::instance('v_form_resources');
-
-      $this->template->content->meet_your_peer = 
-        View::instance('v_form_meet_your_peer');
-	      					     		
-	      					     		
-		# Render the view
-			echo $this->template;
+      # Render the view
+    echo $this->template;
 
 	} # End of method
 
