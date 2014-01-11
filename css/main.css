@@ -382,16 +382,16 @@ body {
  * My styles
  */
 a, img {
-  border: none;
+  /*border: none;*/
 }
 
 p {
-  padding: 0 0 9px 0;
-  margin: 0;
+  /*padding: 0 0 9px 0;*/
+  /*margin: 0;*/
 }
 
 h3 {
-  margin: 7px 0 3px 0;
+  /*margin: 7px 0 3px 0;*/
 }
 
 .display {
@@ -404,11 +404,11 @@ h3 {
 }
 
 a {
-  color: #2b8b78;
-  text-decoration: none;
+  /*color: #2b8b78;*/
+  /*text-decoration: none;*/
 }
 
 a:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 

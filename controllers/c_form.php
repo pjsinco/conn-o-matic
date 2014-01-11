@@ -36,16 +36,19 @@ class form_controller extends base_controller {
         $issue['kicker'];
       $this->template->content->preview->main->headline =
         $issue['headline'];
+
+      // add style to p tags
+      $text_styled = Helpers::add_p_style($issue['main_body']);
       $this->template->content->preview->main->main_body =
-        $issue['main_body'];
+        $text_styled;
 
       // pass poll to view and set up
       $this->template->content->preview->main->poll =
         View::instance('v_preview_poll');
-      $this->template->content->preview->main->poll->link =
-        $issue['link'];
-      $this->template->content->preview->main->poll->question =
-        $issue['question'];
+      $this->template->content->preview->main->poll->poll_link =
+        $issue['poll_link'];
+      $this->template->content->preview->main->poll->poll_q =
+        $issue['poll_q'];
 
       // pass meet-your-peer to view and set up
       $this->template->content->preview->peer =
@@ -84,6 +87,8 @@ class form_controller extends base_controller {
   public function p_index($id) {
     $data = array();
 
+    // for $data, add only values that are set,
+    // skipping id
     foreach ($_POST as $key => $value) {
       if ($value) {
         if ($key == 'id') {
@@ -134,11 +139,13 @@ class form_controller extends base_controller {
     $issue = Helpers::get_issue($id);
     echo Debug::dump($issue);
 
-    $this->template->content = View::instance('v_form_main_body');
-    $this->template->content->preview = View::instance('v_preview_body');
-    $this->template->content->preview->lead_in = $issue['lead_in'];
-    $this->template->content->preview->kicker = $issue['kicker'];
-    $this->template->content->preview->headline = $issue['headline'];
+    $this->template->content = 
+      View::instance('v_form_main_body');
+    $this->template->content->preview = 
+      View::instance('v_preview_main_body');
+    //$this->template->content->preview->lead_in = $issue['lead_in'];
+    //$this->template->content->preview->kicker = $issue['kicker'];
+    //$this->template->content->preview->headline = $issue['headline'];
 
     /*
      * process <p> tags
@@ -164,7 +171,7 @@ class form_controller extends base_controller {
     
     // change p tags and send to view
     $this->template->content->preview->main_body =
-      str_replace('<p>', $p_tag, $issue['main']);
+      str_replace('<p>', $p_tag, $issue['main_body']);
 
 
     // render view

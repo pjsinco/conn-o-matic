@@ -8,32 +8,76 @@ class preview_controller extends base_controller {
 
 	-----------------------------------------------------------*/
 	public function __construct() {
-		parent::__construct();
+      parent::__construct();
 	} 
 		
 	/*----------------------------------------------------------
 	Accessed via http://localhost/index/index/
+    Shows the whole enchilada
 	-----------------------------------------------------------*/
-	public function index() {	
+	public function index($id) {	
+      $issue = Helpers::get_issue($id);
+      //echo Debug::dump($issue);
 		
-		# Any method that loads a view will commonly start with this
-		# First, set the content of the template with a view file
-			$this->template->content = View::instance('v_preview_index');
-			
-		# Now set the <title> tag
-			$this->template->title = APP_NAME . ' | Preview';
-	
-		# CSS/JS includes
-			/*
-			$client_files_head = Array("");
-	    	$this->template->client_files_head = Utils::load_client_files($client_files);
-	    	
-	    	$client_files_body = Array("");
-	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
-	    	*/
-	      					     		
-		# Render the view
-			echo $this->template;
+      # Any method that loads a view will commonly start with this
+      # First, set the content of the template with a view file
+      $this->template->content = View::instance('v_preview_index');
+      	
+      # Now set the <title> tag
+      $this->template->title = APP_NAME . ' | Preview';
+
+      // give the main_body view everthing it needs
+      $this->template->content->main =
+        View::instance('v_preview_main_body');
+      $this->template->content->main->lead_in =
+        $issue['lead_in'];
+      $this->template->content->main->kicker =
+        $issue['kicker'];
+      $this->template->content->main->headline =
+        $issue['headline'];
+
+      // add style to p tags
+      $text_styled = Helpers::add_p_style($issue['main_body']);
+      $this->template->content->main->main_body =
+        $text_styled;
+
+      // pass poll to view and set up
+      $this->template->content->main->poll =
+        View::instance('v_preview_poll');
+      $this->template->content->main->poll->poll_link =
+        $issue['poll_link'];
+      $this->template->content->main->poll->poll_q =
+        $issue['poll_q'];
+
+      // pass meet-your-peer to view and set up
+      $this->template->content->peer =
+        View::instance('v_preview_peer');
+      $this->template->content->peer->peer_name =
+        $issue['peer_name'];
+      $this->template->content->peer->peer_occ =
+        $issue['peer_occ'];
+      $this->template->content->peer->peer_school =
+        $issue['peer_school'];
+      $this->template->content->peer->peer_inv =
+        $issue['peer_inv'];
+      $this->template->content->peer->peer_rev =
+        $issue['peer_rev'];
+
+      // pass footer to view
+      $this->template->content->footer =
+        View::instance('v_preview_footer');
+      
+      # CSS/JS includes
+      	/*
+      	$client_files_head = Array("");
+      	$this->template->client_files_head = Utils::load_client_files($client_files);
+      	
+      	$client_files_body = Array("");
+      	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
+      	*/
+        					     		
+      # Render the view
+      	echo $this->template;
 
 	} # End of method
 

@@ -4,26 +4,26 @@
       <legend>Main body</legend>
       <p>
         <label class='title' for='lead_in'>Lead-in:</label>
-        <textarea name="lead_in" id="lead_in" placeholder="<?=$issue['lead_in']?>" rows="8" cols="40"></textarea>
+        <textarea name="lead_in" id="lead_in" rows="8" cols="40"></textarea>
       </p>
       <p>
         <label class='title' for='kicker'>Lead-in kicker:</label>
-        <textarea name="kicker" id="kicker" placeholder="<?=$issue['kicker']?>" rows="8" cols="40"></textarea>
+        <textarea name="kicker" id="kicker" rows="8" cols="40"></textarea>
       </p>
       <p>
         <label for="headline">Headline:</label>
-        <input type="text" name="headline" placeholder="<?=$issue['headline']?>" id="headline"><br>
+        <input type="text" name="headline" id="headline"><br>
         <label for="main">Main body text:</label>
-        <textarea name="main" id="main" placeholder="<?=$issue['main_body']?>" rows="24" cols="40"></textarea>
+        <textarea name="main_body" id="main_body" rows="24" cols="40"></textarea>
       </p>
     </fieldset>
     <fieldset>
       <legend>Online poll</legend>
       <p>
         <label for="poll">Poll question:</label>
-        <input type="text" name="poll" placeholder='<?=$issue['question']?>' id="poll"><br>
+        <input type="text" name="poll_q" id="poll"><br>
         <label for="poll_link">Poll link:</label>
-        <input type="text" name="poll_link" id="poll_link" placeholder='<?=$issue['link']?>'> 
+        <input type="text" name="poll_link" id="poll_link"> 
       </p>
     </fieldset>
     <fieldset>
@@ -58,16 +58,16 @@
     <fieldset>
       <legend>Meet Your Peer</legend>
       <p>
-        <label for="peername">Name:</label>
-        <input type="text" name="peername" id="peername"><br>
-        <label for="occupation">Occupation:</label>
-        <input type="text" name="occupation" id="occupation"><br>
-        <label for="schoolclass">School/class:</label>
-        <input type="text" name="schoolclass" id="schoolclass"><br>
-        <label for="involved">I am involved because:</label>
-        <input type="text" name="involved" id="involved"><br>
-        <label for="reviewing">When reviewing a manuscript:</label>
-        <input type="text" name="reviewing" id="reviewing"><br>
+        <label for="peer_name">Name:</label>
+        <input type="text" name="peer_name" id="peername"><br>
+        <label for="peer_occ">Occupation:</label>
+        <input type="text" name="peer_occ" id="occupation"><br>
+        <label for="peer_school">School/class:</label>
+        <input type="text" name="peer_school" id="schoolclass"><br>
+        <label for="peer_inv">I am involved because:</label>
+        <input type="text" name="peer_inv" id="involved"><br>
+        <label for="peer_rev">When reviewing a manuscript:</label>
+        <input type="text" name="peer_rev" id="reviewing"><br>
       </p>
     </fieldset>
   
