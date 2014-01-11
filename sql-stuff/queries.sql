@@ -81,3 +81,6 @@ alter table issue
   change involved peer_inv text,
   change reviewing peer_rev text
 
+alter table issue
+  change question poll_q TEXT,
+  change link poll_link TEXT

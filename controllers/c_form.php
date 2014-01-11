@@ -50,6 +50,12 @@ class form_controller extends base_controller {
       $this->template->content->preview->main->poll->poll_q =
         $issue['poll_q'];
 
+      // get and pass resources to view and set up
+      $resources = Helpers::get_resources($id);
+      $this->template->content->preview->main->resources =
+        $resources;
+      
+
       // pass meet-your-peer to view and set up
       $this->template->content->preview->peer =
         View::instance('v_preview_peer');
@@ -70,7 +76,8 @@ class form_controller extends base_controller {
 
 	  # CSS/JS includes
       $client_files_body = Array(
-        '/js/form_index.js'
+        '/js/form_index.js',
+        '/css/main.css'
       );
       $this->template->client_files_body = 
         Utils::load_client_files($client_files_body);

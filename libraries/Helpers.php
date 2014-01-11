@@ -2,6 +2,35 @@
 
 class Helpers
 {
+  public static function set_resource($conn_id, $res, $res_link) {
+    $data = array(
+      'res' => $res,
+      'res_link' => $res_link,
+      'conn_id' => $conn_id
+    );
+
+    $result = DB::instance(DB_NAME)->insert_row('resource', $data);
+
+    return $result;
+  }
+
+  /**
+   * Retrieves the 'Resources to Reference'
+   *
+   * Returns:
+   *   An 2D array 'Resources to Reference'
+   */
+  public static function get_resources($conn_id) {
+    $q = "
+      SELECT res, res_link
+      FROM resource
+      WHERE conn_id = $conn_id
+    ";
+    $result = DB::instance(DB_NAME)->select_rows($q);
+
+    return $result;
+  }
+
   public static function add_p_style($text) {
     // set up p style
     // put in array for readability, accepting a bit more
