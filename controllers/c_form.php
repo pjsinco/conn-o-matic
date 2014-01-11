@@ -1,6 +1,8 @@
 <?php
 
-class connections_controller extends base_controller {
+require_once(APP_PATH . '/config/constants.php');
+
+class form_controller extends base_controller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -13,7 +15,7 @@ class connections_controller extends base_controller {
 		
 		# Any method that loads a view will commonly start with this
 		# First, set the content of the template with a view file
-			$this->template->content = View::instance('v_connections_index');
+			$this->template->content = View::instance('v_form_index');
 			
 		# Now set the <title> tag
 			$this->template->title = APP_NAME;
@@ -38,7 +40,7 @@ class connections_controller extends base_controller {
        * lead_in
        */
       $this->template->content->main_body = 
-        View::instance('v_connections_main_body');
+        View::instance('v_form_main_body');
       $this->template->content->main_body->id = $id;
       $this->template->content->main_body->preview = 
         View::instance('v_preview_body');
@@ -48,17 +50,26 @@ class connections_controller extends base_controller {
         $issue['kicker'];
       $this->template->content->main_body->preview->headline =
         $issue['headline'];
-      $this->template->content->main_body->preview->main =
+      $this->template->content->main_body->preview->main_body =
         $issue['main'];
 
-      $this->template->content->online_poll = 
-        View::instance('v_connections_online_poll');
+      /*
+       *online poll
+       */
+      $this->template->content->main_body->preview->poll = 
+        View::instance('v_preview_poll');
+      $this->template->content->main_body->preview->poll->question =
+        $issue['question'];
+      $this->template->content->main_body->preview->poll->link =
+        $issue['link'];
+    
+      
 
       $this->template->content->resources = 
-        View::instance('v_connections_resources');
+        View::instance('v_form_resources');
 
       $this->template->content->meet_your_peer = 
-        View::instance('v_connections_meet_your_peer');
+        View::instance('v_form_meet_your_peer');
 	      					     		
 	      					     		
 		# Render the view
@@ -67,7 +78,7 @@ class connections_controller extends base_controller {
 	} # End of method
 
   public function meta() {
-    $this->template->content = View::instance('v_connections_meta');
+    $this->template->content = View::instance('v_form_meta');
 
     echo $this->template;
   }
@@ -87,11 +98,14 @@ class connections_controller extends base_controller {
 
     $id = DB::instance(DB_NAME)->insert_row('issue', $data);
 
-    Router::redirect('/connections/index/' . $id);
+    // add default text to issue
+    Helpers::set_default_text($id);
+
+    Router::redirect('/form/index/' . $id);
   }
 
   //public function lead_in($id) {
-    //$this->template->content = View::instance('v_connections_lead_in');
+    //$this->template->content = View::instance('v_form_lead_in');
     //$this->template->content->id = $id;
     //$this->template->content->preview = View::instance('v_preview_main');
     
@@ -117,7 +131,7 @@ class connections_controller extends base_controller {
     $issue = Helpers::get_issue($id);
     echo Debug::dump($issue);
 
-    $this->template->content = View::instance('v_connections_main_body');
+    $this->template->content = View::instance('v_form_main_body');
     $this->template->content->preview = View::instance('v_preview_body');
     $this->template->content->preview->lead_in = $issue['lead_in'];
     $this->template->content->preview->kicker = $issue['kicker'];
@@ -165,25 +179,34 @@ class connections_controller extends base_controller {
       'main' => $_POST['main']
     );
 
-    $result = DB::instance(DB_NAME)->update_or_insert_row('issue', $data);
+    $result = 
+      DB::instance(DB_NAME)->update_or_insert_row('issue', $data);
  
-    Router::redirect('/preview/body/' . ($result == 0 ? $id : $result));
+    Router::redirect('/preview/body/' . 
+      ($result == 0 ? $id : $result));
   }
 
-  public function online_poll() {
-    $this->template->content = View::instance('v_connections_online_poll');
+  public function online_poll($id) {
+    $this->template->content = 
+      View::instance('v_form_online_poll');
+    
+    $issue = Helpers::get_issue($id);
+
+    $this->template->content->preview->link = $issue['link'];
+    $this->template->content->preview->question = $issue['question'];
+
 
     echo $this->template;
   }
 
   public function resources() {
-    $this->template->content = View::instance('v_connections_resources');
+    $this->template->content = View::instance('v_form_resources');
 
     echo $this->template;
   }
 
   public function meet_your_peer() {
-    $this->template->content = View::instance('v_connections_meet_your_peer');
+    $this->template->content = View::instance('v_form_meet_your_peer');
 
     echo $this->template;
   }

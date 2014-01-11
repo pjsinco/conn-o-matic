@@ -2,18 +2,6 @@
 
 class Helpers
 {
-  public static function get_body($conn_id) {
-    $q = "
-      SELECT *
-      FROM issue
-      WHERE conn_id = $conn_id
-    ";
-
-    $result = DB::instance(DB_NAME)->select_row($q);
-
-    return $result;
-  }
-
   public static function set_default_text($id) {
     $data = array(
       'id' => $id,

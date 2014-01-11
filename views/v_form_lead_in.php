@@ -1,4 +1,4 @@
-<form action="/connections/p_lead_in/<?=$id;?>" method="POST" accept-charset="utf-8">
+<form action="/form/p_lead_in/<?=$id;?>" method="POST" accept-charset="utf-8">
   <fieldset>
     <legend>Lead-in</legend>
     <p>

@@ -1,5 +1,7 @@
 <?php
 
+require_once(APP_PATH . '/config/constants.php');
+
 class preview_controller extends base_controller {
 	
 	/*-----------------------------------------------------------

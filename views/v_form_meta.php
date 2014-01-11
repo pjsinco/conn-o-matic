@@ -1,4 +1,4 @@
-<form action="/connections/p_meta" method="POST" accept-charset="utf-8">
+<form action="/form/p_meta" method="POST" accept-charset="utf-8">
 <fieldset>
   <legend>Top matter</legend>
   <p><label class='title' for='edition'>Edition:</label>

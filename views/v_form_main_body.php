@@ -1,4 +1,4 @@
-<form action="/connections/p_main_body/<?=$id;?>" method="POST" accept-charset="utf-8">
+<form action="/form/p_main_body/<?=$id;?>" method="POST" accept-charset="utf-8">
   <fieldset>
     <legend>Main body</legend>
     <p>
