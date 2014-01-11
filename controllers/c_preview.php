@@ -66,12 +66,16 @@ class preview_controller extends base_controller {
     $this->template->content = View::instance('v_preview_body');
 
     $data = Helpers::get_issue($id);
-    //echo Debug::dump($data);
+    echo Debug::dump($data);
     //echo Debug::dump($data['lead_in']);
     $this->template->content->lead_in = $data['lead_in'];
     $this->template->content->kicker = $data['kicker'];
     $this->template->content->headline = $data['headline'];
-    $this->template->content->body = $data['body'];
+    $this->template->content->main_body = $data['main'];
+    $this->template->content->poll = 
+      View::instance('v_preview_poll');
+    $this->template->content->poll->question = $data['question'];
+    $this->template->content->poll->link = $data['link'];
 
     echo $this->template;
   }

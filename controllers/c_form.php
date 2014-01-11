@@ -172,7 +172,6 @@ class form_controller extends base_controller {
     //echo Debug::Dump($_POST);
 
     $data = array(
-      'id' => $id,
       'lead_in' => $_POST['lead-in'],
       'kicker' => $_POST['kicker'],
       'headline' => $_POST['headline'],
@@ -180,7 +179,8 @@ class form_controller extends base_controller {
     );
 
     $result = 
-      DB::instance(DB_NAME)->update_or_insert_row('issue', $data);
+      DB::instance(DB_NAME)->update_row(
+        'issue', $data, "WHERE id = $id");
  
     Router::redirect('/preview/body/' . 
       ($result == 0 ? $id : $result));

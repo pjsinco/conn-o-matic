@@ -4,7 +4,6 @@ class Helpers
 {
   public static function set_default_text($id) {
     $data = array(
-      'id' => $id,
       'headline' => 'HEADLINE GOES HERE',
       'main' => '<p>MAIN BODY TEXT GOES HERE<p>',
       'lead_in' => 'LEAD-IN GOES HERE',
@@ -18,7 +17,7 @@ class Helpers
       'reviewing' => 'PEER WHEN REVIEWING ... GOES HERE'
     );
 
-    $result = DB::instance(DB_NAME)->update_or_insert_row('issue', $data);
+    $result = DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id");
 
     return $result;
   }
