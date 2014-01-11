@@ -42,6 +42,14 @@ class connections_controller extends base_controller {
       $this->template->content->main_body->id = $id;
       $this->template->content->main_body->preview = 
         View::instance('v_preview_body');
+      $this->template->content->main_body->preview->lead_in =
+        $issue['lead_in'];
+      $this->template->content->main_body->preview->kicker =
+        $issue['kicker'];
+      $this->template->content->main_body->preview->headline =
+        $issue['headline'];
+      $this->template->content->main_body->preview->main =
+        $issue['main'];
 
       $this->template->content->online_poll = 
         View::instance('v_connections_online_poll');
@@ -106,9 +114,43 @@ class connections_controller extends base_controller {
   //}
 
   public function main_body($id) {
+    $issue = Helpers::get_issue($id);
+    echo Debug::dump($issue);
+
     $this->template->content = View::instance('v_connections_main_body');
     $this->template->content->preview = View::instance('v_preview_body');
+    $this->template->content->preview->lead_in = $issue['lead_in'];
+    $this->template->content->preview->kicker = $issue['kicker'];
+    $this->template->content->preview->headline = $issue['headline'];
 
+    /*
+     * process <p> tags
+     */
+
+    // set up p style
+    $style = array(
+      'font-size' => '13px',
+      'color' => '#333333',
+      'line-height' => '17px',
+      'margin-top' => '0px',
+      'margin-right' => '20px',
+      'margin-bottom' => '10px',
+      'margin-left' => '20px'   
+    );
+
+    // build up p tag from styles
+    $p_style = '';
+    foreach ($style as $key => $value) {
+      $p_style .= $key . ':' . $value . '; ';
+    }
+    $p_tag = '<p style="' . $p_style . '">';
+    
+    // change p tags and send to view
+    $this->template->content->preview->main_body =
+      str_replace('<p>', $p_tag, $issue['main']);
+
+
+    // render view
     echo $this->template;
   }
 

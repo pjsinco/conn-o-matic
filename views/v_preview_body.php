@@ -20,15 +20,7 @@
                         <h2 style="color: #111f43; font-size: 15px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                           <?=$headline;?>
                         </h2>
-                        <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;">Did you know the <em>JAOA</em> is interested in basic science articles? Here's what you can do to help increase such submissions:</p>
-
-                        <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;"><strong>Explain</strong> to students and researchers outside of the osteopathic profession how their research may build on the evidence base of the osteopathic tenets.</p>
-                                      
-                        <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;"><strong>Encourage</strong> these investigators to submit their basic science research articles to the <em>JAOA</em>. Researchers who prefer to publish their studies in basic science journals should be encouraged to submit derivative articles, in which they explain how their original work connects to and supports the tenets.</p>
-                                      
-                        <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;"><strong>Send</strong> the <i>JAOA</i>'s <a href="http://www.jaoa.org/site/misc/ifora.xhtml" title="Information for Authors" style="color: #111f43;">Information for Authors</a> to those interested in submitting basic science research or derivative articles with appropriate clinical applications. Also consider sharing the AOA's <a href="http://www.osteopathic.org/inside-aoa/about/leadership/Pages/tenets-of-osteopathic-medicine.aspx" title="Tenets of Osteopathic Medicine" style="color: #111f43;">Tenets of Osteopathic Medicine</a> page. </p>
-                                      
-                        <p style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;"><strong>Share</strong> the <em>JAOA</em>'s most recently published basic science research article from the November 2013 issue. Paul R. Standley, PhD, and his colleagues' article, "<a href="http://www.jaoa.org/content/113/11/806.abstract" title="In Vitro Biomechanical Strain Regulation of Fibroblast Wound Healing" style="color: #111f43;">In Vitro Biomechanical Strain Regulation of Fibroblast Wound Healing</a>," is an excellent example of how basic science research can serve as an evidence base for the osteopathic tenets.</p>
+                        <?=$main_body?>
                       </td>
                     </tr>
                     <tr>
