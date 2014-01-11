@@ -68,3 +68,16 @@ create table resources (
   foreign key (conn_id) references meta(id)
 ) engine=InnoDB CHARSET=utf8 
 
+-- change column name
+alter table issue
+  change main main_body TEXT NOT NULL
+
+alter table issue
+  change name peer_name VARCHAR(256) NOT NULL
+
+alter table issue
+  change occupation peer_occ VARCHAR(256),
+  change school peer_school VARCHAR(256),
+  change involved peer_inv text,
+  change reviewing peer_rev text
+

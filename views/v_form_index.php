@@ -1,43 +1,29 @@
-<?php echo Debug::dump($issue); ?>
-<?php echo Debug::dump($issue['lead_in']); ?>
-<div class="grid_6">
-    
-  <form action="/form/p_lead_in/<?=$id;?>" method="POST" accept-charset="utf-8">
-    <fieldset>
-      <legend>Lead-in</legend>
-      <p>
-        <label class='title' for='lead-in'>Lead-in:</label>
-        <textarea name="lead-in" value="<?=$issue['lead_in']?>" id="lead-in" rows="8" cols="40"></textarea>
-      </p>
-      <p>
-        <label class='title' for='kicker'>Lead-in kicker:</label>
-        <textarea name="kicker" id="kicker" rows="8" cols="40"></textarea>
-      </p>
-    </fieldset>
+<div class="grid_5">
+  <form action="/form/p_index/<?=$issue['id'];?>" method="POST" accept-charset="utf-8">
     <fieldset>
       <legend>Main body</legend>
       <p>
-        <label class='title' for='lead-in'>Lead-in:</label>
-        <textarea name="lead-in" id="lead-in" rows="8" cols="40" required></textarea>
+        <label class='title' for='lead_in'>Lead-in:</label>
+        <textarea name="lead_in" id="lead_in" placeholder="<?=$issue['lead_in']?>" rows="8" cols="40"></textarea>
       </p>
       <p>
         <label class='title' for='kicker'>Lead-in kicker:</label>
-        <textarea name="kicker" id="kicker" rows="8" cols="40" required></textarea>
+        <textarea name="kicker" id="kicker" placeholder="<?=$issue['kicker']?>" rows="8" cols="40"></textarea>
       </p>
       <p>
         <label for="headline">Headline:</label>
-        <input type="text" name="headline" id="headline" required><br>
+        <input type="text" name="headline" placeholder="<?=$issue['headline']?>" id="headline"><br>
         <label for="main">Main body text:</label>
-        <textarea name="main" id="main" rows="24" cols="40" required></textarea>
+        <textarea name="main" id="main" placeholder="<?=$issue['main_body']?>" rows="24" cols="40"></textarea>
       </p>
     </fieldset>
     <fieldset>
       <legend>Online poll</legend>
       <p>
         <label for="poll">Poll question:</label>
-        <input type="text" name="poll" value='<?=$issue['question']?>' id="poll"><br>
-        <label for="poll-link">Poll link:</label>
-        <input type="text" name="poll-link" id="poll-link" value='<?=$issue['link']?>'> 
+        <input type="text" name="poll" placeholder='<?=$issue['question']?>' id="poll"><br>
+        <label for="poll_link">Poll link:</label>
+        <input type="text" name="poll_link" id="poll_link" placeholder='<?=$issue['link']?>'> 
       </p>
     </fieldset>
     <fieldset>
@@ -67,7 +53,6 @@
         <input type="text" name="resource5" id="resource5">
         <label for='link1'>Link:</label>
         <input type="text" name="link5" id="link5"><br>
-        <input type="submit" name="resources" id="resources" value="Set">
       </p>
     </fieldset>
     <fieldset>
@@ -83,12 +68,13 @@
         <input type="text" name="involved" id="involved"><br>
         <label for="reviewing">When reviewing a manuscript:</label>
         <input type="text" name="reviewing" id="reviewing"><br>
-        <input type="submit" name="peer" id="peer" value="Set">
       </p>
     </fieldset>
   
     <input type="submit" value="Set">
-    <input type="hidden" name='id' value="<?=$id;?>">
+    <input type="hidden" name='id' value="<?=$id;?>"><br><br>
   </form>
-
+</div>
+<div class="grid_7">
+  <?=$preview?>
 </div>

@@ -22,25 +22,86 @@ class form_controller extends base_controller {
 
       $issue = Helpers::get_issue($id);
       $this->template->content->issue = $issue;
-      //$this->template->content->edition = $issue['edition'];
-      //$this->template->content->quarter = $issue['quarter'];
-      //$this->template->content->year = $issue['year'];
 
-      //$this->template->content->id = $id;
-	
-		# CSS/JS includes
-			/*
-			$client_files_head = Array("");
-	    	$this->template->client_files_head = Utils::load_client_files($client_files);
-	    	
-	    	$client_files_body = Array("");
-	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
-	    	*/
+      // add preview to view
+      $this->template->content->preview =
+        View::instance('v_preview_index');
+
+      // give the main_body view everthing it needs
+      $this->template->content->preview->main =
+        View::instance('v_preview_main_body');
+      $this->template->content->preview->main->lead_in =
+        $issue['lead_in'];
+      $this->template->content->preview->main->kicker =
+        $issue['kicker'];
+      $this->template->content->preview->main->headline =
+        $issue['headline'];
+      $this->template->content->preview->main->main_body =
+        $issue['main_body'];
+
+      // pass poll to view and set up
+      $this->template->content->preview->main->poll =
+        View::instance('v_preview_poll');
+      $this->template->content->preview->main->poll->link =
+        $issue['link'];
+      $this->template->content->preview->main->poll->question =
+        $issue['question'];
+
+      // pass meet-your-peer to view and set up
+      $this->template->content->preview->peer =
+        View::instance('v_preview_peer');
+      $this->template->content->preview->peer->peer_name =
+        $issue['peer_name'];
+      $this->template->content->preview->peer->peer_occ =
+        $issue['peer_occ'];
+      $this->template->content->preview->peer->peer_school =
+        $issue['peer_school'];
+      $this->template->content->preview->peer->peer_inv =
+        $issue['peer_inv'];
+      $this->template->content->preview->peer->peer_rev =
+        $issue['peer_rev'];
+
+      // pass footer to view
+      $this->template->content->preview->footer =
+        View::instance('v_preview_footer');
+
+	  # CSS/JS includes
+      $client_files_body = Array(
+        '/js/form_index.js'
+      );
+      $this->template->client_files_body = 
+        Utils::load_client_files($client_files_body);
+      	
+      //$client_files_body = Array("");
+      //$this->template->client_files_body = 
+        //Utils::load_client_files($client_files_body);   
 
       # Render the view
-    echo $this->template;
+      echo $this->template;
 
 	} # End of method
+
+  public function p_index($id) {
+    $data = array();
+
+    foreach ($_POST as $key => $value) {
+      if ($value) {
+        if ($key == 'id') {
+          continue;
+        } else {
+          $data[$key] = $value;
+        }
+      }
+    }
+
+    //echo Debug::dump($data);
+
+    DB::instance(DB_NAME)->update_row(
+      'issue', $data, "WHERE id = $id"
+    );
+    
+    Router::redirect('/form/index/' . $id);
+  }
 
   public function meta() {
     $this->template->content = View::instance('v_form_meta');
@@ -68,29 +129,6 @@ class form_controller extends base_controller {
 
     Router::redirect('/form/index/' . $id);
   }
-
-  //public function lead_in($id) {
-    //$this->template->content = View::instance('v_form_lead_in');
-    //$this->template->content->id = $id;
-    //$this->template->content->preview = View::instance('v_preview_main');
-    
-    //echo $this->template;
-  //}
-
-   //creates/updates lead_in item
-  
-  //public function p_lead_in($id) {
-    //echo Debug::Dump($_POST);
-    //echo Debug::Dump($id);
-
-    //$data = array(
-      //'conn_id' => $id,
-      //'lead_in' => $_POST['lead-in'],
-      //'kicker' => $_POST['kicker']
-    //);
-
-    //$id = DB::instance(DB_NAME)->insert_row('lead_in', $data);
-  //}
 
   public function main_body($id) {
     $issue = Helpers::get_issue($id);
