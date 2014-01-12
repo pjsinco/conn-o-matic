@@ -106,7 +106,7 @@ class form_controller extends base_controller {
       }
     }
 
-    //echo Debug::dump($data);
+    echo Debug::dump($data);
 
     DB::instance(DB_NAME)->update_row(
       'issue', $data, "WHERE id = $id"
@@ -144,7 +144,7 @@ class form_controller extends base_controller {
 
   public function main_body($id) {
     $issue = Helpers::get_issue($id);
-    echo Debug::dump($issue);
+    //echo Debug::dump($issue);
 
     $this->template->content = 
       View::instance('v_form_main_body');

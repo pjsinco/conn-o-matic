@@ -1,5 +1,5 @@
-<?php echo Debug::dump($resources); ?>
-<?php echo Debug::dump(count($resources[0])); ?>
+<?php //echo Debug::dump($resources); ?>
+<?php //echo Debug::dump(count($resources[0])); ?>
                 <!-- table3 -->
                 <table class="main-left" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-right-width: 2px; border-right-color: #b0c0ce; border-right-style: solid;">
                   <tbody>

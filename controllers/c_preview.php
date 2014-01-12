@@ -110,7 +110,7 @@ class preview_controller extends base_controller {
     $this->template->content = View::instance('v_preview_body');
 
     $data = Helpers::get_issue($id);
-    echo Debug::dump($data);
+    //echo Debug::dump($data);
     //echo Debug::dump($data['lead_in']);
     $this->template->content->lead_in = $data['lead_in'];
     $this->template->content->kicker = $data['kicker'];

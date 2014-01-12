@@ -27,32 +27,13 @@
       </p>
     </fieldset>
     <fieldset>
-      <legend>Resources to Reference</legend>
+      <legend class='resources'>Resources to Reference</legend>
       <p>
         <label for='resource1'>Resource #1:</label>
         <input type="text" name="res1" id="resource1">
         <label for='res_link1'>Link:</label>
         <input type="text" name="res_link1" id="res_link1"><br>
-    
-        <label for='resource1'>Resource #2:</label>
-        <input type="text" name="res2" id="resource2">
-        <label for='res_link2'>Link:</label>
-        <input type="text" name="res_link2" id="res_link2"><br>
-    
-        <label for='resource1'>Resource #3:</label>
-        <input type="text" name="res3" id="resource3">
-        <label for='res_link3'>Link:</label>
-        <input type="text" name="res_link3" id="res_link3"><br>
-    
-        <label for='resource1'>Resource #4:</label>
-        <input type="text" name="res4" id="resource4">
-        <label for='res_link4'>Link:</label>
-        <input type="text" name="res_link4" id="res_link4"><br>
-    
-        <label for='resource1'>Resource #5:</label>
-        <input type="text" name="res5" id="resource5">
-        <label for='res_link5'>Link:</label>
-        <input type="text" name="res_link5" id="res_link5"><br>
+        <input id='add_res' type="button" value='Add resource'></button>
       </p>
     </fieldset>
     <fieldset>
