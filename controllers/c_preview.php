@@ -35,6 +35,8 @@ class preview_controller extends base_controller {
         $issue['kicker'];
       $this->template->content->main->headline =
         $issue['headline'];
+      $this->template->content->main->resources =
+        $issue['resources'];
 
       // add style to p tags
       $text_styled = Helpers::add_p_style($issue['main_body']);

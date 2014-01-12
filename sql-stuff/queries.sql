@@ -1,3 +1,23 @@
+alter table issue
+  drop column res1,
+  drop column res_link1,
+  drop column res2,
+  drop column res_link2,
+  drop column res3,
+  drop column res_link3,
+  drop column res4,
+  drop column res_link4,
+  drop column res5,
+  drop column res_link5
+
+create table resource (
+  id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  res TEXT,
+  res_link TEXT,
+  conn_id MEDIUMINT NOT NULL, 
+  foreign key (conn_id) references issue(id)
+) engine=InnoDB CHARSET=utf8 
+
 create table issue (
   id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   edition ENUM('Peer Reviewer', 'Editorial Board', 'Editorial Advisory Board') NOT NULL,
@@ -80,4 +100,21 @@ alter table issue
   change school peer_school VARCHAR(256),
   change involved peer_inv text,
   change reviewing peer_rev text
+
+alter table issue
+  change question poll_q TEXT,
+  change link poll_link TEXT
+
+alter table issue
+  add column (res1 VARCHAR(256)),
+  add column (res_link1 VARCHAR(256)),
+  add column (res2 VARCHAR(256)),
+  add column (res_link2 VARCHAR(256)),
+  add column (res3 VARCHAR(256)),
+  add column (res_link3 VARCHAR(256)),
+  add column (res4 VARCHAR(256)),
+  add column (res_link4 VARCHAR(256)),
+  add column (res5 VARCHAR(256)),
+  add column (res_link5 VARCHAR(256))
+
 

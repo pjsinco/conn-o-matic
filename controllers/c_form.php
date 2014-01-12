@@ -36,6 +36,8 @@ class form_controller extends base_controller {
         $issue['kicker'];
       $this->template->content->preview->main->headline =
         $issue['headline'];
+      $this->template->content->preview->main->resources =
+        $issue['resources'];
 
       // add style to p tags
       $text_styled = Helpers::add_p_style($issue['main_body']);
