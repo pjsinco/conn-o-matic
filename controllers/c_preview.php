@@ -98,6 +98,10 @@ class preview_controller extends base_controller {
         View::instance('v_form_main_body');
       $this->template->content->main_body_edit->id = $id;
 
+      // add poll_edit form to view
+      $this->template->content->poll_edit =
+        View::instance('v_form_poll');
+      $this->template->content->poll_edit->id = $id;
 
       # CSS/JS includes
       $client_files_body = Array(

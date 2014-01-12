@@ -75,5 +75,18 @@ $(document).ready(function() {
     $('#main_body_edit').dialog('open');
   });
 
+  /*
+   * Edit poll
+   */
+  $('#poll').click(function() {
+    //console.log($(this));
+    var text = $(this).html().trim();
+    $('#poll_q_text').val(text);
+
+    $('#poll_edit').dialog('open');
+
+  });
+
+
 
 });

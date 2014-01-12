@@ -70,14 +70,17 @@
 </div>
 
 <div id="kicker_edit" class="dialog-form">
-   <?=$kicker_edit?>
+  <?=$kicker_edit?>
 </div>
 
 <div id="headline_edit" class="dialog-form">
-   <?=$headline_edit?>
+  <?=$headline_edit?>
 </div>
 
 <div id="main_body_edit" class="dialog-form">
-   <?=$main_body_edit?>
+  <?=$main_body_edit?>
 </div>
 
+<div id="poll_edit" class="dialog-form">
+  <?=$poll_edit ?>
+</div>
