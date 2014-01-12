@@ -3,8 +3,35 @@
 class Helpers
 {
   /**
+   * Distills $_POST and updates the given table
+   * @params:
+   *   $post_arr - $_POST
+   *   $table - the table to update
+   *   $id - the id of the row to update
+   * @returns:
+   *   the result of the update
+   *
+   */
+  public static function distill_post_and_update($post_arr, $table, $id) {
+    $data = self::distill_post($post_arr);
+    
+    // if $data is empty, don't update
+    if (!$data) {
+      return;
+    }
+
+    $result = DB::instance(DB_NAME)->update_row(
+      $table,
+      $data,
+      "WHERE id = $id"
+    );
+    
+    return $result;
+  }
+
+  /**
    * Takes $_POST and strips out keys with blank values
-   *  @param
+   * @param
    *    $post_arr - the $_POST array
    * @returns
    *    the stripped array
@@ -12,11 +39,10 @@ class Helpers
   public static function distill_post($post_arr) {
     $data = array();
 
-    // for $data, add only values that are set,
-    // skipping id
+    // for $data, add only values that are set in $post_arr
     foreach ($_POST as $key => $value) {
       if ($value) {
-        if ($key == 'id') {
+        if ($key == 'id') { // skip id
           continue;
         } else {
           $data[$key] = $value;
@@ -38,7 +64,7 @@ class Helpers
       'margin-top' => '0px',
       'margin-right' => '20px',
       'margin-bottom' => '10px',
-      'margin-left' => '20px'   
+      'margin-left' => '20px',
     );
     
     // build up p tag from styles
@@ -54,6 +80,12 @@ class Helpers
   }
 
   public static function set_default_text($id) {
+    $resources = "<p><a href='#' title=''>Resource #1</a></p>";
+    $resources .= "<p><a href='#' title=''>Resource #2</a></p>";
+    $resources .= "<p><a href='#' title=''>Resource #3</a></p>";
+    $resources .= "<p><a href='#' title=''>Resource #4</a></p>";
+    $resources .= "<p><a href='#' title=''>Resource #5</a></p>";
+
     $data = array(
       'headline' => 'HEADLINE GOES HERE',
       'main_body' => '<p>MAIN BODY TEXT GOES HERE<p>',
@@ -65,7 +97,8 @@ class Helpers
       'peer_occ' => 'PEER OCCUPATION GOES HERE',
       'peer_school' => 'PEER SCHOOL/CLASS GOES HERE',
       'peer_inv' => 'PEER I\'M INVOLVED BECAUSE ... GOES HERE',
-      'peer_rev' => 'PEER WHEN REVIEWING ... GOES HERE'
+      'peer_rev' => 'PEER WHEN REVIEWING ... GOES HERE',
+      'resources' => $resources
     );
 
     $result = DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id");

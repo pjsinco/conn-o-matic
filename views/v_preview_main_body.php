@@ -16,7 +16,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td height="0" width="400" bgcolor="#ffffff">
+                      <td class='main_body' height="0" width="400" bgcolor="#ffffff">
                         <h2 class='selectable' id='headline' style="color: #111f43; font-size: 15px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                           <?=$headline;?>
                         </h2>

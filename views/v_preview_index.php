@@ -72,3 +72,7 @@
 <div id="kicker_edit" class="dialog-form">
    <?=$kicker_edit?>
 </div>
+
+<div id="headline_edit" class="dialog-form">
+   <?=$headline_edit?>
+</div>

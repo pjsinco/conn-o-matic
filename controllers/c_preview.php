@@ -51,6 +51,11 @@ class preview_controller extends base_controller {
       $this->template->content->main->poll->poll_q =
         $issue['poll_q'];
 
+      // pass resources to reference to view
+      $this->template->content->main->resources = 
+        $issue['resources'];
+        //View::instance('v_preview_resources');
+
       // pass meet-your-peer to view and set up
       $this->template->content->peer =
         View::instance('v_preview_peer');
@@ -82,6 +87,11 @@ class preview_controller extends base_controller {
       $this->template->content->kicker_edit =
         View::instance('v_form_kicker');
       $this->template->content->kicker_edit->id = $id;
+
+      // add headline_edit form to view
+      $this->template->content->headline_edit =
+        View::instance('v_form_headline');
+      $this->template->content->headline_edit->id = $id;
 
 
 

@@ -9,6 +9,17 @@ $(document).ready(function() {
     modal: true
   });
 
+  // provide visual feedback on editable areas
+  $('.selectable').hover(
+    function() { // mouse in
+      $(this).css({
+        'opacity': '0.5',
+        'cursor': 'pointer'
+      });
+    }, function() { // mouse out
+      $(this).css('opacity', '1.0');
+    }
+  );
 
   /*
    * Edit lead_in
@@ -37,16 +48,21 @@ $(document).ready(function() {
     $('#kicker_edit').dialog('open');
   });
 
+  /*
+   * Edit headline
+   */
+  $('#headline').click(function() {
+    
+    // grab the lead_in text and put it in the textarea
+    var text = $(this).html().trim();
+    $('#headline_text').val(text);
+    
+    // open the form as a dialog modal
+    $('#headline_edit').dialog('open');
+  });
 
-  $('.selectable').hover(
-    function() { // mouse in
-      $(this).css({
-        'opacity': '0.5',
-        'cursor': 'pointer'
-      });
-    }, function() { // mouse out
-      $(this).css('opacity', '1.0');
-    }
-  );
+
+
+
 
 });
