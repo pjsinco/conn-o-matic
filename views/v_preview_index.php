@@ -1,3 +1,7 @@
+<div id='lead_in_edit' class="dialog-form">
+  <?=$lead_in_edit?>
+  
+</div>
 <div id="etoc">
   
   <!--

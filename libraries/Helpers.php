@@ -2,6 +2,31 @@
 
 class Helpers
 {
+  /**
+   * Takes $_POST and strips out keys with blank values
+   *  @param
+   *    $post_arr - the $_POST array
+   * @returns
+   *    the stripped array
+   */
+  public static function distill_post($post_arr) {
+    $data = array();
+
+    // for $data, add only values that are set,
+    // skipping id
+    foreach ($_POST as $key => $value) {
+      if ($value) {
+        if ($key == 'id') {
+          continue;
+        } else {
+          $data[$key] = $value;
+        }
+      }
+    }
+    
+    return $data;
+  }
+
   public static function add_p_style($text) {
     // set up p style
     // put in array for readability, accepting a bit more

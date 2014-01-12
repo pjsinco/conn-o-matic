@@ -68,7 +68,16 @@ class preview_controller extends base_controller {
       // pass footer to view
       $this->template->content->footer =
         View::instance('v_preview_footer');
-      
+
+      /*
+       * add forms to view
+       */
+     
+      // add lead_in_edit form to view 
+      $this->template->content->lead_in_edit =
+        View::instance('v_form_lead_in');
+      $this->template->content->lead_in_edit->id = $id;
+
       # CSS/JS includes
       $client_files_body = Array(
         '/js/preview_index.js'

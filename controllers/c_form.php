@@ -88,19 +88,8 @@ class form_controller extends base_controller {
 	} # End of method
 
   public function p_index($id) {
-    $data = array();
+    $data = Helpers::distill_post($_POST);
 
-    // for $data, add only values that are set,
-    // skipping id
-    foreach ($_POST as $key => $value) {
-      if ($value) {
-        if ($key == 'id') {
-          continue;
-        } else {
-          $data[$key] = $value;
-        }
-      }
-    }
 
     //echo Debug::dump($data);
 
@@ -210,6 +199,37 @@ class form_controller extends base_controller {
 
 
     echo $this->template;
+  }
+
+  public function lead_in_edit($id) {
+    $this->template->content =
+      View::instance('v_form_lead_in');
+
+    // pass id to view
+    $this->template->content->id = $id;
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);
+
+    // render view
+    echo $this->template;
+  }
+
+  public function p_lead_in_edit($id) {
+    //echo Debug::dump($_POST);
+    $data = Helpers::distill_post($_POST);
+    
+    DB::instance(DB_NAME)->update_row(
+      'issue', 
+      $data,
+      "WHERE id = $id"
+    );
+
+    Router::redirect('/preview/index/' . $id);
+
   }
 
   public function resources() {
