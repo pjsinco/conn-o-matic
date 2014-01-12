@@ -2,14 +2,14 @@
                 <table class="main-left" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-right-width: 2px; border-right-color: #b0c0ce; border-right-style: solid;">
                   <tbody>
                     <tr>
-                      <td height="0" class="intro-first" width="380" bgcolor="#111f43">
+                      <td class='selectable' id='lead_in' height="0" width="380" bgcolor="#111f43">
                         <p style="font-size: 14px; color: #fdc578; line-height: 22px; margin-top: 10px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;">
                           <?=$lead_in;?>
                         </p>
                       </td>
                     </tr>
                     <tr>
-                      <td height="0" class="intro-second" width="400" bgcolor="#b0c0ce">
+                      <td class='selectable' id='kicker' height="0" width="400" bgcolor="#b0c0ce">
                         <p style="font-size: 14px; color: #111f43; line-height: 18px; font-weight: bold; margin-top: 3px; margin-right: 20px; margin-bottom: 6px; margin-left: 20px;">
                           <?=$kicker;?>
                         </p>
@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                       <td height="0" width="400" bgcolor="#ffffff">
-                        <h2 style="color: #111f43; font-size: 15px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+                        <h2 class='selectable' id='headline' style="color: #111f43; font-size: 15px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                           <?=$headline;?>
                         </h2>
                         <?=$main_body?>
