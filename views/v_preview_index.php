@@ -76,3 +76,8 @@
 <div id="headline_edit" class="dialog-form">
    <?=$headline_edit?>
 </div>
+
+<div id="main_body_edit" class="dialog-form">
+   <?=$main_body_edit?>
+</div>
+

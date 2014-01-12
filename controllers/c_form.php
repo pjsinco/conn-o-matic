@@ -127,66 +127,28 @@ class form_controller extends base_controller {
     Router::redirect('/form/index/' . $id);
   }
 
-
-  public function main_body($id) {
-    $issue = Helpers::get_issue($id);
-    echo Debug::dump($issue);
-
+  public function main_body_edit($id) {
     $this->template->content = 
-      View::instance('v_form_main_body');
-    $this->template->content->preview = 
-      View::instance('v_preview_main_body');
-    //$this->template->content->preview->lead_in = $issue['lead_in'];
-    //$this->template->content->preview->kicker = $issue['kicker'];
-    //$this->template->content->preview->headline = $issue['headline'];
+      View::instance('v_form_main_body');  
 
-    /*
-     * process <p> tags
-     */
-
-    // set up p style
-    $style = array(
-      'font-size' => '13px',
-      'color' => '#333333',
-      'line-height' => '17px',
-      'margin-top' => '0px',
-      'margin-right' => '20px',
-      'margin-bottom' => '10px',
-      'margin-left' => '20px'   
+    $client_files_head = Array(
+      '/css/main.css'
     );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);
 
-    // build up p tag from styles
-    $p_style = '';
-    foreach ($style as $key => $value) {
-      $p_style .= $key . ':' . $value . '; ';
-    }
-    $p_tag = '<p style="' . $p_style . '">';
-    
-    // change p tags and send to view
-    $this->template->content->preview->main_body =
-      str_replace('<p>', $p_tag, $issue['main_body']);
-
+    // pass id to view
+    $this->template->content->id = $id;
 
     // render view
     echo $this->template;
   }
 
-  public function p_main_body($id) {
-    //echo Debug::Dump($_POST);
-
-    $data = array(
-      'lead_in' => $_POST['lead-in'],
-      'kicker' => $_POST['kicker'],
-      'headline' => $_POST['headline'],
-      'main' => $_POST['main']
-    );
-
+  public function p_main_body_edit($id) {
     $result = 
-      DB::instance(DB_NAME)->update_row(
-        'issue', $data, "WHERE id = $id");
- 
-    Router::redirect('/preview/body/' . 
-      ($result == 0 ? $id : $result));
+      Helpers::distill_post_and_update($_POST, 'issue', $id);
+
+    Router::redirect('/preview/index/' . $id);
   }
 
   public function online_poll($id) {
@@ -277,6 +239,7 @@ class form_controller extends base_controller {
 
     Router::redirect('/preview/index/' . $id);
   }
+
 
   public function resources() {
     $this->template->content = View::instance('v_form_resources');

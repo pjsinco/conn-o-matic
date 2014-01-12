@@ -61,8 +61,19 @@ $(document).ready(function() {
     $('#headline_edit').dialog('open');
   });
 
+  /*
+   * Edit main body
+   */
 
-
+  $('#main_body_text_to_edit').click(function() {
+    
+    // grab the lead_in text and put it in the textarea
+    var text = $('#main_body_text_to_edit').html().trim();
+    $('#main_body_text').val(text);
+    
+    // open the form as a dialog modal
+    $('#main_body_edit').dialog('open');
+  });
 
 
 });

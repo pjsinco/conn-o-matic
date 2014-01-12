@@ -93,6 +93,10 @@ class preview_controller extends base_controller {
         View::instance('v_form_headline');
       $this->template->content->headline_edit->id = $id;
 
+      // add main_body_edit form to view
+      $this->template->content->main_body_edit =
+        View::instance('v_form_main_body');
+      $this->template->content->main_body_edit->id = $id;
 
 
       # CSS/JS includes
