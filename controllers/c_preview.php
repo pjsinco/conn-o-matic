@@ -70,13 +70,20 @@ class preview_controller extends base_controller {
         View::instance('v_preview_footer');
 
       /*
-       * add forms to view
+       * add edit forms to view
        */
      
       // add lead_in_edit form to view 
       $this->template->content->lead_in_edit =
         View::instance('v_form_lead_in');
       $this->template->content->lead_in_edit->id = $id;
+
+      // add kicker_edit form to view
+      $this->template->content->kicker_edit =
+        View::instance('v_form_kicker');
+      $this->template->content->kicker_edit->id = $id;
+
+
 
       # CSS/JS includes
       $client_files_body = Array(

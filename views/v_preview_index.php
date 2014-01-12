@@ -1,7 +1,4 @@
-<div id='lead_in_edit' class="dialog-form">
-  <?=$lead_in_edit?>
-  
-</div>
+
 <div id="etoc">
   
   <!--
@@ -66,4 +63,12 @@
       </tr>
     </tbody>
   </table> <!-- end table1 -->
+</div> <!-- end etoc -->
+
+<div id='lead_in_edit' class="dialog-form">
+  <?=$lead_in_edit?>
+</div>
+
+<div id="kicker_edit" class="dialog-form">
+   <?=$kicker_edit?>
 </div>

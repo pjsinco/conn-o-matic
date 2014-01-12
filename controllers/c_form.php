@@ -222,14 +222,44 @@ class form_controller extends base_controller {
     //echo Debug::dump($_POST);
     $data = Helpers::distill_post($_POST);
     
-    DB::instance(DB_NAME)->update_row(
+    $result = DB::instance(DB_NAME)->update_row(
       'issue', 
       $data,
       "WHERE id = $id"
     );
 
     Router::redirect('/preview/index/' . $id);
+  }
 
+  public function kicker_edit($id) {
+    $this->template->content =
+      View::instance('v_form_kicker');
+
+    // pass id to view
+    $this->template->content->id = $id;
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);
+
+    // render view
+    echo $this->template;
+  }
+
+  public function p_kicker_edit($id) {
+    //echo Debug::dump($_POST);
+
+    $data = Helpers::distill_post($_POST);
+
+    $result = DB::instance(DB_NAME)->update_row(
+      'issue',
+      $data,
+      "WHERE id = $id"
+    );
+
+    Router::redirect('/preview/index/' . $id);
   }
 
   public function resources() {
