@@ -93,6 +93,9 @@ alter table issue
   change main main_body TEXT NOT NULL
 
 alter table issue
+  change resource resources TEXT
+
+alter table issue
   change name peer_name VARCHAR(256) NOT NULL
 
 alter table issue
@@ -117,4 +120,5 @@ alter table issue
   add column (res5 VARCHAR(256)),
   add column (res_link5 VARCHAR(256))
 
-
+alter table issue
+  add column (resource TEXT)
