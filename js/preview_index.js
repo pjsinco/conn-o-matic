@@ -5,7 +5,7 @@ $(document).ready(function() {
   $('.dialog-form').dialog({
     autoOpen: false,
     height: 400,
-    width: 450,
+    width: 650,
     modal: true
   });
 
@@ -87,6 +87,30 @@ $(document).ready(function() {
     $('#poll_edit').dialog('open');
 
   });
+
+  /*
+   * Edit resources
+   */
+  $('#resources').click(function(event) {
+    // ignore the default behavior or following a link
+    event.preventDefault();
+    // get link text
+    var a = $(this).find('li');
+    var resources = '';
+
+    // add each resource to var resources
+    $(a).each(function() {
+      resources += $(this).html().trim();
+    });
+
+    // set the value of the textarea in the form
+    $('#resources_text').val(resources);
+
+    // open the form for editing the resources
+    $('#resources_edit').dialog('open');
+    
+  });
+
 
   /*
    * Edit peer

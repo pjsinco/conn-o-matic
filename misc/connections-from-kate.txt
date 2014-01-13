@@ -26,9 +26,10 @@ Let us know!
 ------------------------------
 Resources to Reference
 ------------------------------
-* Information for Authors [http://www.jaoa.org/site/misc/ifora.xhtml]
-* Tenets of Osteopathic Medicine [http://www.osteopathic.org/inside-aoa/about/leadership/Pages/tenets-of-osteopathic-medicine.aspx]
-* JAOA Editorial Advisory Board online workspace [http://www.osteopathic.org/committees/JAOA-editorial-advisory-board/Pages/default.aspx]
+<li><a href='http://www.jaoa.org/site/misc/ifora.xhtml' title=''>Information for Authors</a>
+<li><a href='http://www.osteopathic.org/inside-aoa/about/leadership/Pages/tenets-of-osteopathic-medicine.aspx' title=''>Tenets of Osteopathic Medicine</a>
+<li><a href='http://www.osteopathic.org/committees/JAOA-editorial-advisory-board/Pages/default.aspx' title=''>JAOA Editorial Advisory Board online workspace</a>
+
 
 Additional resources you would find helpful? Other helpful tips for peer reviewers or authors? Let us know--we want to hear from you!
 [circulation@osteopathic.org]

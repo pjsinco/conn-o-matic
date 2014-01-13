@@ -85,6 +85,10 @@
   <?=$poll_edit ?>
 </div>
 
+<div id="resources_edit" class="dialog-form">
+  <?=$resources_edit ?>
+</div>
+
 <div id="peer_edit" class="dialog-form">
   <?=$peer_edit ?>
 </div>

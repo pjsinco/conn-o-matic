@@ -80,11 +80,11 @@ class Helpers
   }
 
   public static function set_default_text($id) {
-    $resources = "<p><a href='#' title=''>Resource #1</a></p>";
-    $resources .= "<p><a href='#' title=''>Resource #2</a></p>";
-    $resources .= "<p><a href='#' title=''>Resource #3</a></p>";
-    $resources .= "<p><a href='#' title=''>Resource #4</a></p>";
-    $resources .= "<p><a href='#' title=''>Resource #5</a></p>";
+    $resources =  "<li><a href='#' title=''>Resource #1</a></li>";
+    $resources .= "<li><a href='#' title=''>Resource #2</a></li>";
+    $resources .= "<li><a href='#' title=''>Resource #3</a></li>";
+    $resources .= "<li><a href='#' title=''>Resource #4</a></li>";
+    $resources .= "<li><a href='#' title=''>Resource #5</a></li>";
 
     $data = array(
       'headline' => 'HEADLINE GOES HERE',
