@@ -423,9 +423,10 @@ fieldset {
 } 
 
 legend {
-  background-color: #efefef;
+  /*background-color: #efefef;*/
+  background-color: #fff;
   border: 1px solid #dcdcdc;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px 20px;
   text-align: left;
   text-transform: uppercase;
@@ -469,6 +470,7 @@ input.submit {
   /*width: 165px;*/
   width: 100px;
   box-shadow: none;
+  float: right;
 }
 
 .btn:hover {

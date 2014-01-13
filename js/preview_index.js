@@ -1,6 +1,19 @@
 $(document).ready(function() {
   console.log('hiya');
 
+  // select the text in the textarea
+  function focusSelect(input) {
+    //$(input).focus(function() {
+      //$(this).select();
+    //});
+  };
+
+  // select text in field on focus
+  $('textarea, input').focus(function() {
+    $(this).select();
+  });
+
+
   // prep the form to be opened as a dialog modal
   $('.dialog-form').dialog({
     autoOpen: false,
@@ -56,7 +69,6 @@ $(document).ready(function() {
     // grab the lead_in text and put it in the textarea
     var text = $('#lead_in > p').html().trim();
     $('#lead_in_text').val(text);
-
     // open the form as a dialog modal
     $('#lead_in_edit').dialog('open');
   });
@@ -79,7 +91,7 @@ $(document).ready(function() {
    * Edit headline
    */
   $('#headline').click(function() {
-    
+
     // grab the lead_in text and put it in the textarea
     var text = $(this).html().trim();
     $('#headline_text').val(text);
@@ -91,7 +103,6 @@ $(document).ready(function() {
   /*
    * Edit main body
    */
-
   $('#main_body_text_to_edit').click(function() {
     
     // grab the lead_in text and put it in the textarea
@@ -107,6 +118,7 @@ $(document).ready(function() {
    */
   // todo NEED TO POPULATE LINK FIELD
   $('#poll').click(function() {
+
     //console.log($(this));
     var text = $(this).html().trim();
     $('#poll_q_text').val(text);
@@ -121,6 +133,7 @@ $(document).ready(function() {
   $('#resources').click(function(event) {
     // ignore the default behavior or following a link
     event.preventDefault();
+
     // get link text
     var a = $(this).find('li');
     var resources = '';
@@ -143,6 +156,7 @@ $(document).ready(function() {
    * Edit peer
    */
   $('#peer').click(function() {
+
     var peerName = $('#peer_name').html().trim();
     $('#peer_name_text').val(peerName);
 
