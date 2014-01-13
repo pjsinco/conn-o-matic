@@ -68,38 +68,38 @@
   </table> <!-- end table1 -->
 </div> <!-- end etoc -->
 
-<div id='connections_flag_edit' class="dialog-form">
+<div id='connections_flag_edit' class="dialog-form" title='Edit edition'>
   <?=$connections_flag_edit?>
 </div>
 
-<div id='connections_quarter_edit' class="dialog-form">
+<div id='connections_quarter_edit' class="dialog-form" title='Edit date'>
   <?=$connections_quarter_edit?>
 </div>
 
-<div id='lead_in_edit' class="dialog-form">
+<div id='lead_in_edit' class="dialog-form" title='Edit lead-in'>
   <?=$lead_in_edit?>
 </div>
 
-<div id="kicker_edit" class="dialog-form">
+<div id="kicker_edit" class="dialog-form" title='Edit kicker'>
   <?=$kicker_edit?>
 </div>
 
-<div id="headline_edit" class="dialog-form">
+<div id="headline_edit" class="dialog-form" title='Edit headline'>
   <?=$headline_edit?>
 </div>
 
-<div id="main_body_edit" class="dialog-form">
+<div id="main_body_edit" class="dialog-form" title='Edit main body text'>
   <?=$main_body_edit?>
 </div>
 
-<div id="poll_edit" class="dialog-form">
+<div id="poll_edit" class="dialog-form" title='Edit poll'>
   <?=$poll_edit ?>
 </div>
 
-<div id="resources_edit" class="dialog-form">
+<div id="resources_edit" class="dialog-form" title='Edit resources'>
   <?=$resources_edit ?>
 </div>
 
-<div id="peer_edit" class="dialog-form">
+<div id="peer_edit" class="dialog-form" title="Edit 'Meet Your Peer'">
   <?=$peer_edit ?>
 </div>

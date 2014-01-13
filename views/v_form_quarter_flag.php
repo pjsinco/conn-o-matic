@@ -1,6 +1,6 @@
 <form action="/form/p_conn_flag_edit/<?=$id;?>" method="POST" accept-charset="utf-8">
-  <fieldset>
-    <legend>Quarter, Year</legend>
+<!--   <fieldset> -->
+<!--     <legend>Date</legend> -->
     <p>
       <label class='title' for='quarter'>Quarter:</label>
       <select id='quarter' name='quarter'>
@@ -16,8 +16,8 @@
         <option value='2016'>2016</option>
       </select>
     <p>
-    <input type="submit" value="Set">
+    <input class='btn' type="submit" value="Set">
     <input type="hidden" name='id' value="<?=$id;?>">
-  </fieldset>
+<!--   </fieldset> -->
 </form>
 

@@ -11,6 +11,11 @@ class form_controller extends base_controller {
   public function meta() {
     $this->template->content = View::instance('v_form_meta');
 
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    Utils::load_client_files($client_files_head);
+
     echo $this->template;
   }
 

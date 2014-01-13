@@ -2,8 +2,8 @@
   <fieldset>
     <legend>Resources to Reference</legend>
     <p>
-      <label class='title' for='kicker'>Resources to Reference</label>
-      <textarea name="resources" id="resources_text" rows="8" cols="40"></textarea>
+<!--       <label class='title' for='kicker'>Resources to Reference</label> -->
+      <textarea name="resources" id="resources_text" rows="24" cols="60"></textarea>
       
 <!--       <label for='resource1'>Resource #1:</label> -->
 <!--       <input type="text" name="resource1" id="resource1"> -->
@@ -30,7 +30,7 @@
 <!--       <label for='link1'>Link:</label> -->
 <!--       <input type="text" name="link5" id="link5"><br> -->
     </p>
-    <input type="submit" value="Set">
+    <input class='btn' type="submit" value="Set">
     <input type="hidden" name='id' value="<?=$id;?>">
   </fieldset>
 </form>

@@ -4,8 +4,8 @@ $(document).ready(function() {
   // prep the form to be opened as a dialog modal
   $('.dialog-form').dialog({
     autoOpen: false,
-    height: 400,
-    width: 650,
+    height: 'auto',
+    width: 'auto',
     modal: true,
     show: {
       effect: 'fade',

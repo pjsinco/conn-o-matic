@@ -21,7 +21,7 @@
       <option value='2015'>2015</option>
       <option value='2016'>2016</option>
     </select>
-    <input type="submit" value="Set">
+    <input class='btn' type="submit" value="Set">
   </p>
 </fieldset>
 </form>
