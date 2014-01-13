@@ -1,4 +1,3 @@
-
 <div id="etoc">
   
   <!--
@@ -21,7 +20,7 @@
   -->
   
   <!-- table1 -->
-  <table class="wrapper" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;">
+  <table class="connections-wrapper" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;">
     <tbody>
       <tr>
         <td height="0" align="center">
@@ -29,11 +28,15 @@
           <table class="main" width="612" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-bottom-width: 4px; border-bottom-color: #913a20; border-bottom-style: solid;">
             <tbody>
               <tr>
-                <td height="0" width="612" align="left" valign="top" colspan="2"><a href="http://www.jaoa.org/" title="JAOA mdash;mdash; The Journal of the American Osteopathic Association: Connections Newsletter" style="color: #111f43;"><img src="http://aoa-do.informz.net/aoa-do/data/images/connections/jaoa-flag-eb.gif" alt="JAOA flag" width="612" height="135" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" title="JAOA flag"></a></td>
+                <td height="0" width="612" align="left" valign="top" colspan="2">
+                  <a href="http://www.jaoa.org/" title="JAOA--The Journal of the American Osteopathic Association: Connections Newsletter: <?=$connections_edition?>" style="color: #111f43;">
+                    <img class='selectable' id='connections_flag' src="<?=$connections_flag?>" alt="JAOA flag" width="612" height="135" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" title="JAOA flag">
+                  </a>
+                </td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
-                <td height="0" width="612" align="left" valign="bottom" colspan="2"><img src="http://aoa-do.informz.net/aoa-do/data/images/connections/connections-fall-2013.gif" alt="Connections" width="612" height="33" title="Connections - *QUARTER-YEAR*"></td>
+                <td class='selectable' id='connections_edition_flag' height="0" width="612" align="left" valign="bottom" colspan="2"><img src="<?=$connections_quarter_flag?>" alt="Connections" width="612" height="33" title="Connections - <?=$connections_quarter?>"></td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
@@ -64,6 +67,14 @@
     </tbody>
   </table> <!-- end table1 -->
 </div> <!-- end etoc -->
+
+<div id='connections_flag_edit' class="dialog-form">
+  <?=$connections_flag_edit?>
+</div>
+
+<div id='connections_quarter_edit' class="dialog-form">
+  <?=$connections_quarter_edit?>
+</div>
 
 <div id='lead_in_edit' class="dialog-form">
   <?=$lead_in_edit?>

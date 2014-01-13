@@ -127,6 +127,46 @@ class form_controller extends base_controller {
     Router::redirect('/form/index/' . $id);
   }
 
+  public function connections_flag_edit($id) {
+    $this->template->content =
+      View::instance('v_form_conn_flag');
+
+    $this->template->content->id = $id;
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+
+    echo $this->template;
+  }
+
+  public function p_conn_flag_edit($id) {
+    $result = 
+      Helpers::distill_post_and_update($_POST, 'issue', $id);
+
+    Router::redirect('/preview/index/' . $id);
+  }
+
+  public function connections_quarter_edit($id) {
+    $this->template->content =
+      View::instance('v_form_quarter_flag');
+
+    $this->template->content->id = $id;
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+
+    echo $this->template;
+  }
+
+  public function p_connections_quarter_edit($id) {
+    $result = 
+      Helpers::distill_post_and_update($_POST, 'issue', $id);
+
+    Router::redirect('/preview/index/' . $id);
+  }
+
   public function main_body_edit($id) {
     $this->template->content = 
       View::instance('v_form_main_body');  

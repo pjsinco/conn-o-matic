@@ -1,7 +1,8 @@
 <form action="/form/p_meta" method="POST" accept-charset="utf-8">
 <fieldset>
   <legend>Top matter</legend>
-  <p><label class='title' for='edition'>Edition:</label>
+  <p>
+    <label class='title' for='edition'>Edition:</label>
     <select id='edition' name='edition'>
       <option value='Peer Reviewer'>Peer Reviewer</option>
       <option value='Editorial Board'>Editorial Board</option>
@@ -16,9 +17,9 @@
     </select>&nbsp;
     <label class='title' for='year'>Year:</label>
     <select id='year' name='year'>
-      <option value='2013'>2013</option>
       <option value='2014'>2014</option>
       <option value='2015'>2015</option>
+      <option value='2016'>2016</option>
     </select>
     <input type="submit" value="Set">
   </p>

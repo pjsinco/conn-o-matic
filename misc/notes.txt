@@ -2,6 +2,7 @@ http://aoa-do.informz.net/aoa-do/data/images/connections/jaoa-flag-eab.gif
 http://aoa-do.informz.net/aoa-do/data/images/connections/jaoa-flag-eb.gif
 http://aoa-do.informz.net/aoa-do/data/images/connections/jaoa-flag-pr.gif
 
-http://aoa-do.informz.net/aoa-do/data/images/connections/connections-winter-2014.gif
+http://aoa-do.informz.net/aoa-do/data/images/connections/connections_winter_2014.gif
+http://aoa-do.informz.net/aoa-do/data/images/connections/connections_fall_2014.gif
 
 

@@ -34,6 +34,25 @@ class preview_controller extends base_controller {
       $this->template->title = APP_NAME . ' | Preview';
 
       // give the main_body view everthing it needs
+
+      // pass flag to view
+      $conn_flag = Helpers::get_flag_url($id); // get url for flag
+      $this->template->content->connections_flag = $conn_flag;
+
+      // pass connections flag to view
+      $edition_flag = Helpers::get_edition_url($id);
+      $this->template->content->connections_quarter_flag = $edition_flag;
+      $this->template->content->connections_quarter = $issue['edition'];
+
+      //echo Debug::dump($issue['edition']);
+
+      // pass edition to view
+      $this->template->content->connections_season = 
+        $data['quarter'] . ' ' . $data['year'];
+        
+      //echo Debug::dump($conn_flag);
+
+      // pass lead_in, kicker, headline, main, resources to view
       $this->template->content->main =
         View::instance('v_preview_main_body');
       $this->template->content->main->lead_in =
@@ -84,6 +103,16 @@ class preview_controller extends base_controller {
       /*
        * add edit forms to view
        */
+      // add connections_flag_edit form to view
+      $this->template->content->connections_flag_edit =
+        View::instance('v_form_conn_flag');
+      $this->template->content->connections_flag_edit->id = $id;
+
+      // add connections_quarter_edit form to view
+      $this->template->content->connections_quarter_edit =
+        View::instance('v_form_quarter_flag');
+      $this->template->content->connections_quarter_edit->id = $id;
+
      
       // add lead_in_edit form to view 
       $this->template->content->lead_in_edit =
@@ -119,6 +148,7 @@ class preview_controller extends base_controller {
       $this->template->content->peer_edit =
         View::instance('v_form_peer');
       $this->template->content->peer_edit->id = $id;
+
 
       # Render the view
       echo $this->template;

@@ -22,6 +22,25 @@ $(document).ready(function() {
   );
 
   /*
+   * Edit flag
+   */
+  $('#connections_flag').click(function(event) {
+    event.preventDefault();
+    //var edition = $(this).parent().attr('title').split(':')[2].trim();
+    
+    $('#connections_flag_edit').dialog('open');
+  });
+
+  /*
+   * Edit edition flag
+   */
+  $('#connections_edition_flag').click(function() {
+    //console.log('connections edition flag clicked');
+    $('#connections_quarter_edit').dialog('open');
+  });
+
+
+  /*
    * Edit lead_in
    */
   $('#lead_in').click(function() {

@@ -1,7 +1,52 @@
 <?php  
 
+include_once('/config/constants.php');
+
 class Helpers
 {
+  /**
+   * Returns the link to edition flag for the issue
+   * @param
+   *   $id - issue id
+   * @returns
+   *   the url for the edition flag
+   */
+  public static function get_edition_url($id) {
+    $data = self::get_issue($id);
+    
+    $url = IMAGE_LINK . 'connections_';
+    $url .= strtolower($data['quarter']) . '_';
+    $url .= $data['year'] . '.gif';
+
+    return $url;
+  }
+
+  /**
+   * Returns the link to flag for the issue
+   * @param
+   *   $id - issue id
+   * @returns
+   *   the url for the flag
+   */
+  public static function get_flag_url($id) {
+    $data = self::get_issue($id);
+
+    switch ($data['edition']) {
+      case 'Peer Reviewer':
+        return IMAGE_LINK . PR_FILE;
+        break;
+      case 'Editorial Board':
+        return IMAGE_LINK . EB_FILE;
+        break;
+      case 'Editorial Advisory Board':
+        return IMAGE_LINK . EAB_FILE;
+        break;
+      default:
+        return null;
+        break;
+    }
+  }
+
   /**
    * Distills $_POST and updates the given table
    * @params:
@@ -80,28 +125,29 @@ class Helpers
   }
 
   public static function set_default_text($id) {
-    $resources =  "<li><a href='#' title=''>Resource #1</a></li>";
-    $resources .= "<li><a href='#' title=''>Resource #2</a></li>";
-    $resources .= "<li><a href='#' title=''>Resource #3</a></li>";
-    $resources .= "<li><a href='#' title=''>Resource #4</a></li>";
-    $resources .= "<li><a href='#' title=''>Resource #5</a></li>";
+    $resources =  "<li><a href='#' title=''>***Resource #1***</a></li>";
+    $resources .= "<li><a href='#' title=''>***Resource #2***</a></li>";
+    $resources .= "<li><a href='#' title=''>***Resource #3***</a></li>";
+    $resources .= "<li><a href='#' title=''>***Resource #4***</a></li>";
+    $resources .= "<li><a href='#' title=''>***Resource #5***</a></li>";
 
     $data = array(
-      'headline' => 'HEADLINE GOES HERE',
-      'main_body' => '<p>MAIN BODY TEXT GOES HERE<p>',
-      'lead_in' => 'LEAD-IN GOES HERE',
-      'kicker' => 'LEAD-IN KICKER GOES HERE',
-      'poll_q' => 'ONLINE POLL QUESTION GOES HERE',
-      'poll_link' => '#',
-      'peer_name' => 'PEER NAME GOES HERE',
-      'peer_occ' => 'PEER OCCUPATION GOES HERE',
-      'peer_school' => 'PEER SCHOOL/CLASS GOES HERE',
-      'peer_inv' => 'PEER I\'M INVOLVED BECAUSE ... GOES HERE',
-      'peer_rev' => 'PEER WHEN REVIEWING ... GOES HERE',
-      'resources' => $resources
+      'headline'    => '***HEADLINE***',
+      'main_body'   => '<p>***MAIN BODY TEXT***<p>',
+      'lead_in'     => '***LEAD-IN***',
+      'kicker'      => '***LEAD-IN KICKER***',
+      'poll_q'      => '***ONLINE POLL QUESTION***',
+      'poll_link'   => '#',
+      'peer_name'   => '***PEER NAME***',
+      'peer_occ'    => '***PEER OCCUPATION***',
+      'peer_school' => '***PEER SCHOOL/CLASS***',
+      'peer_inv'    => '***PEER I\'M INVOLVED BECAUSE ...***',
+      'peer_rev'    => '***PEER WHEN REVIEWING ...***',
+      'resources'   => $resources
     );
 
-    $result = DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id");
+    $result = 
+      DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id");
 
     return $result;
   }
