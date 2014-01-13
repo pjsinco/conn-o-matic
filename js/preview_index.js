@@ -1,13 +1,6 @@
 $(document).ready(function() {
   console.log('hiya');
 
-  // select the text in the textarea
-  function focusSelect(input) {
-    //$(input).focus(function() {
-      //$(this).select();
-    //});
-  };
-
   // select text in field on focus
   $('textarea, input').focus(function() {
     $(this).select();
