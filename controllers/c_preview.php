@@ -23,6 +23,13 @@ class preview_controller extends base_controller {
       );
       $this->template->client_files_body = 
         Utils::load_client_files($client_files_body);   
+
+      $client_files_head = Array(
+        '/css/main.css'
+      );
+      $this->template->client_files_head = 
+        Utils::load_client_files($client_files_head);   
+        					     		
         					     		
       $issue = Helpers::get_issue($id);
 		

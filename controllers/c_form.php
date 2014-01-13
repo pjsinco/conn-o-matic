@@ -136,6 +136,7 @@ class form_controller extends base_controller {
     $client_files_head = Array(
       '/css/main.css'
     );
+    Utils::load_client_files($client_files_head);
 
     echo $this->template;
   }
@@ -156,6 +157,7 @@ class form_controller extends base_controller {
     $client_files_head = Array(
       '/css/main.css'
     );
+    Utils::load_client_files($client_files_head);
 
     echo $this->template;
   }

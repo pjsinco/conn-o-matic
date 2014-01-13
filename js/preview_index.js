@@ -6,7 +6,15 @@ $(document).ready(function() {
     autoOpen: false,
     height: 400,
     width: 650,
-    modal: true
+    modal: true,
+    show: {
+      effect: 'fade',
+      duration: 300
+    },
+    hide: {
+      effect: 'fade',
+      duration: 300
+    }
   });
 
   // provide visual feedback on editable areas
