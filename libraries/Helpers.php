@@ -90,7 +90,7 @@ class Helpers
         if ($key == 'id') { // skip id
           continue;
         } else {
-          $data[$key] = $value;
+          $data[$key] = stripslashes($value);
         }
       }
     }
