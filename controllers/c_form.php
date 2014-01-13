@@ -252,18 +252,35 @@ class form_controller extends base_controller {
     Router::redirect('/preview/index/' . $id);
   }
 
-  public function resources() {
+  public function resources($id) {
     $this->template->content = View::instance('v_form_resources');
 
     echo $this->template;
   }
 
-  public function meet_your_peer() {
-    $this->template->content = View::instance('v_form_meet_your_peer');
+  public function peer_edit($id) {
+    $this->template->content = 
+      View::instance('v_form_peer');
 
+    $this->template->content->id = $id;
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);
+
+    // render view
     echo $this->template;
   }
   
+  public function p_peer_edit($id) {
+    //update the poll
+    $result = 
+      Helpers::distill_post_and_update($_POST, 'issue', $id);
+
+    Router::redirect('/preview/index/' . $id);
+  }
   
 
 	

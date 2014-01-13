@@ -87,6 +87,27 @@ $(document).ready(function() {
 
   });
 
+  /*
+   * Edit peer
+   */
+  $('#peer').click(function() {
+    var peerName = $('#peer_name').html().trim();
+    $('#peer_name_text').val(peerName);
+
+    var peerOcc = $('#peer_occ').html().trim();
+    $('#peer_occ_text').val(peerOcc);
+
+    var peerSchool = $('#peer_school').html().trim();
+    $('#peer_school_text').val(peerSchool);
+
+    var peerInv = $('#peer_inv').html().trim();
+    $('#peer_inv_text').val(peerInv);
+
+    var peerRev = $('#peer_rev').html().trim();
+    $('#peer_rev_text').val(peerRev);
+
+    $('#peer_edit').dialog('open');
+  });
 
 
 });

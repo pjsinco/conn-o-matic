@@ -84,3 +84,7 @@
 <div id="poll_edit" class="dialog-form">
   <?=$poll_edit ?>
 </div>
+
+<div id="peer_edit" class="dialog-form">
+  <?=$peer_edit ?>
+</div>

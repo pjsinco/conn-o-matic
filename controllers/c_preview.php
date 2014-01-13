@@ -12,7 +12,7 @@ class preview_controller extends base_controller {
 	} 
 		
 	/*----------------------------------------------------------
-	Accessed via http://localhost/index/index/
+	Accessed via http://localhost/preview/index/{$id}
     Shows the whole enchilada
 	-----------------------------------------------------------*/
 	public function index($id) {	
@@ -103,6 +103,11 @@ class preview_controller extends base_controller {
         View::instance('v_form_poll');
       $this->template->content->poll_edit->id = $id;
 
+      // add peer_edit form to view
+      $this->template->content->peer_edit =
+        View::instance('v_form_peer');
+      $this->template->content->peer_edit->id = $id;
+
       # CSS/JS includes
       $client_files_body = Array(
         '/js/preview_index.js'
@@ -111,7 +116,7 @@ class preview_controller extends base_controller {
         Utils::load_client_files($client_files_body);   
         					     		
       # Render the view
-      	echo $this->template;
+      echo $this->template;
 
 	} # End of method
 
