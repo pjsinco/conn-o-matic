@@ -6,16 +6,16 @@
     <input type="text" name="peer_name" id="peer_name_text"><br>
 
     <label for="peer_occ_text">Occupation:</label>
-    <textarea name="peer_occ" id="peer_occ_text"><br>
+    <textarea name="peer_occ" id="peer_occ_text"></textarea><br>
 
     <label for="peer_school_text">School/class:</label>
-    <textarea type="text" name="peer_school" id="peer_school_text"><br>
+    <textarea name="peer_school" id="peer_school_text"></textarea><br>
 
     <label for="peer_inv_text">I am involved because:</label>
-    <textarea type="text" name="peer_inv" id="peer_inv_text"><br>
+    <textarea name="peer_inv" id="peer_inv_text"></textarea><br>
 
     <label for="peer_rev_text">When reviewing a manuscript:</label>
-    <textarea type="text" name="peer_rev" id="peer_rev_text"><br>
+    <textarea name="peer_rev" id="peer_rev_text"></textarea><br>
   </p>
     <input type="submit" value="Set">
     <input type="hidden" name='id' value="<?=$id;?>">

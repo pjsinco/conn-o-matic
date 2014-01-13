@@ -78,6 +78,7 @@ $(document).ready(function() {
   /*
    * Edit poll
    */
+  // todo NEED TO POPULATE LINK FIELD
   $('#poll').click(function() {
     //console.log($(this));
     var text = $(this).html().trim();

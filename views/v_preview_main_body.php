@@ -1,5 +1,5 @@
                 <!-- table3 -->
-                <table class="main-left" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-right-width: 2px; border-right-color: #b0c0ce; border-right-style: solid;">
+                <table class="main-left" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-right-width: 2px; border-right-color: #b0c0ce; border-right-style: solid; padding-bottom: 16px;">
                   <tbody>
                     <tr>
                       <td class='selectable' id='lead_in' height="0" width="380" bgcolor="#111f43">
