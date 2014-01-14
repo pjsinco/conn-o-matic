@@ -12,11 +12,9 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class='selectable' id='headline' height="0" width="400" bgcolor="#ffffff">
+                      <td class='selectable' id='main_body' height="0" width="400" bgcolor="#ffffff">
                           <?=$headline;?>
-                        <div class='selectable' id='main_body_text_to_edit'>
                           <?=$main_body?>
-                        </div>
                       </td>
                     </tr>
                     <tr>

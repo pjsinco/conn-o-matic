@@ -1,5 +1,5 @@
                 <!-- table5 -->
-                <table class="sidebar selectable" id='peer' cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif;">
+                <table bgcolor="#ffffff" class="sidebar selectable" id='peer' cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif;">
                   <tbody>
                     <tr>
                       <td height="0" width="212" align="left" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;">

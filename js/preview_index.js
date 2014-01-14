@@ -83,10 +83,10 @@ $(document).ready(function() {
   /*
    * Edit headline
    */
-  $('#headline').click(function() {
+  $('#main_body h2').click(function() {
 
     // grab the lead_in text and put it in the textarea
-    var text = $(this).find('h2').html().trim();
+    var text = $(this).html().trim();
     $('#headline_text').val(text);
     
     // open the form as a dialog modal
