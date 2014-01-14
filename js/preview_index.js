@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log('hiya');
+  console.log(schools[3]);
 
   // select text in field on focus
   $('textarea, input').focus(function() {
@@ -159,12 +159,19 @@ $(document).ready(function() {
     var peerSchool = $('#peer_school').html().trim();
     $('#peer_school_text').val(peerSchool);
 
+    var peerClass = $('#peer_school span').html().trim();
+    $('#peer_class_yr_text').val(peerClass);
+
     var peerInv = $('#peer_inv').html().trim();
     $('#peer_inv_text').val(peerInv);
 
     var peerRev = $('#peer_rev').html().trim();
     $('#peer_rev_text').val(peerRev);
 
+    $('#peer_school_text').autocomplete({
+      source: schools
+    });
+    
     $('#peer_edit').dialog('open');
   });
 

@@ -23,6 +23,7 @@
                         </p>
                         <p id='peer_school' style="font-size: 13px; color: #333333; line-height: 17px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;">
                           <?=$peer_school?>
+                          Class of <span><?=$peer_class_yr?></span>.
                         </p>
                         <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">
                           I am involved with the <i>JAOA</i> because ...

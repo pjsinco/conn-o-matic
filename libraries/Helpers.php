@@ -1,6 +1,6 @@
 <?php  
 
-include_once('/config/constants.php');
+include_once(APP_PATH . '/config/constants.php');
 
 class Helpers
 {
@@ -140,7 +140,8 @@ class Helpers
       'poll_link'   => '#',
       'peer_name'   => '***PEER NAME***',
       'peer_occ'    => '***PEER OCCUPATION***',
-      'peer_school' => '***PEER SCHOOL/CLASS***',
+      'peer_school' => '***PEER SCHOOL***',
+      'peer_class'  => '0000',
       'peer_inv'    => '***PEER I\'M INVOLVED BECAUSE ...***',
       'peer_rev'    => '***PEER WHEN REVIEWING ...***',
       'resources'   => $resources

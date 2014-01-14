@@ -19,6 +19,7 @@ class preview_controller extends base_controller {
     
       // CSS/JS includes
       $client_files_body = Array(
+        '/js/schools.js',
         '/js/preview_index.js'
       );
       $this->template->client_files_body = 
@@ -29,7 +30,6 @@ class preview_controller extends base_controller {
       );
       $this->template->client_files_head = 
         Utils::load_client_files($client_files_head);   
-        					     		
         					     		
       $issue = Helpers::get_issue($id);
 		
@@ -55,7 +55,7 @@ class preview_controller extends base_controller {
 
       // pass edition to view
       $this->template->content->connections_season = 
-        $data['quarter'] . ' ' . $data['year'];
+        $issue['quarter'] . ' ' . $issue['year'];
         
       //echo Debug::dump($conn_flag);
 
@@ -98,6 +98,8 @@ class preview_controller extends base_controller {
         $issue['peer_occ'];
       $this->template->content->peer->peer_school =
         $issue['peer_school'];
+      $this->template->content->peer->peer_class_yr =
+        $issue['peer_class_yr'];
       $this->template->content->peer->peer_inv =
         $issue['peer_inv'];
       $this->template->content->peer->peer_rev =

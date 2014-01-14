@@ -109,6 +109,9 @@ alter table issue
   change link poll_link TEXT
 
 alter table issue
+  add column (peer_class_yr YEAR(4));
+
+alter table issue
   add column (res1 VARCHAR(256)),
   add column (res_link1 VARCHAR(256)),
   add column (res2 VARCHAR(256)),

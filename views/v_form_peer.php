@@ -8,8 +8,11 @@
     <label for="peer_occ_text">Occupation</label><br>
     <textarea class='peer' name="peer_occ" id="peer_occ_text" rows='3'></textarea><br>
 
-    <label for="peer_school_text">School/class</label><br>
-    <textarea class='peer' name="peer_school" id="peer_school_text" rows='3'></textarea><br>
+    <label for="peer_school_text">School</label><br>
+    <input type='text' class='peer' name="peer_school" id="peer_school_text"><br>
+
+    <label for="peer_class_yr_text">Class year</label><br>
+    <input type='text' class='peer' name="peer_class_yr" id="peer_class_yr_text" rows='1'><br>
 
     <label for="peer_inv_text">I am involved because</label><br>
     <textarea class='peer' name="peer_inv" id="peer_inv_text" rows='12'></textarea><br>
