@@ -78,10 +78,8 @@ $(document).ready(function() {
   // style kicker a tags
   $('#kicker a').css(kickerATag);
 
-  // style main-body headline h2
-  $('#main_body h2').css(mainH2).attr({
-    'class': 'selectable'
-  });
+  // style main-body h2 tag
+  $('#main_body h2').css(mainH2);
 
   // style main-body p tags
   $('#main_body p').css(mainPTag);
@@ -89,6 +87,7 @@ $(document).ready(function() {
   // style main-body ul tags
   $('#main_body ul').css(mainULTag);
   
+  // style main-body a tags
   $('#main_body a').css(mainA);
 
 

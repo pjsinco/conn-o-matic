@@ -83,28 +83,37 @@ $(document).ready(function() {
   /*
    * Edit headline
    */
-  $('#main_body h2').click(function() {
+  $('#main_body').click(function() {
 
+    console.log(this);
     // grab the lead_in text and put it in the textarea
-    var text = $(this).html().trim();
-    $('#headline_text').val(text);
-    
+    var headline = $(this).find('h2').html().trim();
+    console.log(headline);
+    $('#headline_text').val(headline);
+
+    var body = $('#main_body p, #main_body h2');
+    var body = $(this).find('p').find('ul');
+    //var body = $(this).find('p').html().trim() + $(this).find('ul').html().trim();
+    //var body = $('#main_body p, #main_body li').html().trim();
+    $('#main_body_text').val(body);
+    console.log(body);
+
     // open the form as a dialog modal
-    $('#headline_edit').dialog('open');
+    $('#main_body_edit').dialog('open');
   });
 
   /*
    * Edit main body
    */
-  $('#main_body_text_to_edit').click(function() {
+  //$('#main_body_text_to_edit').click(function() {
     
     // grab the lead_in text and put it in the textarea
-    var text = $('#main_body_text_to_edit').html().trim();
-    $('#main_body_text').val(text);
-    
-    // open the form as a dialog modal
-    $('#main_body_edit').dialog('open');
-  });
+//    var text = $('#main_body p, #main_body ul').html().trim();
+//    $('#main_body_text').val(text);
+//    
+//    // open the form as a dialog modal
+//    $('#main_body_edit').dialog('open');
+//  });
 
   /*
    * Edit poll

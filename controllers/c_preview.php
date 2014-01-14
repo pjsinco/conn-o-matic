@@ -135,9 +135,9 @@ class preview_controller extends base_controller {
       $this->template->content->kicker_edit->id = $id;
 
       // add headline_edit form to view
-      $this->template->content->headline_edit =
-        View::instance('v_form_headline');
-      $this->template->content->headline_edit->id = $id;
+      //$this->template->content->headline_edit =
+        //View::instance('v_form_headline');
+      //$this->template->content->headline_edit->id = $id;
 
       // add main_body_edit form to view
       $this->template->content->main_body_edit =

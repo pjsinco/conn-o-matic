@@ -1,12 +1,17 @@
-﻿
-We're on Twitter! Follow The Journal of the American Osteopathic Association (JAOA) on Twitter at @TheJAOA for updates, highlights, and conversations about the JAOA and osteopathic medical research.Take note of the special report on the AOA's Strategic Research Plan by JAOA Editorial Advisory Board member Brian F. Degenhardt, DO.Get to know our submission guidelines.
+﻿We're on Twitter! Follow The Journal of the American Osteopathic Association (JAOA) on Twitter at @TheJAOA for updates, highlights, and conversations about the JAOA and osteopathic medical research.
 
-As a peer reviewer for the JAOA, it is important to be familiar with not only the peer review process, but also with The Journal's submission expectations. Before conducting your review, be sure you are conversant with the JAOA's Information for Authors page on JAOA.org. The next time you review an article for the JAOA, remember:
-• Contributors to the JAOA follow this “Manuscript Checklist."
-• The JAOA's contributors must adhere to these 10 manuscript components. 
-• Word count, reference, and graphic element requirements are specified for each article category.  a graphic element.
-• Original contributions, meta-analyses, systematic reviews, and brief reports require structured abstracts.
-• References should follow standard medical citation formatting.
+Take note of the special report on the AOA's Strategic Research Plan by JAOA Editorial Advisory Board member Brian F. Degenhardt, DO.Get to know our submission guidelines.
+
+As a peer reviewer for the JAOA, it is important to be familiar with not only the peer review process, but also with The Journal's submission expectations. Before conducting your review, be sure you are conversant with the JAOA's Information for Authors page on <a href='http://www.jaoa.org'>JAOA.org</a>. The next time you review an article for the JAOA, remember:
+
+<ul>
+<li>Contributors to the JAOA follow this “Manuscript Checklist."</li>
+<li>The JAOA's contributors must adhere to these 10 manuscript components. </li>
+<li>Word count, reference, and graphic element requirements are specified for each article category.  a graphic element.</li>
+<li>Original contributions, meta-analyses, systematic reviews, and brief reports require structured abstracts.</li>
+<li>References should follow standard medical citation formatting.</li>
+</ul>
+
 Take Our Online Poll
 When I review for the JAOA, I refer to the JAOA Instructions for Authors…
 

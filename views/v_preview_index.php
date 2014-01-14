@@ -84,9 +84,9 @@
   <?=$kicker_edit?>
 </div>
 
-<div id="headline_edit" class="dialog-form" title='Edit headline'>
-  <?=$headline_edit?>
-</div>
+<!-- <div id="headline_edit" class="dialog-form" title='Edit headline'> -->
+  <?//=$headline_edit?>
+<!-- </div> -->
 
 <div id="main_body_edit" class="dialog-form" title='Edit main body text'>
   <?=$main_body_edit?>
