@@ -494,3 +494,6 @@ label {
   /*color: cadetblue;*/
   
 }
+.hidden {
+  display: none;
+}

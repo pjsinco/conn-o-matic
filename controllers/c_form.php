@@ -305,6 +305,12 @@ class form_controller extends base_controller {
 
     $this->template->content->id = $id;
 
+    $client_files_body = Array(
+      '/js/form_resources.js'
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);
+
     $client_files_head = Array(
       '/css/main.css'
     );
@@ -315,10 +321,17 @@ class form_controller extends base_controller {
     echo $this->template;
   }
 
+  public function p_resources_add($id) {
+    $result =
+      Helpers::distill_post_and_update($_POST, 'resource', $id);
+  }
+
   public function p_resources_edit($id) {
-    //update the poll
+
+
+    //add the resource 
     $result = 
-      Helpers::distill_post_and_update($_POST, 'issue', $id);
+      Helpers::distill_post_and_update($_POST, 'resource', $id);
 
     Router::redirect('/preview/index/' . $id);
   }
