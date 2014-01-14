@@ -2,10 +2,9 @@ $(document).ready(function() {
   console.log(schools[3]);
 
   // select text in field on focus
-  $('textarea, input').focus(function() {
+  $('textarea, input:text').focus(function() {
     $(this).select();
   });
-
 
   // prep the form to be opened as a dialog modal
   $('.dialog-form').dialog({
