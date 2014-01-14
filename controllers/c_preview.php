@@ -20,7 +20,9 @@ class preview_controller extends base_controller {
       // CSS/JS includes
       $client_files_body = Array(
         '/js/schools.js',
+        '/js/style.js',
         '/js/preview_index.js'
+        
       );
       $this->template->client_files_body = 
         Utils::load_client_files($client_files_body);   
@@ -70,7 +72,6 @@ class preview_controller extends base_controller {
         $issue['headline'];
       $this->template->content->main->resources =
         $issue['resources'];
-
       // add style to p tags
       $text_styled = Helpers::add_p_style($issue['main_body']);
       $this->template->content->main->main_body =

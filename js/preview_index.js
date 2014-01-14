@@ -2,6 +2,7 @@ $(document).ready(function() {
   console.log(schools[3]);
 
   // select text in field on focus
+  // NOTE: input:text works, but not textarea
   $('textarea, input:text').focus(function() {
     $(this).select();
   });
@@ -59,7 +60,7 @@ $(document).ready(function() {
   $('#lead_in').click(function() {
 
     // grab the lead_in text and put it in the textarea
-    var text = $('#lead_in > p').html().trim();
+    var text = $('#lead_in').html().trim();
     $('#lead_in_text').val(text);
     // open the form as a dialog modal
     $('#lead_in_edit').dialog('open');
@@ -72,7 +73,7 @@ $(document).ready(function() {
   $('#kicker').click(function() {
 
     // grab the lead_in text and put it in the textarea
-    var text = $('#kicker > p').html().trim();
+    var text = $('#kicker').html().trim();
     $('#kicker_text').val(text);
 
     // open the form as a dialog modal
@@ -85,7 +86,7 @@ $(document).ready(function() {
   $('#headline').click(function() {
 
     // grab the lead_in text and put it in the textarea
-    var text = $(this).html().trim();
+    var text = $(this).find('h2').html().trim();
     $('#headline_text').val(text);
     
     // open the form as a dialog modal

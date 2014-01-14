@@ -98,6 +98,26 @@ class Helpers
     return $data;
   }
 
+  /**
+   *  Adds style 
+   *
+   */
+  //public static function add_style($
+
+  public static function add_lead_in_a_style($text, $link) {
+    $style = array(
+      'color' => '#fdc578'
+    );
+
+    $a_style = '';
+    foreach($style as $key => $value) {
+      //$a_style .= $key . ':' . $value . '; '
+    }
+    //$a_tag = '<a 
+
+
+  }
+
   public static function add_p_style($text) {
     // set up p style
     // put in array for readability, accepting a bit more
@@ -132,16 +152,16 @@ class Helpers
     $resources .= "<li><a href='#' title=''>***Resource #5***</a></li>";
 
     $data = array(
-      'headline'    => '***HEADLINE***',
+      'headline'    => '<h2>***HEADLINE***</h2>',
       'main_body'   => '<p>***MAIN BODY TEXT***<p>',
-      'lead_in'     => '***LEAD-IN***',
-      'kicker'      => '***LEAD-IN KICKER***',
+      'lead_in'     => '<p>***LEAD-IN***</p>',
+      'kicker'      => '<p>***LEAD-IN KICKER***</p>',
       'poll_q'      => '***ONLINE POLL QUESTION***',
       'poll_link'   => '#',
       'peer_name'   => '***PEER NAME***',
       'peer_occ'    => '***PEER OCCUPATION***',
       'peer_school' => '***PEER SCHOOL***',
-      'peer_class'  => '0000',
+      'peer_class_yr'  => '0000',
       'peer_inv'    => '***PEER I\'M INVOLVED BECAUSE ...***',
       'peer_rev'    => '***PEER WHEN REVIEWING ...***',
       'resources'   => $resources

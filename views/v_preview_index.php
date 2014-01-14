@@ -20,12 +20,12 @@
   -->
   
   <!-- table1 -->
-  <table class="connections-wrapper" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;">
+  <table class="wrapper" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;">
     <tbody>
       <tr>
         <td height="0" align="center">
           <!-- table2 -->
-          <table class="main" width="612" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-bottom-width: 4px; border-bottom-color: #913a20; border-bottom-style: solid;">
+          <table class="content" width="612" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-bottom-width: 4px; border-bottom-color: #913a20; border-bottom-style: solid;">
             <tbody>
               <tr>
                 <td height="0" width="612" align="left" valign="top" colspan="2">

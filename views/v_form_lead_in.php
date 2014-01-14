@@ -3,7 +3,7 @@
     <legend>Lead-in</legend>
       <p>
 <!--         <label class='title' for='lead_in'>Lead-in:</label> -->
-        <textarea name="lead_in" id="lead_in_text" rows="8" cols="40"></textarea>
+        <textarea name="lead_in" id="lead_in_text" rows="12" cols="40"></textarea>
       </p>
       <input class='btn' type="submit" value="Set">
       <input type="hidden" name='id' value="<?=$id;?>">
