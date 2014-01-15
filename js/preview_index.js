@@ -137,13 +137,26 @@ $(document).ready(function() {
     event.preventDefault();
 
     // get link text
-    var a = $(this).find('li');
-    var resources = '';
-
-    // add each resource to var resources
-    $(a).each(function() {
-      resources += $(this).html().trim();
+    var items = $(this).find('li');
+    var count = items.length;
+    //$("input[name='link1']").val('hiya');
+    //$("input[name='link2']").val('ho ho ho');
+    console.log($(items[0]).find('a').attr('href'));
+    console.log($(items[0]).text());
+    for (var i = 0; i < items.length; i++) {
+      $("input[name='resource" + (i + 1) + "']").val($(items[i]).text());
+      $("input[name='link" + (i + 1) + "']").val($(items[i]).find('a').attr('href'));
+    }
+    //console.log(count);
+    $(items).each(function() {
+      console.log($(this).html());
     });
+    // add each resource to var resources
+    //$(a).each(function() {
+      //resources += $(this).html().trim();
+    //});
+
+    //console.log(items);
 
     // set the value of the textarea in the form
     $('#resources_text').val(resources);

@@ -166,32 +166,33 @@ class Helpers
   }
 
   public static function set_default_text($id) {
-    $resources =  "<li><a href='#' title=''>***Resource #1***</a></li>";
-    $resources .= "<li><a href='#' title=''>***Resource #2***</a></li>";
-    $resources .= "<li><a href='#' title=''>***Resource #3***</a></li>";
-    $resources .= "<li><a href='#' title=''>***Resource #4***</a></li>";
-    $resources .= "<li><a href='#' title=''>***Resource #5***</a></li>";
+    $results = array();
 
     $data = array(
       'headline'    => '<h2>***HEADLINE***</h2>',
-      'main_body'   => '<p>***MAIN BODY TEXT***<p>',
-      'lead_in'     => '<p>***LEAD-IN***</p>',
-      'kicker'      => '<p>***LEAD-IN KICKER***</p>',
-      'poll_q'      => '***ONLINE POLL QUESTION***',
+      'main_body'   => '<p>***MAIN*BODY*TEXT***<p>',
+      'lead_in'     => '<p>***LEAD*IN***</p>',
+      'kicker'      => '<p>***LEAD*IN*KICKER***</p>',
+      'poll_q'      => '***ONLINE*POLL*QUESTION***',
       'poll_link'   => '#',
-      'peer_name'   => '***PEER NAME***',
-      'peer_occ'    => '***PEER OCCUPATION***',
-      'peer_school' => '***PEER SCHOOL***',
+      'peer_name'   => '***PEER*NAME***',
+      'peer_occ'    => '***PEER*OCCUPATION***',
+      'peer_school' => '***PEER*SCHOOL***',
       'peer_class_yr'  => '0000',
-      'peer_inv'    => '***PEER I\'M INVOLVED BECAUSE ...***',
-      'peer_rev'    => '***PEER WHEN REVIEWING ...***',
-      'resources'   => $resources
+      'peer_inv'    => '***PEER*I\'M*INVOLVED*BECAUSE***',
+      'peer_rev'    => '***PEER*WHEN*REVIEWING***',
     );
 
-    $result = 
-      DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id");
+    array_push($results, DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id"));
 
-    return $result;
+    $res_data = array();
+    $res_data['res'] = 'Resource';
+    $res_data['res_link'] = '#';
+    $res_data['conn_id'] = $id;
+
+    array_push($results, DB::instance(DB_NAME)->insert_row('resource', $res_data));
+
+    return $results;
   }
 
   public static function get_issue($id) {
