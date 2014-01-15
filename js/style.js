@@ -29,7 +29,7 @@ $(document).ready(function() {
     color: '#111f43'
   };
 
-  var mainH2 = {
+  var mainH2Tag = {
     color: '#111f4c',
     'font-size': '15px',
     'margin-bottom': '0px',
@@ -56,9 +56,13 @@ $(document).ready(function() {
   'margin-right': '20px'
   };
   
-  var mainA = {
+  var mainATag = {
     'color' : '#111f43'
   };
+
+  //var resATag = {
+    //'color': '#111f43'
+  //}
 
   // style lead-in a tags
   $('#lead_in a').css(leadInATag);
@@ -79,7 +83,7 @@ $(document).ready(function() {
   $('#kicker a').css(kickerATag);
 
   // style main-body h2 tag
-  $('#main_body h2').css(mainH2);
+  $('#main_body h2').css(mainH2Tag);
 
   // style main-body p tags
   $('#main_body p').css(mainPTag);
@@ -88,7 +92,9 @@ $(document).ready(function() {
   $('#main_body ul').css(mainULTag);
   
   // style main-body a tags
-  $('#main_body a').css(mainA);
+  $('#main_body a').css(mainATag);
 
+  // style resources a tags
+  //$('#resources a').css(resATag);
 
 });

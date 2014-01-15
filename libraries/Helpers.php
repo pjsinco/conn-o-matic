@@ -5,6 +5,27 @@ include_once(APP_PATH . '/config/constants.php');
 class Helpers
 {
   /**
+   *  Returns the list of resources-to-reference for
+   *    the given $id
+   *  @param
+   *    $id - issue id
+   *  @retursn
+   *    an associative array of resources and resource links
+   */
+  public static function get_resources($id) {
+    $q = "
+      SELECT res, res_link
+      FROM resource
+      WHERE conn_id = $id
+    ";
+
+    $result = DB::instance(DB_NAME)->select_rows($q);
+
+    return $result;
+  }
+
+
+  /**
    * Returns the link to edition flag for the issue
    * @param
    *   $id - issue id
