@@ -20,7 +20,7 @@
   -->
   
   <!-- table1 -->
-  <table class="wrapper" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;">
+  <table class="wrapper" width="100%" border="0" bgcolor='#ffffff' cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;">
     <tbody>
       <tr>
         <td height="0" align="center">
@@ -67,6 +67,11 @@
     </tbody>
   </table> <!-- end table1 -->
 </div> <!-- end etoc -->
+
+<!-- <div id='res_modify'> -->
+<!--   <img src="/css/images/add.gif" alt=""> -->
+<!--   <img src="/css/images/delete.gif" alt=""> -->
+<!-- </div> -->
 
 <div id='connections_flag_edit' class="dialog-form" title='Edit edition'>
   <?=$connections_flag_edit?>

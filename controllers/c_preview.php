@@ -165,6 +165,13 @@ class preview_controller extends base_controller {
   public function resources($id) {
     $this->template->content = 
       View::instance('v_preview_resources');
+      //View::instance('v_preview_resources_play');
+
+    $client_files_body = array(
+       '/js/preview_resources.js' 
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);   
 
     $client_files_head = Array(
       '/css/main.css'
