@@ -321,17 +321,23 @@ class form_controller extends base_controller {
     echo $this->template;
   }
 
-  public function p_resources_add($id) {
-    $result =
-      Helpers::distill_post_and_update($_POST, 'resource', $id);
-  }
-
   public function p_resources_edit($id) {
 
+    // get rid of the id in the array
+    $id = array_pop($_POST);
 
-    //add the resource 
-    $result = 
-      Helpers::distill_post_and_update($_POST, 'resource', $id);
+    // our target info (res, res_link) comes in pairs
+    // so operate on on $_POST two fields at a time
+    for ($i = 1; $i <= (count($_POST) / 2); $i++) {
+      $data = array();
+      $data['res'] = $_POST['resource' . $i];
+      $data['res_link'] = $_POST['link' . $i];
+      $data['conn_id'] = $id; 
+    
+      // insert a res, res_link and id into the db
+      $result = 
+        DB::instance(DB_NAME)->insert_row('resource', $data);
+    }
 
     Router::redirect('/preview/index/' . $id);
   }
