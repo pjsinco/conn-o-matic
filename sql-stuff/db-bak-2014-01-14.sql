@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.33, for osx10.6 (i386)
+-- MySQL dump 10.13  Distrib 5.5.29, for osx10.6 (i386)
 --
 -- Host: localhost    Database: conn_o_matic
 -- ------------------------------------------------------
--- Server version	5.5.33
+-- Server version	5.5.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -69,7 +69,7 @@ CREATE TABLE `resource` (
   PRIMARY KEY (`id`),
   KEY `conn_id` (`conn_id`),
   CONSTRAINT `resource_ibfk_1` FOREIGN KEY (`conn_id`) REFERENCES `issue` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,6 +78,7 @@ CREATE TABLE `resource` (
 
 LOCK TABLES `resource` WRITE;
 /*!40000 ALTER TABLE `resource` DISABLE KEYS */;
+INSERT INTO `resource` VALUES (1,'International Committee of Medical Journal Editors (ICMJE) Guidelines','http://www.icmje.org/',25),(2,'AMA Manual of Style (10th edition): A Guide for Authors and Editors','http://www.amamanualofstyle.com/',25);
 /*!40000 ALTER TABLE `resource` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -90,4 +91,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-01-14 17:20:09
+-- Dump completed on 2014-01-14 21:14:34
