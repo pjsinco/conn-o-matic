@@ -26,12 +26,9 @@ $(document).ready(function() {
   // provide visual feedback on editable areas
   $('.selectable').hover(
     function() { // mouse in
-      $(this).css({
-        'opacity': '0.5',
-        'cursor': 'pointer'
-      });
+      $(this).addClass('selected');
     }, function() { // mouse out
-      $(this).css('opacity', '1.0');
+      $(this).removeClass('selected');
     }
   );
 

@@ -497,3 +497,10 @@ label {
 .hidden {
   display: none;
 }
+.selected {
+  /*background-color: yellow;*/
+  /*border: 3px solid yellow;*/
+  /*box-shadow: inset 0px 0px 0px 10px #f00;*/
+  opacity: 0.5;
+  cursor: pointer;
+}

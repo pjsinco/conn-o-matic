@@ -28,9 +28,9 @@
           <table class="content" width="612" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, Helvetica, sans-serif; border-bottom-width: 4px; border-bottom-color: #913a20; border-bottom-style: solid;">
             <tbody>
               <tr>
-                <td height="0" width="612" align="left" valign="top" colspan="2">
+                <td class='selectable' id='connections_flag' height="0" width="612" align="left" valign="top" colspan="2">
                   <a href="http://www.jaoa.org/" title="JAOA--The Journal of the American Osteopathic Association: Connections Newsletter: <?=$connections_edition?>" style="color: #111f43;">
-                    <img class='selectable' id='connections_flag' src="<?=$connections_flag?>" alt="JAOA flag" width="612" height="135" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" title="JAOA flag">
+                    <img src="<?=$connections_flag?>" alt="JAOA flag" width="612" height="135" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" title="JAOA flag">
                   </a>
                 </td>
                 <td>&nbsp;</td>
