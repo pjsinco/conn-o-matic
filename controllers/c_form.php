@@ -299,6 +299,26 @@ class form_controller extends base_controller {
     Router::redirect('/preview/index/' . $id);
   }
 
+  public function resources_modal($id) {
+    $this->template->content =
+      View::instance('v_form_resources_modal');
+
+    $this->template->content->id = $id;
+    
+    $client_files_body = Array(
+      '/js/form_resources_modal.js'
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);
+
+    // render view
+    echo $this->template;
+  }
+
+  public function p_resources_modal($id) {
+    echo Debug::dump($_POST);
+  }
+
   public function resources_edit($id) {
     $this->template->content = 
       View::instance('v_form_resources');

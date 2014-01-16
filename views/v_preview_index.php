@@ -101,6 +101,10 @@
   <?=$poll_edit ?>
 </div>
 
+<div id="resources_modal" class="dialog-form" title='Edit resource'>
+  <?=$resources_modal ?>
+</div>
+
 <div id="resources_edit" class="dialog-form" title='Edit resources'>
   <?=$resources_edit ?>
 </div>

@@ -185,12 +185,14 @@ class Helpers
 
     array_push($results, DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id"));
 
-    $res_data = array();
-    $res_data['res'] = 'Resource';
-    $res_data['res_link'] = '#';
-    $res_data['conn_id'] = $id;
+    for ($i = 1; $i <= 3; $i++) {
+      $res_data = array();
+      $res_data['res'] = 'Resource #' . $i;
+      $res_data['res_link'] = '#';
+      $res_data['conn_id'] = $id;
 
-    array_push($results, DB::instance(DB_NAME)->insert_row('resource', $res_data));
+      array_push($results, DB::instance(DB_NAME)->insert_row('resource', $res_data));
+    };
 
     return $results;
   }

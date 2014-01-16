@@ -141,6 +141,11 @@ class preview_controller extends base_controller {
       View::instance('v_form_main_body');
     $this->template->content->main_body_edit->id = $id;
 
+    // add resources_modal form to view
+    $this->template->content->resources_modal =
+      View::instance('v_form_resources_modal');
+    $this->template->content->resources_modal->id = $id;
+
     // add resources_edit form to view
     $this->template->content->resources_edit =
       View::instance('v_form_resources');
@@ -187,59 +192,4 @@ class preview_controller extends base_controller {
   }
 
 
-  //public function test() {
-  //  $this->template->content =
-  //    View::instance('v_preview_test');
-
-  //  # CSS/JS includes
-  //  $client_files_body = Array(
-  //    '/js/test.js'
-  //  );
-  //  $this->template->client_files_body = 
-  //    Utils::load_client_files($client_files_body);   
-
-  //  echo $this->template;
-  //}
-  //  
-  //public function meta($id) {
-  //  $this->template->content = View::instance('v_preview_meta');
-
-  //  echo $this->template;
-  //}
-
-  //public function poll($id) {
-  //  $this->template->content = View::instance('v_preview_poll');
-
-  //  echo $this->template;
-  //}
-  //  
-  //public function footer($id) {
-  //  $this->template->content = View::instance('v_preview_footer');
-
-  //  echo $this->template;
-  //}
-
-  //public function peer($id) {
-  //  $this->template->content = View::instance('v_preview_peer');
-
-  //  echo $this->template;
-  //}
-
-  //public function body($id) {
-  //  $this->template->content = View::instance('v_preview_body');
-
-  //  $data = Helpers::get_issue($id);
-  //  echo Debug::dump($data);
-  //  //echo Debug::dump($data['lead_in']);
-  //  $this->template->content->lead_in = $data['lead_in'];
-  //  $this->template->content->kicker = $data['kicker'];
-  //  $this->template->content->headline = $data['headline'];
-  //  $this->template->content->main_body = $data['main'];
-  //  $this->template->content->poll = 
-  //    View::instance('v_preview_poll');
-  //  $this->template->content->poll->question = $data['question'];
-  //  $this->template->content->poll->link = $data['link'];
-
-  //  echo $this->template;
-  //}
 } # End of class
