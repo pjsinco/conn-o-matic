@@ -12,7 +12,7 @@ $(document).ready(function() {
     autoOpen: false,
     height: 'auto',
     width: 'auto',
-    modal: true,
+    modal: false,
     show: {
       effect: 'fade',
       duration: 300
