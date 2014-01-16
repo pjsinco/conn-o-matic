@@ -137,6 +137,22 @@ $(document).ready(function() {
     console.log(event.target);
 
     $('#resources_modal').dialog('open'); 
+  });
+
+  //opening one dialog from another dialog
+  //http://jsfiddle.net/usmanhalalit/sZUaK/1/
+  $("#resources_modal button[value='create']").click(function(){
+    $('#peer_edit').dialog('open');
+  });
+
+//  $("#resources_modal button[value='create']").click(function(event) {
+//    var action = $(this).val();
+//    //console.log(action);
+//    if (action == 'create') {
+//      $('#peer_edit').dialog('open');
+//    }; 
+//  });
+    
     // get link text
     //var items = $(this).find('li');
     //var count = items.length;
@@ -164,7 +180,7 @@ $(document).ready(function() {
     // open the form for editing the resources
     //$('#resources_edit').dialog('open');
     
-  });
+  //});
 
 
   /*

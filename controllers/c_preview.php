@@ -21,6 +21,7 @@ class preview_controller extends base_controller {
     $client_files_body = Array(
       '/js/schools.js',
       '/js/style.js',
+      '/js/form_resources_modal.js',
       '/js/form_resources.js',
       '/js/preview_index.js'
       

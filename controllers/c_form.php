@@ -324,7 +324,7 @@ class form_controller extends base_controller {
   }
 
   public function p_resources_modal($id) {
-    echo Debug::dump($_POST);
+    //echo Debug::dump($_POST);
   }
 
   public function resources_edit($id) {
