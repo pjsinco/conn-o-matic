@@ -305,6 +305,14 @@ class form_controller extends base_controller {
 
     $this->template->content->id = $id;
     
+    // add css; needed?
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);
+
+    // add js
     $client_files_body = Array(
       '/js/form_resources_modal.js'
     );
