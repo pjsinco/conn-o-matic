@@ -140,15 +140,28 @@ $(document).ready(function() {
       });
       $('.ui-state-default').click(function() {
           $(this).toggleClass('ui-state-active');
-          var id = $(this).parent().prev().attr('id').split('-')[1];
+          var resId = $(this).parent().prev().attr('id').split('-')[1];
           var action = $(this).attr('id');
+          var id = parseInt(window.location.href.split('/').pop());
           switch (action) {
-            case 'res_create':
+            case 'res_edit':
+              var text = $(this).parent().prev().text();
+              var link = $(this).parent().prev().attr('href');
+              $("input[name='resource'").val(text);
+              $("input[name='link'").val(link);
               $('#resources_edit').dialog('open');
               break;
-            
+            case 'res_create':
+              $("input[name='resource'").val('');
+              $("input[name='link'").val('');
+              $('#resources_edit').dialog('open');
+              break;
+            case 'res_delete': // NOT WORKING
+              $(this).parent().prev().load({
+                url: '/form/p_resources_delete/' + id + '/' + resId,
+              });
+              break;
             default:
-              
           }
       });
       $('#create_res').click(function() {

@@ -349,6 +349,21 @@ class form_controller extends base_controller {
     echo $this->template;
   }
 
+  public function p_resources_delete($id, $res_id) {
+    $where = "WHERE id = $res_id";
+    $result = 
+      DB::instance(DB_NAME)->delete('resource', $where);
+
+    if ($result == 1) {
+      return '';
+    }
+
+  }
+
+  public function p_resources_create($id) {
+    // body...
+  }
+
   public function p_resources_edit($id) {
 
     // get rid of the id in the array

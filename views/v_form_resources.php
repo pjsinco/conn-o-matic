@@ -5,14 +5,13 @@
 <!--       <textarea name="resources" id="resources_text" rows="24" cols="60"></textarea> -->
       
     <div id="res_wrapper">
-      <div id="res1">
-        <label for='resource1'>Resource</label><br>
-        <input type="text" name="resource1" required><br>
-        <label for='link1'>Link</label><br>
-        <input type="text" name="link1" required><br>
+      <div id="res">
+        <label for='resource'>Resource</label><br>
+        <input type="text" name="resource" required><br>
+        <label for='link'>Link</label><br>
+        <input type="text" name="link" required><br>
       </div>
     </div>
-    <button type="button">Add resource</button>
 
     <input class='btn' type="submit" value="Set">
     <input type="hidden" name='id' value="<?=$id;?>">
