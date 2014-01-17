@@ -26,11 +26,8 @@ $(document).ready(function() {
   // provide visual feedback on editable areas
   $('.selectable').hover(
     function() { // mouse in
-      $(this).addClass('selected');
-    }, function() { // mouse out
-      $(this).removeClass('selected');
-    }
-  );
+      $(this).toggleClass('selected');
+  });
 
   /*
    * Edit flag
@@ -133,17 +130,36 @@ $(document).ready(function() {
   /*
    * Edit resources
    */
+  // help from http://jsfiddle.net/2U5TN/1/
   $('#resources_list li').hover(
     function() { // mousein
-      $(this).append("<span style='display: block; float: right'><img id='edit_res' src='/css/images/pencil.gif'>&nbsp;<img src='/css/images/plus.png' id='create_res'>&nbsp;<img id='delete_res' src='/css/images/x-mark-16.jpg'></span>");
+      $(this).append("<div style='display: inline-block; float: right; '><span id='res_edit' style='display: inline-block; margin-right: 3px;' class='ui-state-default ui-corner-all ui-icon ui-icon-pencil'></span><span id='res_create' style='display: inline-block; margin-right: 3px;' class='ui-state-default ui-corner-all ui-icon ui-icon-plus'></span><span id='res_delete' style='display: inline-block' class='ui-state-default ui-corner-all ui-icon ui-icon-close'></span></div>");
+      //$(this).append("<span style='display: block; float: right'><img id='edit_res' src='/css/images/pencil.gif'>&nbsp;<img src='/css/images/plus.png' id='create_res'>&nbsp;<img id='delete_res' src='/css/images/x-mark-16.jpg'></span>");
+      $('.ui-state-default').hover(function() {
+          $(this).toggleClass('ui-state-hover');
+      });
+      $('.ui-state-default').click(function() {
+          $(this).toggleClass('ui-state-active');
+          var id = $(this).parent().prev().attr('id').split('-')[1];
+          var action = $(this).attr('id');
+          switch (action) {
+            case 'res_create':
+              $('#resources_edit').dialog('open');
+              break;
+            
+            default:
+              
+          }
+      });
       $('#create_res').click(function() {
+        $(this)
         $('#resources_edit').dialog('open'); 
       });
       $('#edit_res').click(function() {
         $('#resources_edit').dialog('open'); 
       });
     }, function() { // mouseout
-      $(this).find('span:last').remove();
+      $(this).find('div').remove();
     }
   );
 

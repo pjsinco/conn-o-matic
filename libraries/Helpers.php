@@ -14,7 +14,7 @@ class Helpers
    */
   public static function get_resources($id) {
     $q = "
-      SELECT res, res_link
+      SELECT id, res, res_link
       FROM resource
       WHERE conn_id = $id
     ";
