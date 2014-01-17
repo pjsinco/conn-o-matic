@@ -299,33 +299,33 @@ class form_controller extends base_controller {
     Router::redirect('/preview/index/' . $id);
   }
 
-  public function resources_modal($id) {
-    $this->template->content =
-      View::instance('v_form_resources_modal');
+//  public function resources_modal($id) {
+//    $this->template->content =
+//      View::instance('v_form_resources_modal');
+//
+//    $this->template->content->id = $id;
+//    
+//    // add css; needed?
+//    $client_files_head = Array(
+//      '/css/main.css'
+//    );
+//    $this->template->client_files_head = 
+//      Utils::load_client_files($client_files_head);
+//
+//    // add js
+//    $client_files_body = Array(
+//      '/js/form_resources_modal.js'
+//    );
+//    $this->template->client_files_body = 
+//      Utils::load_client_files($client_files_body);
+//
+//    // render view
+//    echo $this->template;
+//  }
 
-    $this->template->content->id = $id;
-    
-    // add css; needed?
-    $client_files_head = Array(
-      '/css/main.css'
-    );
-    $this->template->client_files_head = 
-      Utils::load_client_files($client_files_head);
-
-    // add js
-    $client_files_body = Array(
-      '/js/form_resources_modal.js'
-    );
-    $this->template->client_files_body = 
-      Utils::load_client_files($client_files_body);
-
-    // render view
-    echo $this->template;
-  }
-
-  public function p_resources_modal($id) {
-    echo Debug::dump($_POST);
-  }
+//  public function p_resources_modal($id) {
+//    echo Debug::dump($_POST);
+//  }
 
   public function resources_edit($id) {
     $this->template->content = 
@@ -340,6 +340,7 @@ class form_controller extends base_controller {
       Utils::load_client_files($client_files_body);
 
     $client_files_head = Array(
+      '/js/jquery.form.js',
       '/css/main.css'
     );
     $this->template->client_files_head = 
@@ -364,25 +365,33 @@ class form_controller extends base_controller {
     // body...
   }
 
-  public function p_resources_edit($id) {
+  public function p_resources_edit() {
 
+    //echo Debug::dump($_POST);
     // get rid of the id in the array
-    $id = array_pop($_POST);
+    //$id = array_pop($_POST);
 
     // our target info (res, res_link) comes in pairs
     // so operate on on $_POST two fields at a time
-    for ($i = 1; $i <= (count($_POST) / 2); $i++) {
-      $data = array();
-      $data['res'] = $_POST['resource' . $i];
-      $data['res_link'] = $_POST['link' . $i];
-      $data['conn_id'] = $id; 
+    //for ($i = 1; $i <= (count($_POST) / 2); $i++) {
+//      $data = array();
+//      $data['res'] = $_POST['resource' . $i];
+//      $data['res_link'] = $_POST['link' . $i];
+//      $data['conn_id'] = $id; 
     
       // insert a res, res_link and id into the db
-      $result = 
-        DB::instance(DB_NAME)->insert_row('resource', $data);
-    }
+    $where = "WHERE id = " . $_POST['id'];
+    $result = 
+      DB::instance(DB_NAME)->update('resource', $_POST, $where);
+    
+    $q = "
+      SELECT * 
+      FROM resource
+      WHERE id = " . $_POST['id'];
 
-    Router::redirect('/preview/index/' . $id);
+    echo json_encode(DB::instance(DB_NAME)->select_row($q));
+
+    //Router::redirect('/preview/index/' . $id);
   }
 
   public function peer_edit($id) {

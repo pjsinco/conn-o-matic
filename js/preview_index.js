@@ -12,7 +12,7 @@ $(document).ready(function() {
     autoOpen: false,
     height: 'auto',
     width: 'auto',
-    modal: false,
+    modal: true,
     show: {
       effect: 'fade',
       duration: 300
@@ -140,23 +140,34 @@ $(document).ready(function() {
       });
       $('.ui-state-default').click(function() {
           $(this).toggleClass('ui-state-active');
+
+          // get the resource id
           var resId = $(this).parent().prev().attr('id').split('-')[1];
+          
+          // get the desired action - edit, create or delete
           var action = $(this).attr('id');
-          var id = parseInt(window.location.href.split('/').pop());
+
+          // get the connections id by parsing the page location
+          var connId = parseInt(window.location.href.split('/').pop());
+
+          // take the appropriate action
           switch (action) {
-            case 'res_edit':
+            case 'res_edit': // edit a res-to-ref
               var text = $(this).parent().prev().text();
               var link = $(this).parent().prev().attr('href');
-              $("input[name='resource'").val(text);
-              $("input[name='link'").val(link);
+              $("input[name='id'").val(resId);
+              $("input[name='res'").val(text);
+              $("input[name='res_link'").val(link);
+              $("input[name='conn_id'").val(connId);
               $('#resources_edit').dialog('open');
               break;
-            case 'res_create':
+            case 'res_create': // create a res-to-ref
               $("input[name='resource'").val('');
               $("input[name='link'").val('');
               $('#resources_edit').dialog('open');
               break;
-            case 'res_delete': // NOT WORKING
+            case 'res_delete': // delete a res-to-ref
+              // NOT WORKING
               $(this).parent().prev().load({
                 url: '/form/p_resources_delete/' + id + '/' + resId,
               });
