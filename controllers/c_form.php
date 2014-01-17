@@ -376,30 +376,11 @@ class form_controller extends base_controller {
 
   public function p_resources_edit() {
 
-    //echo Debug::dump($_POST);
-    // get rid of the id in the array
-    //$id = array_pop($_POST);
-
-    // our target info (res, res_link) comes in pairs
-    // so operate on on $_POST two fields at a time
-    //for ($i = 1; $i <= (count($_POST) / 2); $i++) {
-//      $data = array();
-//      $data['res'] = $_POST['resource' . $i];
-//      $data['res_link'] = $_POST['link' . $i];
-//      $data['conn_id'] = $id; 
-    
-      // insert a res, res_link and id into the db
+    // get rid of any escape slashes
     $_POST['res'] = stripslashes($_POST['res']);
     $where = "WHERE id = " . $_POST['id'];
     $result = 
       DB::instance(DB_NAME)->update('resource', $_POST, $where);
-    
-//    $q = "
-//      SELECT * 
-//      FROM resource
-//      WHERE id = " . $_POST['id'];
-
-    //$results = (DB::instance(DB_NAME)->select_row($q));
 
     Router::redirect('/preview/index/' . $_POST['conn_id']);
   }

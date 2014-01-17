@@ -113,6 +113,11 @@
   <?=$resources_create?>
 </div>
 
+<div id="resources_delete_modal" class="dialog-form" title='Delete resource'>
+  <p><span class='ui-icon ui-icon-alert' style="float: left; margin: 0px 7px 20px 0px; position: relative; top: 2px;"></span>Are you sure you want to delete this resource?</p>
+  <?//=$resources_delete_modal?>
+</div>
+
 <div id="peer_edit" class="dialog-form" title="Edit 'Meet Your Peer'">
   <?=$peer_edit ?>
 </div>

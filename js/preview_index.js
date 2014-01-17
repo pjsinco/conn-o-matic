@@ -168,9 +168,20 @@ $(document).ready(function() {
               $('#resources_create').dialog('open');
               break;
             case 'res_delete': // delete a res-to-ref
-              // NOT WORKING
-              $(this).parent().prev().load({
-                url: '/form/p_resources_delete/' + id + '/' + resId,
+              $('#resources_delete_modal').dialog({
+                resizable: false,
+                height: 'auto',
+                width: 'auto',
+                autoOpen: true,
+                modal: true,
+                buttons: {
+                  "Delete this resource?": function() {
+                    $(this).dialog('close');
+                  },
+                  Cancel: function() {
+                    $(this).dialog('close');
+                  }
+                } 
               });
               break;
             default:
