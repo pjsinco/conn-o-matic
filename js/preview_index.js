@@ -162,9 +162,10 @@ $(document).ready(function() {
               $('#resources_edit').dialog('open');
               break;
             case 'res_create': // create a res-to-ref
-              $("input[name='resource'").val('');
-              $("input[name='link'").val('');
-              $('#resources_edit').dialog('open');
+              $("input[name='conn_id'").val(connId);
+              $("input[name='res'").val('');
+              $("input[name='res_link'").val('');
+              $('#resources_create').dialog('open');
               break;
             case 'res_delete': // delete a res-to-ref
               // NOT WORKING

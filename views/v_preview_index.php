@@ -101,12 +101,16 @@
   <?=$poll_edit ?>
 </div>
 
-<div id="resources_modal" class="dialog-form" title='Resource'>
-  <?=$resources_modal ?>
+<!-- <div id="resources_modal" class="dialog-form" title='Resource'> -->
+  <?//=$resources_modal ?>
+<!-- </div> -->
+
+<div id="resources_edit" class="dialog-form" title='Edit resource'>
+  <?=$resources_edit ?>
 </div>
 
-<div id="resources_edit" class="dialog-form" title='Edit resources'>
-  <?=$resources_edit ?>
+<div id="resources_create" class="dialog-form" title='Create resource'>
+  <?=$resources_create?>
 </div>
 
 <div id="peer_edit" class="dialog-form" title="Edit 'Meet Your Peer'">

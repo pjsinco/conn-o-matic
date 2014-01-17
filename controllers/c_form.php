@@ -329,7 +329,7 @@ class form_controller extends base_controller {
 
   public function resources_edit($id) {
     $this->template->content = 
-      View::instance('v_form_resources');
+      View::instance('v_form_resources_edit');
 
     $this->template->content->id = $id;
 
@@ -361,8 +361,17 @@ class form_controller extends base_controller {
 
   }
 
-  public function p_resources_create($id) {
-    // body...
+  public function p_resources_create() {
+
+    // get rid of id in $_POST
+    unset($_POST['id']);
+
+    // get rid of any escape slashes
+    $_POST['res'] = stripslashes($_POST['res']);
+
+    $result = DB::instance(DB_NAME)->insert('resource', $_POST);
+
+    Router::redirect('/preview/index/' . $_POST['conn_id']);
   }
 
   public function p_resources_edit() {
@@ -380,6 +389,7 @@ class form_controller extends base_controller {
 //      $data['conn_id'] = $id; 
     
       // insert a res, res_link and id into the db
+    $_POST['res'] = stripslashes($_POST['res']);
     $where = "WHERE id = " . $_POST['id'];
     $result = 
       DB::instance(DB_NAME)->update('resource', $_POST, $where);

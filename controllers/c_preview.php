@@ -143,15 +143,15 @@ class preview_controller extends base_controller {
       View::instance('v_form_main_body');
     $this->template->content->main_body_edit->id = $id;
 
-    // add resources_modal form to view
-    $this->template->content->resources_modal =
-      View::instance('v_form_resources_modal');
-    $this->template->content->resources_modal->id = $id;
-
     // add resources_edit form to view
     $this->template->content->resources_edit =
-      View::instance('v_form_resources');
+      View::instance('v_form_resources_edit');
     $this->template->content->resources_edit->id = $id;
+
+    // add resources_create form to view
+    $this->template->content->resources_create =
+      View::instance('v_form_resources_create');
+    $this->template->content->resources_create->id = $id;
 
     // add poll_edit form to view
     $this->template->content->poll_edit =
