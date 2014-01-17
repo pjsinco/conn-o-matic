@@ -134,12 +134,15 @@ $(document).ready(function() {
    * Edit resources
    */
   $('#resources_list li').hover(
-    function() {
-      $(this).append("<span style='display: block; float: right'><img id='edit_res' src='/css/images/pencil.gif'>&nbsp;<img src='/css/images/plus.png' ic='create_res'>&nbsp;<img id='delete_res' src='/css/images/x-mark-16.jpg'></span>");
+    function() { // mousein
+      $(this).append("<span style='display: block; float: right'><img id='edit_res' src='/css/images/pencil.gif'>&nbsp;<img src='/css/images/plus.png' id='create_res'>&nbsp;<img id='delete_res' src='/css/images/x-mark-16.jpg'></span>");
+      $('#create_res').click(function() {
+        $('#resources_edit').dialog('open'); 
+      });
       $('#edit_res').click(function() {
         $('#resources_edit').dialog('open'); 
       });
-    }, function() {
+    }, function() { // mouseout
       $(this).find('span:last').remove();
     }
   );
