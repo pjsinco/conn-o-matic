@@ -126,24 +126,37 @@ $(document).ready(function() {
 
   });
 
+  $('#resources_list li').click(function(event) {
+
+  });
 
   /*
    * Edit resources
    */
-  // NOT WORKING
-  $('#resources_list li').click(function(event) {
-    // ignore the default behavior or following a link
-    event.preventDefault();
-    console.log(event.target);
+  $('#resources_list li').hover(
+    function() {
+      $(this).append("<span style='display: block; float: right'><img id='edit_res' src='/css/images/pencil.gif'>&nbsp;<img src='/css/images/plus.png' ic='create_res'>&nbsp;<img id='delete_res' src='/css/images/x-mark-16.jpg'></span>");
+      $('#edit_res').click(function() {
+        $('#resources_edit').dialog('open'); 
+      });
+    }, function() {
+      $(this).find('span:last').remove();
+    }
+  );
 
-    $('#resources_modal').dialog('open'); 
-  });
+//  $('#resources_list li').click(function(event) {
+//    // ignore the default behavior or following a link
+//    event.preventDefault();
+//    console.log(event.target);
+//
+//    $('#resources_modal').dialog('open'); 
+//  });
 
   //opening one dialog from another dialog
   //http://jsfiddle.net/usmanhalalit/sZUaK/1/
-  $("#resources_modal button[value='create']").click(function(){
-    $('#peer_edit').dialog('open');
-  });
+  //$("#resources_modal button[value='create']").click(function(){
+    //$('#peer_edit').dialog('open');
+  //});
 
 //  $("#resources_modal button[value='create']").click(function(event) {
 //    var action = $(this).val();

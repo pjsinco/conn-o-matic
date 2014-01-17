@@ -1,4 +1,4 @@
-<form action="" method="POST" accept-charset="utf-8">
+<form action="/form/p_resources_modal/<?=$id?>" method="POST" accept-charset="utf-8">
   <fieldset>
     <legend>Resource</legend>
 <!--       <label class='title' for='kicker'>Resources to Reference</label> -->
