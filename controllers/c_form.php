@@ -384,14 +384,14 @@ class form_controller extends base_controller {
     $result = 
       DB::instance(DB_NAME)->update('resource', $_POST, $where);
     
-    $q = "
-      SELECT * 
-      FROM resource
-      WHERE id = " . $_POST['id'];
+//    $q = "
+//      SELECT * 
+//      FROM resource
+//      WHERE id = " . $_POST['id'];
 
-    echo json_encode(DB::instance(DB_NAME)->select_row($q));
+    //$results = (DB::instance(DB_NAME)->select_row($q));
 
-    //Router::redirect('/preview/index/' . $id);
+    Router::redirect('/preview/index/' . $_POST['conn_id']);
   }
 
   public function peer_edit($id) {

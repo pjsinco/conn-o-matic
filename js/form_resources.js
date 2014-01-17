@@ -4,17 +4,17 @@
 
   console.log('aluminum');
 
-  var options = {
-    type: 'POST',
-    url: '/form/p_resources_edit/',
-    success: function(response) {
-      var data = $.parseJSON(response);
-      console.log(response);
-      
-    }
-  };
-
-  $('form').ajaxForm(options);
+//  var options = {
+//    type: 'POST',
+//    url: '/form/p_resources_edit/',
+//    success: function(response) {
+//      var data = $.parseJSON(response);
+//      console.log(response);
+//      
+//    }
+//  };
+//
+//  $('form').ajaxForm(options);
 
 //  $('.btn').click(function(event) {
 //    //event.preventDefault();

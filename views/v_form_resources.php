@@ -1,4 +1,4 @@
-<form action="" method="POST" accept-charset="utf-8">
+<form action="/form/p_resources_edit" method="POST" accept-charset="utf-8">
   <fieldset>
     <legend>Resources to Reference</legend>
 <!--       <label class='title' for='kicker'>Resources to Reference</label> -->
