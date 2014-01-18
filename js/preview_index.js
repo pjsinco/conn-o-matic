@@ -107,22 +107,21 @@ $(document).ready(function() {
   });
 
   /*
-   * Edit headline
+   * Edit headline and main body
    */
   $('#main_body').click(function() {
 
-    console.log(this);
     // grab the lead_in text and put it in the textarea
-    var headline = $(this).find('h2').html().trim();
-    console.log(headline);
+    var headline = $('h1')[0].outerHTML;
+
+    // populate headline field with headline
     $('#headline_text').val(headline);
 
-    var body = $('#main_body p, #main_body h2');
-    var body = $(this).find('p').find('ul');
-    //var body = $(this).find('p').html().trim() + $(this).find('ul').html().trim();
-    //var body = $('#main_body p, #main_body li').html().trim();
+    var body = $('#body').html().trim();
+
+    // populate body field with body
     $('#main_body_text').val(body);
-    console.log(body);
+    //console.log(body);
 
     // open the form as a dialog modal
     $('#main_body_edit').dialog('open');
@@ -134,10 +133,11 @@ $(document).ready(function() {
    */
   // todo NEED TO POPULATE LINK FIELD
   $('#poll').click(function() {
+    var pollLink = $(this).find('a').attr('href');
+    var pollQ = $(this).find('p')[0].outerHTML;
 
-    //console.log($(this));
-    var text = $(this).html().trim();
-    $('#poll_q_text').val(text);
+    $('#poll_q_text').val(pollQ);
+    $('#poll_link_text').val(pollLink);
 
     $('#poll_edit').dialog('open');
 

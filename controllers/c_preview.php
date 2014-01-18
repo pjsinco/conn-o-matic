@@ -76,9 +76,10 @@ class preview_controller extends base_controller {
     //$this->template->content->main->resources =
       //$issue['resources'];
     // add style to p tags
-    $text_styled = Helpers::add_p_style($issue['main_body']);
+    //$text_styled = Helpers::add_p_style($issue['main_body']);
     $this->template->content->main->main_body =
-      $text_styled;
+      $issue['main_body'];
+      //$text_styled;
 
     // pass poll to view and set up
     $this->template->content->main->poll =

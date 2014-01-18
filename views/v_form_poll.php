@@ -3,9 +3,9 @@
     <legend>Online poll</legend>
     <p>
       <label for="poll_q">Poll question</label><br>
-      <textarea cols='30' rows='5' name="poll_q" id="poll_q_text"></textarea><br>
+      <textarea cols='30' rows='5' name="poll_q" id="poll_q_text" required></textarea><br>
       <label for="poll_link">Poll link</label><br>
-      <textarea cols='30' rows='3' name="poll_link" id="poll_link_text"></textarea><br>
+      <textarea cols='30' rows='3' name="poll_link" id="poll_link_text" required></textarea><br>
       <input class='btn' type="submit" value="Set">
       <input type="hidden" name='id' value="<?=$id;?>">
   </fieldset>

@@ -139,41 +139,41 @@ class Helpers
 
   }
 
-  public static function add_p_style($text) {
-    // set up p style
-    // put in array for readability, accepting a bit more
-    // complexity as price
-    $style = array(
-      'font-size' => '13px',
-      'color' => '#333333',
-      'line-height' => '17px',
-      'margin-top' => '0px',
-      'margin-right' => '20px',
-      'margin-bottom' => '10px',
-      'margin-left' => '20px',
-    );
-    
-    // build up p tag from styles
-    $p_style = '';
-    foreach ($style as $key => $value) {
-      $p_style .= $key . ':' . $value . '; ';
-    }
-    $p_tag = '<p style="' . $p_style . '">';
-    
-    // change p tags and send to view
-    //$this->template->content->preview->main_body =
-    return str_replace('<p>', $p_tag, $text);
-  }
+//  public static function add_p_style($text) {
+//    // set up p style
+//    // put in array for readability, accepting a bit more
+//    // complexity as price
+//    $style = array(
+//      'font-size' => '13px',
+//      'color' => '#333333',
+//      'line-height' => '17px',
+//      'margin-top' => '0px',
+//      'margin-right' => '20px',
+//      'margin-bottom' => '10px',
+//      'margin-left' => '20px',
+//    );
+//    
+//    // build up p tag from styles
+//    $p_style = '';
+//    foreach ($style as $key => $value) {
+//      $p_style .= $key . ':' . $value . '; ';
+//    }
+//    $p_tag = '<p style="' . $p_style . '">';
+//    
+//    // change p tags and send to view
+//    //$this->template->content->preview->main_body =
+//    return str_replace('<p>', $p_tag, $text);
+//  }
 
   public static function set_default_text($id) {
     $results = array();
 
     $data = array(
-      'headline'    => '<h2>***HEADLINE***</h2>',
-      'main_body'   => '<p>***MAIN*BODY*TEXT***<p>',
+      'headline'    => '<h1>***HEADLINE***</h1>',
+      'main_body'   => '<p>***MAIN*BODY*TEXT***</p>',
       'lead_in'     => '<p>***LEAD*IN***</p>',
       'kicker'      => '<p>***LEAD*IN*KICKER***</p>',
-      'poll_q'      => '***ONLINE*POLL*QUESTION***',
+      'poll_q'      => '<p>***ONLINE*POLL*QUESTION***</p>',
       'poll_link'   => '#',
       'peer_name'   => '***PEER*NAME***',
       'peer_occ'    => '***PEER*OCCUPATION***',

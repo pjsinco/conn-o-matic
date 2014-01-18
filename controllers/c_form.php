@@ -72,9 +72,8 @@ class form_controller extends base_controller {
       $issue['resources'];
   
     // add style to p tags
-    $text_styled = Helpers::add_p_style($issue['main_body']);
     $this->template->content->preview->main->main_body =
-      $text_styled;
+      $issue['main_body'];
   
     // pass poll to view and set up
     $this->template->content->preview->main->poll =
@@ -192,6 +191,7 @@ class form_controller extends base_controller {
   }
 
   public function p_main_body_edit($id) {
+
     $result = 
       Helpers::distill_post_and_update($_POST, 'issue', $id);
 
