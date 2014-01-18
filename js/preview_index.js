@@ -1,5 +1,37 @@
 $(document).ready(function() {
-  console.log(schools[3]);
+
+  // keep track so we don't ever end up with 0 resources
+  var resCount = $('#resources_list').children().length;
+  
+  // prevent links from working
+  $('a').click(function(event) {
+    event.preventDefault();
+  });
+
+
+  /*
+   * DOM elements for res-to-ref mouseover edit icons
+   */
+  var resEdit = $("<span></span>",
+    {
+      'id': 'res_edit',
+      'class': 'ui-state-default ui-corner-all ui-icon ui-icon-pencil',
+      'style': 'display: inline-block; margin-right: 3px'
+    });
+
+  var resCreate = $('<span></span>',
+    {
+      'id': 'res_create',
+      'class': 'ui-state-default ui-corner-all ui-icon ui-icon-plus',
+      'style': 'display: inline-block; margin-right: 3px'
+    });
+
+  var resDelete = $('<span></span>',
+    {
+      'id': 'res_delete',
+      'class': 'ui-state-default ui-corner-all ui-icon ui-icon-close',
+      'style': 'display: inline-block; margin-right: 3px'
+    });
 
   // select text in field on focus
   // NOTE: input:text works, but not textarea
@@ -96,18 +128,6 @@ $(document).ready(function() {
     $('#main_body_edit').dialog('open');
   });
 
-  /*
-   * Edit main body
-   */
-  //$('#main_body_text_to_edit').click(function() {
-    
-    // grab the lead_in text and put it in the textarea
-//    var text = $('#main_body p, #main_body ul').html().trim();
-//    $('#main_body_text').val(text);
-//    
-//    // open the form as a dialog modal
-//    $('#main_body_edit').dialog('open');
-//  });
 
   /*
    * Edit poll
@@ -123,9 +143,6 @@ $(document).ready(function() {
 
   });
 
-  $('#resources_list li').click(function(event) {
-
-  });
 
   /*
    * Edit resources
@@ -133,7 +150,13 @@ $(document).ready(function() {
   // help from http://jsfiddle.net/2U5TN/1/
   $('#resources_list li').hover(
     function() { // mousein
-      $(this).append("<div style='display: inline-block; float: right; '><span id='res_edit' style='display: inline-block; margin-right: 3px;' class='ui-state-default ui-corner-all ui-icon ui-icon-pencil'></span><span id='res_create' style='display: inline-block; margin-right: 3px;' class='ui-state-default ui-corner-all ui-icon ui-icon-plus'></span><span id='res_delete' style='display: inline-block' class='ui-state-default ui-corner-all ui-icon ui-icon-close'></span></div>");
+      $(this)
+        .append("<div style='display: inline-block; float: right; '>" 
+          + $(resEdit)[0].outerHTML 
+          + $(resCreate)[0].outerHTML 
+          + (resCount > 1 ? $(resDelete)[0].outerHTML : '')
+          + "</div>"
+        );
       $('.ui-state-default').hover(function() {
           $(this).toggleClass('ui-state-hover');
       });
@@ -178,14 +201,16 @@ $(document).ready(function() {
                   "Delete this resource": function() {
                     $.ajax({
                       type: 'POST',
-                      url: '/form/p_resources_delete/' + connId
-                        + '/' + resId,
+                      url: '/form/p_resources_delete/' 
+                        + connId + '/' + resId,
                       dataType: text,
                       success: function(response) {
-                        console.log(response);
-                        //if (response == 1) {
-                          //$('#' + resourceId).parent().remove();
-                        //}
+                        // peel off the <li> with the resource
+                        $('#' + resourceId).parent().remove();
+
+                        // update # of resources
+                        resCount = 
+                          $('#resources_list').children().length;
                       }
                     });
                     $(this).dialog('close');
@@ -200,67 +225,15 @@ $(document).ready(function() {
           }
       });
       $('#create_res').click(function() {
-        $(this)
         $('#resources_edit').dialog('open'); 
       });
       $('#edit_res').click(function() {
         $('#resources_edit').dialog('open'); 
       });
     }, function() { // mouseout
-      $(this).find('div').remove();
+      $(this).find('div').remove(); // remove the edit icons
     }
   );
-
-//  $('#resources_list li').click(function(event) {
-//    // ignore the default behavior or following a link
-//    event.preventDefault();
-//    console.log(event.target);
-//
-//    $('#resources_modal').dialog('open'); 
-//  });
-
-  //opening one dialog from another dialog
-  //http://jsfiddle.net/usmanhalalit/sZUaK/1/
-  //$("#resources_modal button[value='create']").click(function(){
-    //$('#peer_edit').dialog('open');
-  //});
-
-//  $("#resources_modal button[value='create']").click(function(event) {
-//    var action = $(this).val();
-//    //console.log(action);
-//    if (action == 'create') {
-//      $('#peer_edit').dialog('open');
-//    }; 
-//  });
-    
-    // get link text
-    //var items = $(this).find('li');
-    //var count = items.length;
-
-    //console.log($(items[0]).find('a').attr('href'));
-    //console.log($(items[0]).text());
-    //for (var i = 0; i < items.length; i++) {
-      //$("input[name='resource" + (i + 1) + "']").val($(items[i]).text());
-      //$("input[name='link" + (i + 1) + "']").val($(items[i]).find('a').attr('href'));
-    //}
-    //console.log(count);
-    //$(items).each(function() {
-      //console.log($(this).html());
-    //});
-    // add each resource to var resources
-    //$(a).each(function() {
-      //resources += $(this).html().trim();
-    //});
-
-    //console.log(items);
-
-    // set the value of the textarea in the form
-    //$('#resources_text').val(resources);
-
-    // open the form for editing the resources
-    //$('#resources_edit').dialog('open');
-    
-  //});
 
 
   /*
