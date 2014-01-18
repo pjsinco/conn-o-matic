@@ -354,10 +354,11 @@ class form_controller extends base_controller {
     $where = "WHERE id = $res_id";
     $result = 
       DB::instance(DB_NAME)->delete('resource', $where);
+      
+    //echo Debug::dump($result);
+    return $result;
+      //Router::redirect('/preview/index/' . $_POST['conn_id']);
 
-    if ($result == 1) {
-      return '';
-    }
 
   }
 

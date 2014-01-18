@@ -134,7 +134,6 @@ $(document).ready(function() {
   $('#resources_list li').hover(
     function() { // mousein
       $(this).append("<div style='display: inline-block; float: right; '><span id='res_edit' style='display: inline-block; margin-right: 3px;' class='ui-state-default ui-corner-all ui-icon ui-icon-pencil'></span><span id='res_create' style='display: inline-block; margin-right: 3px;' class='ui-state-default ui-corner-all ui-icon ui-icon-plus'></span><span id='res_delete' style='display: inline-block' class='ui-state-default ui-corner-all ui-icon ui-icon-close'></span></div>");
-      //$(this).append("<span style='display: block; float: right'><img id='edit_res' src='/css/images/pencil.gif'>&nbsp;<img src='/css/images/plus.png' id='create_res'>&nbsp;<img id='delete_res' src='/css/images/x-mark-16.jpg'></span>");
       $('.ui-state-default').hover(function() {
           $(this).toggleClass('ui-state-hover');
       });
@@ -142,7 +141,8 @@ $(document).ready(function() {
           $(this).toggleClass('ui-state-active');
 
           // get the resource id
-          var resId = $(this).parent().prev().attr('id').split('-')[1];
+          var resourceId = $(this).parent().prev().attr('id');
+          var resId = resourceId.split('-')[1];
           
           // get the desired action - edit, create or delete
           var action = $(this).attr('id');
@@ -175,7 +175,19 @@ $(document).ready(function() {
                 autoOpen: true,
                 modal: true,
                 buttons: {
-                  "Delete this resource?": function() {
+                  "Delete this resource": function() {
+                    $.ajax({
+                      type: 'POST',
+                      url: '/form/p_resources_delete/' + connId
+                        + '/' + resId,
+                      dataType: text,
+                      success: function(response) {
+                        console.log(response);
+                        //if (response == 1) {
+                          //$('#' + resourceId).parent().remove();
+                        //}
+                      }
+                    });
                     $(this).dialog('close');
                   },
                   Cancel: function() {
