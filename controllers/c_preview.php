@@ -104,8 +104,6 @@ class preview_controller extends base_controller {
       $issue['peer_occ'];
     $this->template->content->peer->peer_school =
       $issue['peer_school'];
-    $this->template->content->peer->peer_class_yr =
-      $issue['peer_class_yr'];
     $this->template->content->peer->peer_inv =
       $issue['peer_inv'];
     $this->template->content->peer->peer_rev =

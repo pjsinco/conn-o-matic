@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  // TESTING
+  //console.log($('p.heading').next());
 
   // keep track so we don't ever end up with 0 resources
   var resCount = $('#resources_list').children().length;
@@ -112,7 +114,7 @@ $(document).ready(function() {
   $('#main_body').click(function() {
 
     // grab the lead_in text and put it in the textarea
-    var headline = $('h1')[0].outerHTML;
+    var headline = $('#headline').html().trim();
 
     // populate headline field with headline
     $('#headline_text').val(headline);
@@ -134,7 +136,7 @@ $(document).ready(function() {
   // todo NEED TO POPULATE LINK FIELD
   $('#poll').click(function() {
     var pollLink = $(this).find('a').attr('href');
-    var pollQ = $(this).find('p')[0].outerHTML;
+    var pollQ = $('#poll_q').html().trim();
 
     $('#poll_q_text').val(pollQ);
     $('#poll_link_text').val(pollLink);
@@ -241,27 +243,25 @@ $(document).ready(function() {
    */
   $('#peer').click(function() {
 
+    //var peerName = $('#peer h2')[0].outerHTML;
     var peerName = $('#peer_name').html().trim();
     $('#peer_name_text').val(peerName);
 
-    var peerOcc = $('#peer_occ').html().trim();
+    var peerOcc = $("#peer_occ").html().trim();
     $('#peer_occ_text').val(peerOcc);
 
-    var peerSchool = $('#peer_school').html().trim();
+    var peerSchool = $("#peer_school").html().trim();
     $('#peer_school_text').val(peerSchool);
 
-    var peerClass = $('#peer_school span').html().trim();
-    $('#peer_class_yr_text').val(peerClass);
-
-    var peerInv = $('#peer_inv').html().trim();
+    var peerInv =  $('#peer_inv').html().trim();
     $('#peer_inv_text').val(peerInv);
 
     var peerRev = $('#peer_rev').html().trim();
     $('#peer_rev_text').val(peerRev);
 
-    $('#peer_school_text').autocomplete({
-      source: schools
-    });
+    //$('#peer_school_text').autocomplete({
+      //source: schools
+    //});
     
     $('#peer_edit').dialog('open');
   });

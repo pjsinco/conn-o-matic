@@ -1,4 +1,7 @@
 alter table issue
+  drop column peer_class_yr
+
+alter table issue
   drop column res1,
   drop column res_link1,
   drop column res2,

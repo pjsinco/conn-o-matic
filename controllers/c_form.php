@@ -387,6 +387,7 @@ class form_controller extends base_controller {
   }
 
   public function peer_edit($id) {
+    echo Debug::dump($_POST);
     $this->template->content = 
       View::instance('v_form_peer');
 

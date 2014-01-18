@@ -13,7 +13,9 @@
                     </tr>
                     <tr>
                       <td class='selectable' id='main_body' height="0" width="400" bgcolor="#ffffff">
+                        <div id='headline'>
                           <?=$headline;?>
+                        </div>
                         <div id="body">
                           <?=$main_body?>
                         </div>      

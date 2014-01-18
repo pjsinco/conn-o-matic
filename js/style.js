@@ -71,9 +71,22 @@ $(document).ready(function() {
 
   };
 
-  //var resATag = {
-    //'color': '#111f43'
-  //}
+  var peerH2Tag = {
+    'margin-bottom' : '10px',
+    'font-size'     : '17px',
+    'color'         : '#111f43',
+    'margin-top'    : '3px'
+  };
+
+  var peerPTag = {
+    'font-size'     : '13px',
+    'color'         : '#333333',
+    'line-height'   : '17px',
+    'margin-top'    : '0',
+    'margin-right'  : '0',
+    'margin-bottom' : '0',
+    'margin-left'   : '0'
+  };
 
   // style lead-in a tags
   $('#lead_in a').css(leadInATag);
@@ -108,6 +121,11 @@ $(document).ready(function() {
   // style poll p tag
   $('#poll p').css(pollPTag);
 
+  // style peer h2 tag (name)
+  $('#peer_name h2').css(peerH2Tag);
+
+  // style peer p tag in response
+  $('.peer_response p').css(peerPTag);
   // style resources a tags
   //$('#resources a').css(resATag);
 

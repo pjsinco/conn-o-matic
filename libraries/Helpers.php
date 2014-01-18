@@ -175,12 +175,11 @@ class Helpers
       'kicker'      => '<p>***LEAD*IN*KICKER***</p>',
       'poll_q'      => '<p>***ONLINE*POLL*QUESTION***</p>',
       'poll_link'   => '#',
-      'peer_name'   => '***PEER*NAME***',
-      'peer_occ'    => '***PEER*OCCUPATION***',
-      'peer_school' => '***PEER*SCHOOL***',
-      'peer_class_yr'  => '0000',
-      'peer_inv'    => '***PEER*I\'M*INVOLVED*BECAUSE***',
-      'peer_rev'    => '***PEER*WHEN*REVIEWING***',
+      'peer_name'   => '<p>***PEER*NAME***</p>',
+      'peer_occ'    => '<p>***PEER*OCCUPATION***</p>',
+      'peer_school' => '<p>***PEER*SCHOOL***</p>',
+      'peer_inv'    => '<p>***PEER*I*AM*INVOLVED*BECAUSE***</p>',
+      'peer_rev'    => '<p>***PEER*WHEN*REVIEWING***</p>'
     );
 
     array_push($results, DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id"));

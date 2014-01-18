@@ -2,23 +2,23 @@
 <fieldset>
   <legend>Meet Your Peer</legend>
   <p>
-    <label for="peer_name_text">Name</label><br>
-    <input class='peer' type="text" name="peer_name" id="peer_name_text"><br>
+    <label for="peer_name_text">&lt;h2&gt;Name&lt;/h2&gt;</label><br>
+    <textarea class='peer' name="peer_name" rows='3' id="peer_name_text" required></textarea><br>
 
-    <label for="peer_occ_text">Occupation</label><br>
-    <textarea class='peer' name="peer_occ" id="peer_occ_text" rows='3'></textarea><br>
+    <label for="peer_occ_text">&lt;p&gt;Occupation&lt;/p&gt;</label><br>
+    <textarea class='peer' name="peer_occ" id="peer_occ_text" rows='4' required></textarea><br>
 
-    <label for="peer_school_text">School</label><br>
-    <input type='text' class='peer' name="peer_school" id="peer_school_text"><br>
+    <label for="peer_school_text">&lt;p&gt;School/Class&lt;/p&gt;</label><br>
+    <textarea class='peer' name="peer_school" id="peer_school_text" rows='3' required></textarea><br>
 
-    <label for="peer_class_yr_text">Class year</label><br>
-    <input type='text' class='peer' name="peer_class_yr" id="peer_class_yr_text" rows='1'><br>
+<!--     <label for="peer_class_yr_text">&lt;p&gt;Class year&lt;/p&gt;</label><br> -->
+<!--     <input type='text' class='peer' name="peer_class_yr" id="peer_class_yr_text" rows='1'><br> -->
 
-    <label for="peer_inv_text">I am involved because</label><br>
-    <textarea class='peer' name="peer_inv" id="peer_inv_text" rows='12'></textarea><br>
+    <label for="peer_inv_text">&lt;p&gt;I am involved because&lt;/p&gt;</label><br>
+    <textarea class='peer' name="peer_inv" id="peer_inv_text" rows='6' required></textarea><br>
 
-    <label for="peer_rev_text">When reviewing a manuscript</label><br>
-    <textarea class='peer' name="peer_rev" id="peer_rev_text" rows='12'></textarea><br>
+    <label for="peer_rev_text">&lt;p&gt;When reviewing a manuscript&lt;/p&gt;</label><br>
+    <textarea class='peer' name="peer_rev" id="peer_rev_text" rows='6' required></textarea><br>
   </p>
     <input class='btn' type="submit" value="Set">
     <input type="hidden" name='id' value="<?=$id;?>">
