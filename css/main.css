@@ -569,8 +569,8 @@ label {
   cursor: pointer;
   width: 100px;
   height: 30px;
-  background-color: darkorange;
-  color: #ffffff;
+  background-color: ghostwhite;
+  /*color: #ffffff;*/
   border: 2px solid #C0ACD3;
   position: absolute;
   top: 20px;

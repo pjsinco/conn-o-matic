@@ -62,7 +62,7 @@ class preview_controller extends base_controller {
     //echo Debug::dump($issue['edition']);
 
     // pass edition to view
-    $this->template->content->connections_season = 
+    $this->template->content->connections_date = 
       $issue['quarter'] . ' ' . $issue['year'];
       
     //echo Debug::dump($conn_flag);
