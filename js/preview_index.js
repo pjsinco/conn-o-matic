@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('body').addClass('etoc_create');
+
   /*
    * *** TESTING AREA ***
    */
@@ -114,7 +116,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // open the form as a dialog modal
@@ -145,7 +148,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // open the form as a dialog modal
@@ -176,7 +180,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // grab the main_body text and plop in textarea
@@ -195,7 +200,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // open the form as a dialog modal
@@ -228,7 +234,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     $('#poll_edit').dialog('open');
@@ -350,7 +357,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // set up occupation
@@ -369,7 +377,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // set up school
@@ -388,7 +397,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // set up involved
@@ -407,7 +417,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     // set up reviewing
@@ -426,7 +437,8 @@ $(document).ready(function() {
         tabSize: 2,
         lineNumbers: true,
         lineWrapping: true,
-        keyMap: 'default'
+        keyMap: 'default',
+        theme: 'eclipse'
       });
 
     //$('#peer_school_text').autocomplete({

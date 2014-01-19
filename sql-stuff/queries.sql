@@ -1,3 +1,6 @@
+alter table issu
+  modify edition ENUM('Peer Reviewers', 'Editorial Board', 'Editorial Advisory Board') NOT NULL
+
 alter table issue
   drop column peer_class_yr
 
