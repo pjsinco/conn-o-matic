@@ -447,7 +447,7 @@ textarea, input {
   padding: 5px;
   border-radius: 10px;
   box-shadow: inset 0 2px 2px #ececec;
-  width: 600px
+  width: 500px;
 }
 
 input.submit {
@@ -521,4 +521,15 @@ label {
   position: relative;
   top: -274px;
   left: 100px;
+}
+
+/*http://codemirror.net/demo/resize.html*/
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+.CodeMirror-scroll {
+  /*overflow-y: hidden;*/
+  /*overflow-x: auto;  */
 }

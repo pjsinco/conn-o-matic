@@ -4,7 +4,7 @@
     <p>
 <!--       <label class='title' for='edition'>Edition:</label> -->
       <select id='edition' name='edition'>
-        <option value='Peer Reviewer'>Peer Reviewer</option>
+        <option value='Peer Reviewers'>Peer Reviewers</option>
         <option value='Editorial Board'>Editorial Board</option>
         <option value='Editorial Advisory Board'>Editorial Advisory Board</option>
       </select>&nbsp;

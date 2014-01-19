@@ -60,6 +60,13 @@ $(document).ready(function() {
     }
   });
 
+  // refresh the page on 'cancel'; 
+  // hack for bug that duplicates a form's textarea
+  // if a form is canceled and immediately reopened
+  $('.dialog-form').bind('dialogbeforeclose', function(event) {
+    document.location.reload();
+  });
+
   // provide visual feedback on editable areas
   $('.selectable').hover(
     function() { // mouse in
@@ -89,12 +96,11 @@ $(document).ready(function() {
    * Edit lead_in
    */
   $('#lead_in').click(function() {
-
     // grab the lead_in text and put it in the textarea
     var text = $('#lead_in').html().trim();
     $('#lead_in_text').val(text);
     
-    // play with codemirror
+    // set up with code editor
     var cm = 
       CodeMirror.fromTextArea(document.getElementById('lead_in_text'), {
         mode: {
@@ -110,7 +116,10 @@ $(document).ready(function() {
 
     // open the form as a dialog modal
     $('#lead_in_edit').dialog('open');
+
+    // refresh to to get code to show up
     cm.refresh();
+
   });
 
 
@@ -123,8 +132,25 @@ $(document).ready(function() {
     var text = $('#kicker').html().trim();
     $('#kicker_text').val(text);
 
+    // set up with code editor
+    var cm = 
+      CodeMirror.fromTextArea(document.getElementById('kicker_text'), {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
+
     // open the form as a dialog modal
     $('#kicker_edit').dialog('open');
+
+    // refresh to to get code to show up
+    cm.refresh();
   });
 
   /*
@@ -134,18 +160,47 @@ $(document).ready(function() {
 
     // grab the lead_in text and put it in the textarea
     var headline = $('#headline').html().trim();
-
-    // populate headline field with headline
     $('#headline_text').val(headline);
 
-    var body = $('#body').html().trim();
+    // set up textarea with code editor
+    var cmHead =
+      CodeMirror.fromTextArea(document.getElementById('headline_text'),
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
 
-    // populate body field with body
+    // grab the main_body text and plop in textarea
+    var body = $('#body').html().trim();
     $('#main_body_text').val(body);
-    //console.log(body);
+
+    // set up textarea with code editor
+    var cmBody =
+      CodeMirror.fromTextArea(document.getElementById('main_body_text'),
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
 
     // open the form as a dialog modal
     $('#main_body_edit').dialog('open');
+
+    cmHead.refresh();
+    cmBody.refresh();
   });
 
 
@@ -160,8 +215,22 @@ $(document).ready(function() {
     $('#poll_q_text').val(pollQ);
     $('#poll_link_text').val(pollLink);
 
-    $('#poll_edit').dialog('open');
+    // set up with code editor
+    var cm = 
+      CodeMirror.fromTextArea(document.getElementById('poll_q_text'), {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
 
+    $('#poll_edit').dialog('open');
+    cm.refresh();
   });
 
 

@@ -3,11 +3,11 @@
     <legend>Main body</legend>
     <p>
       <label for="headline">&lt;h1&gt;Headline&lt;/h1&gt;</label><br>
-      <textarea class='text ui-widget-content ui-corner-all' width='900' name="headline" cols='50' rows='4' id="headline_text" required></textarea><br>
+      <textarea class='codemirror' width='900' name="headline" id="headline_text" required></textarea><br>
     </p>
     <p>
       <label for="main_body">&lt;p&gt;Main body text&lt;/p&gt;</label><br>
-      <textarea name="main_body" id="main_body_text" rows="25" cols="60" required></textarea><br>
+      <textarea name="main_body" class='codemirror' id="main_body_text" rows="25" cols="60" required></textarea><br>
       <input class='btn' type="submit" value="Set">
       <input type="hidden" name='id' value="<?=$id;?>">
     </p>

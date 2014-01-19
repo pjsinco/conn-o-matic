@@ -53,7 +53,7 @@ class Helpers
     $data = self::get_issue($id);
 
     switch ($data['edition']) {
-      case 'Peer Reviewer':
+      case 'Peer Reviewers':
         return IMAGE_LINK . PR_FILE;
         break;
       case 'Editorial Board':
@@ -174,8 +174,8 @@ class Helpers
       'lead_in'     => '<p>***LEAD*IN***</p>',
       'kicker'      => '<p>***LEAD*IN*KICKER***</p>',
       'poll_q'      => '<p>***ONLINE*POLL*QUESTION***</p>',
-      'poll_link'   => '#',
-      'peer_name'   => '<p>***PEER*NAME***</p>',
+      'poll_link'   => 'http://',
+      'peer_name'   => '<h2>***PEER*NAME***</h2>',
       'peer_occ'    => '<p>***PEER*OCCUPATION***</p>',
       'peer_school' => '<p>***PEER*SCHOOL***</p>',
       'peer_inv'    => '<p>***PEER*I*AM*INVOLVED*BECAUSE***</p>',
