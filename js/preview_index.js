@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
   /*
-   * DOM elements for res-to-ref mouseover edit icons
+   * create span elements for res-to-ref mouseover edit icons
    */
   var resEdit = $("<span></span>",
     {
@@ -77,17 +77,19 @@ $(document).ready(function() {
    * Edit flag
    */
   $('#connections_flag').click(function(event) {
-    event.preventDefault();
-    //var edition = $(this).parent().attr('title').split(':')[2].trim();
     
+    // local change: make the width of the dialog 'auto'
+    $('.dialog-form').dialog('option', 'width', 'auto');
     $('#connections_flag_edit').dialog('open');
   });
 
+
   /*
-   * Edit edition flag
+   * Edit date
    */
   $('#connections_edition_flag').click(function() {
-    //console.log('connections edition flag clicked');
+    // local change: make the width of the dialog 'auto'
+    $('.dialog-form').dialog('option', 'width', 'auto');
     $('#connections_quarter_edit').dialog('open');
   });
 
@@ -102,7 +104,8 @@ $(document).ready(function() {
     
     // set up with code editor
     var cm = 
-      CodeMirror.fromTextArea(document.getElementById('lead_in_text'), {
+      CodeMirror.fromTextArea(document.getElementById('lead_in_text'), 
+      {
         mode: {
           name: 'xml',
           htmlMode: true
@@ -119,7 +122,6 @@ $(document).ready(function() {
 
     // refresh to to get code to show up
     cm.refresh();
-
   });
 
 
@@ -207,7 +209,6 @@ $(document).ready(function() {
   /*
    * Edit poll
    */
-  // todo NEED TO POPULATE LINK FIELD
   $('#poll').click(function() {
     var pollLink = $(this).find('a').attr('href');
     var pollQ = $('#poll_q').html().trim();
@@ -217,7 +218,8 @@ $(document).ready(function() {
 
     // set up with code editor
     var cm = 
-      CodeMirror.fromTextArea(document.getElementById('poll_q_text'), {
+      CodeMirror.fromTextArea(document.getElementById('poll_q_text'), 
+      {
         mode: {
           name: 'xml',
           htmlMode: true
@@ -265,7 +267,7 @@ $(document).ready(function() {
 
           // take the appropriate action
           switch (action) {
-            case 'res_edit': // edit a res-to-ref
+            case 'res_edit': // EDIT a res-to-ref
               var text = $(this).parent().prev().text();
               var link = $(this).parent().prev().attr('href');
               $("input[name='id'").val(resId);
@@ -274,13 +276,14 @@ $(document).ready(function() {
               $("input[name='conn_id'").val(connId);
               $('#resources_edit').dialog('open');
               break;
-            case 'res_create': // create a res-to-ref
+            case 'res_create': // CREATE a res-to-ref
               $("input[name='conn_id'").val(connId);
               $("input[name='res'").val('');
               $("input[name='res_link'").val('');
               $('#resources_create').dialog('open');
               break;
-            case 'res_delete': // delete a res-to-ref
+            case 'res_delete': // DELETE a res-to-ref
+              // confirm deletion
               $('#resources_delete_modal').dialog({
                 resizable: false,
                 height: 'auto',
@@ -331,28 +334,113 @@ $(document).ready(function() {
    */
   $('#peer').click(function() {
 
-    //var peerName = $('#peer h2')[0].outerHTML;
+    // set up name
     var peerName = $('#peer_name').html().trim();
     $('#peer_name_text').val(peerName);
 
+    // set up with code editor
+    var cmName = 
+      CodeMirror.fromTextArea(document.getElementById('peer_name_text'), 
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
+
+    // set up occupation
     var peerOcc = $("#peer_occ").html().trim();
-    console.log(peerOcc);
     $('#peer_occ_text').val(peerOcc);
 
+    // set up with code editor
+    var cmOcc = 
+      CodeMirror.fromTextArea(document.getElementById('peer_occ_text'), 
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
+
+    // set up school
     var peerSchool = $("#peer_school").html().trim();
     $('#peer_school_text').val(peerSchool);
 
+    // set up with code editor
+    var cmSchool = 
+      CodeMirror.fromTextArea(document.getElementById('peer_school_text'), 
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
+
+    // set up involved
     var peerInv =  $('#peer_inv').html().trim();
     $('#peer_inv_text').val(peerInv);
 
+    // set up with code editor
+    var cmInv = 
+      CodeMirror.fromTextArea(document.getElementById('peer_inv_text'), 
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
+
+    // set up reviewing
     var peerRev = $('#peer_rev').html().trim();
     $('#peer_rev_text').val(peerRev);
+
+    // set up with code editor
+    var cmRev = 
+      CodeMirror.fromTextArea(document.getElementById('peer_rev_text'), 
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
 
     //$('#peer_school_text').autocomplete({
       //source: schools
     //});
     
     $('#peer_edit').dialog('open');
+
+    // fresh all code editors so they show up 
+    cmName.refresh();
+    cmOcc.refresh();
+    cmSchool.refresh();
+    cmInv.refresh();
+    cmRev.refresh();
   });
 
 
