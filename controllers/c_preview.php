@@ -25,8 +25,8 @@ class preview_controller extends base_controller {
       '/js/style.js',
       '/js/jquery.form.js',
       '/js/form_resources.js',
-      '/js/preview_index.js'
-      
+      '/js/preview_index.js',
+      '/js/admin_control_panel_preview.js'
     );
     $this->template->client_files_body = 
       Utils::load_client_files($client_files_body);   
@@ -116,6 +116,10 @@ class preview_controller extends base_controller {
     $this->template->content->footer =
       View::instance('v_preview_footer');
 
+    // pass control_panel to view
+    $this->template->content->control_panel_preview =
+      View::instance('v_admin_control_panel_preview');
+
     /*
      * add edit forms to view
      */
@@ -201,5 +205,18 @@ class preview_controller extends base_controller {
     echo $this->template;
   }
 
+  public function page() {
+    $this->template->content =
+      View::instance('v_preview_page');
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);   
+
+    // render view
+    echo $this->template;
+  }
 
 } # End of class

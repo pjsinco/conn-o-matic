@@ -506,8 +506,9 @@ label {
 }
 #etoc {
   box-shadow: 0 0 1em #242424;
-  margin: 0 auto;
-  width: 620px;
+  z-index: 10;
+  /*margin: 0 auto;*/
+  /*width: 620px;*/
   position: relative;
 }
 
@@ -559,4 +560,41 @@ label {
                    /*#269;*/
   /*behavior: url(/pie/PIE.htc);*/
 
+}
+.etoc_wrapper {
+  position: relative;
+}
+
+#admin {
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  background-color: darkorange;
+  color: #ffffff;
+  border: 2px solid #C0ACD3;
+  position: absolute;
+  top: 20px;
+  left: 860px;
+  -webkit-border-top-right-radius: 25px;
+  -webkit-border-bottom-right-radius: 25px;
+  -moz-border-radius-topright: 25px;
+  -moz-border-radius-bottomright: 0px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+#admin span {
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: 78px;
+}
+#admin p {
+  font-size: 14px;
+  /*margin-left: 20px;*/
+  position: relative;
+  top: -10px;
+  left: 19px;
+}
+.ui-icon-eyeball {
+  background-image: url('/css/images/eye.png');
 }
