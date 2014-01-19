@@ -8,25 +8,39 @@ $(document).ready(function() {
     'font-size'     : '14px',
     'color'         : '#fdc578',
     'line-height'   : '22px',
+    'mso-line-height-rule': 'exactly',
     'margin-top'    : '10px',
     'margin-right'  : '20px',
     'margin-bottom' : '10px',
-    'margin-left'   : '20px'
+    'margin-left'   : '20px',
+    'text-align'    : 'left'
+  };
+
+  var leadInULTag = {
+    'font-size'    : '14px',
+    'color'        : '#fdc578',
+    'mso-line-height-rule': 'exactly',
+    'line-height'  : '22px',
+    'margin-top'   : '10px',
+    'margin-right' : '20px',
+    'margin-bottom': '10px'
   };
 
   var kickerPTag = {
     'font-size'     : '14px',
     'color'         : '#111f43',
+    'mso-line-height-rule': 'exactly',
     'line-height'   : '18px',
     'font-weight'   : 'bold',
     'margin-top'    : '3px',
     'margin-right'  : '20px',
     'margin-bottom' : '6px',
-    'margin-left'   : '20px'
+    'margin-left'   : '20px',
+    'text-align'    : 'left'
   };
 
   var kickerATag = {
-    color: '#111f43'
+    'color': '#111f43'
   };
 
   var mainH1Tag = {
@@ -42,18 +56,21 @@ $(document).ready(function() {
     'font-size'     : '13px',
     'color'         : '#333333',
     'line-height'   : '17px',
+    'mso-line-height-rule': 'exactly',
     'margin-top'    : '0px',
     'margin-right'  : '20px',
     'margin-bottom' : '10px',
-    'margin-left'   : '20px'
+    'margin-left'   : '20px',
+    'text-align'    : 'left'
   };
 
   var mainULTag = {
-  'font-size'    : '13px',
-  'color'        : '#333333',
-  'line-height'  : '17px',
-  'margin-top'   : '0px',
-  'margin-right' : '20px'
+    'font-size'    : '13px',
+    'color'        : '#333333',
+    'mso-line-height-rule': 'exactly',
+    'line-height'  : '17px',
+    'margin-top'   : '0px',
+    'margin-right' : '20px'
   };
   
   var mainATag = {
@@ -64,10 +81,12 @@ $(document).ready(function() {
     'font-size'     : '13px',
     'color'         : '#333333',
     'line-height'   : '17px',
+    'mso-line-height-rule': 'exactly',
     'margin-top'    : '0px',
     'margin-right'  : '20px',
     'margin-bottom' : '10px',
-    'margin-left'   : '15px'
+    'margin-left'   : '15px',
+    'text-align'    : 'left'
 
   };
 
@@ -82,17 +101,26 @@ $(document).ready(function() {
     'font-size'     : '13px',
     'color'         : '#333333',
     'line-height'   : '17px',
+    'mso-line-height-rule': 'exactly',
     'margin-top'    : '0',
     'margin-right'  : '0',
     'margin-bottom' : '0',
-    'margin-left'   : '0'
+    'margin-left'   : '0',
+    'text-align'    : 'left'
   };
+
+  var peerATag = {
+    'color' : '#111f43'
+  }
 
   // style lead-in a tags
   $('#lead_in a').css(leadInATag);
 
   // style lead-in a tags
   $('#lead_in p').css(leadInPTag);
+
+  // style lead-in ul tags
+  $('#lead_in ul').css(leadInULTag);
 
   // style kicker p tags
   $('#main_body p').css(leadInPTag).attr({
@@ -126,7 +154,8 @@ $(document).ready(function() {
 
   // style peer p tag in response
   $('.peer_response p').css(peerPTag);
-  // style resources a tags
-  //$('#resources a').css(resATag);
+
+  // style peer a tags
+  $('.peer_response a').css(peerATag);
 
 });

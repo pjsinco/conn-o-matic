@@ -13,7 +13,7 @@
                     <tr>
                       <td height="0" width="212" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;">
                         <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">Occupation</p>
-                        <div class='peer_response' id='peer_occ'><?=$peer_occ?></div>
+                        <div class="peer_response" id="peer_occ"><?=$peer_occ?></div>
 
                         <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">School/Class</p>
                         <div class='peer_response' id='peer_school'><?=$peer_school?></div>

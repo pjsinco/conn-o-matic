@@ -248,6 +248,7 @@ $(document).ready(function() {
     $('#peer_name_text').val(peerName);
 
     var peerOcc = $("#peer_occ").html().trim();
+    console.log(peerOcc);
     $('#peer_occ_text').val(peerOcc);
 
     var peerSchool = $("#peer_school").html().trim();
