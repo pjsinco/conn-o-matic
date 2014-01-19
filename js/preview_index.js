@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  // TESTING
+  /*
+   * *** TESTING AREA ***
+   */
   //console.log($('p.heading').next());
 
   // keep track so we don't ever end up with 0 resources
@@ -45,7 +47,8 @@ $(document).ready(function() {
   $('.dialog-form').dialog({
     autoOpen: false,
     height: 'auto',
-    width: 'auto',
+    //width: 'auto',
+    width: 600,
     modal: true,
     show: {
       effect: 'fade',
@@ -90,8 +93,24 @@ $(document).ready(function() {
     // grab the lead_in text and put it in the textarea
     var text = $('#lead_in').html().trim();
     $('#lead_in_text').val(text);
+    
+    // play with codemirror
+    var cm = 
+      CodeMirror.fromTextArea(document.getElementById('lead_in_text'), {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default'
+      });
+
     // open the form as a dialog modal
     $('#lead_in_edit').dialog('open');
+    cm.refresh();
   });
 
 

@@ -19,9 +19,10 @@ class preview_controller extends base_controller {
     
     // CSS/JS includes
     $client_files_body = Array(
+      '/js/codemirror.js',
+      '/js/xml.js',
       '/js/schools.js',
       '/js/style.js',
-      //'/js/form_resources_modal.js',
       '/js/jquery.form.js',
       '/js/form_resources.js',
       '/js/preview_index.js'
@@ -31,6 +32,8 @@ class preview_controller extends base_controller {
       Utils::load_client_files($client_files_body);   
 
     $client_files_head = Array(
+      '/css/codemirror.css',
+      '/css/eclipse.css',
       '/css/main.css'
     );
     $this->template->client_files_head = 
