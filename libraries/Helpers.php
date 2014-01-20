@@ -5,6 +5,34 @@ include_once(APP_PATH . '/config/constants.php');
 class Helpers
 {
   /**
+   * Checkes to see if file was exists on Informz
+   *
+   */
+  public static function verify_file($file) {
+    $ch = curl_init(IMAGE_LINK . $file);
+
+    // return as a string
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $ret = curl_exec($ch);
+
+    //http://us2.php.net/manual/en/function.curl-getinfo.php
+    if (empty($ret)) {
+      die(curl_error($ch));
+      curl_close($ch);
+    } else {
+      $info = curl_getinfo($ch);
+      curl_close($ch);
+    }
+
+    if ($info['http_code'] == 200) {
+      return true;
+    } 
+
+    return false;
+  }
+
+  /**
    *  Returns the list of resources-to-reference for
    *    the given $id
    *  @param
@@ -178,7 +206,7 @@ class Helpers
       'peer_name'   => '<h2>***PEER*NAME***</h2>',
       'peer_occ'    => '<p>***PEER*OCCUPATION***</p>',
       'peer_school' => '<p>***PEER*SCHOOL***</p>',
-      'peer_inv'    => '<p>***PEER*I*AM*INVOLVED*BECAUSE***</p>',
+      'peer_inv'    => '<p>***PEER*INVOLVED*BECAUSE***</p>',
       'peer_rev'    => '<p>***PEER*WHEN*REVIEWING***</p>'
     );
 

@@ -455,8 +455,8 @@ input.submit {
 }
 
 .btn {
-  -webkit-border-radius: 5;
-  -moz-border-radius: 5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
   display: block;
   color: #5B5D64;
@@ -597,4 +597,50 @@ label {
 }
 .ui-icon-eyeball {
   background-image: url('/css/images/eye.png');
+}
+#welcome {
+  background-color: #ffffff;
+  border: 3px solid #d0d0d0;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  padding: 20px;
+  height: 240px;
+  margin-top: 50px;
+}
+#welcome input[type=text] {
+  width: 560px;
+}
+#welcome h1 {
+  color: darkblue;
+  font-size: 380%;
+  margin-top: 14px;
+}
+#welcome span {
+  font-size: 45%;
+  color: #d0d0d0;
+}
+.error {
+  background-color: darkred;
+}
+.success {
+  background-color: green;
+}
+.ajax_load {
+  height: 30px;
+  /*background-image: url('/css/images/eye.png');*/
+  background: url('/css/images/ajax-loader.gif') #fff no-repeat;
+  background-position: 3px 3px;
+}
+.validate {
+  border-radius: 10px 10px 10px 10px;
+  color: #ffffff;
+  width: 100px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  text-align: center;
+  opacity: 0.8;
+}
+input[disabled='true'] {
+  opacity: 0.4;
 }

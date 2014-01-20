@@ -18,10 +18,10 @@
                         <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">School/Class</p>
                         <div class='peer_response' id='peer_school'><?=$peer_school?></div>
 
-                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">I am involved with the <i>JAOA</i> because ...</p>
+                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">I am involved with the <i>JAOA</i> <br />because ...</p>
                         <div class='peer_response' id='peer_inv'><?=$peer_inv?></div>
 
-                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">When reviewing a manuscript, I consider ...</p>
+                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">When reviewing a manuscript, <br />I consider ...</p>
                         <div class='peer_response' id='peer_rev'><?=$peer_rev?></div>
 
                       </td>

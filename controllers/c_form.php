@@ -11,12 +11,24 @@ class form_controller extends base_controller {
   public function meta() {
     $this->template->content = View::instance('v_form_meta');
 
+    $client_files_body = Array(
+      '/js/form_meta.js'
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);   
+
     $client_files_head = Array(
       '/css/main.css'
     );
-    Utils::load_client_files($client_files_head);
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);   
 
     echo $this->template;
+  }
+
+  public function p_meta_verify($file) {
+    //return $file;
+    echo Helpers::verify_file($file);
   }
 
   /**
@@ -24,8 +36,7 @@ class form_controller extends base_controller {
    *
    */
   public function p_meta() {
-    //echo Debug::dump($_POST);
-    
+
     $data = array(
       'edition' => $_POST['edition'],
       'quarter' => $_POST['quarter'],
