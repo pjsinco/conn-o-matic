@@ -226,4 +226,9 @@ class preview_controller extends base_controller {
     echo $this->template;
   }
 
+  public function p_page() {
+    var_dump($_POST); 
+
+  }
+  
 } # End of class

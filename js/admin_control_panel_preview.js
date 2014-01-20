@@ -2,7 +2,8 @@ $(document).ready(function() {
   console.log('tuesday');
 
   $('.admin').hover(function(event) {
-    console.log($(this));
+    //console.log($(this)[0].id);
+    //console.log($(this).prop('id'));
     $(this).css('background-color', 'darkorange');
     $(this).animate({
       left: '778px'
@@ -19,8 +20,13 @@ $(document).ready(function() {
   // /questions/3841100/write-content-to-new-window-with-jquery
   // http://jsfiddle.net/ypAsY/
   $('.admin').click(function(event) {
-    var w = window.open();
-    var html = $('#etoc').html();
-    $(w.document.body).html(html);
+    //console.log(event.target.id);
+    if ($(this)[0].id == 'preview') {
+      var w = window.open();
+      var html = $('#etoc').html();
+      $(w.document.body).html(html);
+    } else {
+      
+    }
   });
 });
