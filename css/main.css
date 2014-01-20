@@ -640,7 +640,15 @@ label {
   font-size: 0.7em;
   text-align: center;
   opacity: 0.8;
+  display: none;
 }
-input[disabled='true'] {
+.btn:disabled {
+  opacity: 0.4;
+}
+.btn:hover:disabled {
+  background-color: #dcdcdc;
+  color: #585d64;
+}
+input[type='text']:disabled {
   opacity: 0.4;
 }

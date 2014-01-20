@@ -5,9 +5,9 @@ $(document).ready(function() {
     }
   });
 
-  //$('#peer_photo_file').focus(function(event) {
-    //$('.error').to
-  //});
+  $('#peer_photo_file').focus(function(event) {
+    $('.validate').removeClass('error success').fadeOut();
+  });
 
   $('#peer_photo_file').blur(function(event) {
     // clear error, success classes
@@ -17,17 +17,18 @@ $(document).ready(function() {
     // check to see if file really exists
     $.ajax('/form/p_meta_verify/' + $(this).val(), {
       beforeSend: function() {
-        $('.validate').toggleClass('ajax_load');
+        // put up the spinner while we're waiting
+        $('.validate').toggleClass('ajax_load').fadeIn();
       },
-      success: function(response) { // yep!
-        //$('.validate').toggleClass('ajax_load');
+      success: function(response) { // found it!
         if (response == 1) {
           $('.validate')
-            .toggleClass('success')
-            .toggleClass('ajax_load')
-            .html('<p>Found it!</p>');
-          $("input[type='submit']").attr('disabled', 'false');
-        } else { // nope!
+            .toggleClass('success ajax_load')
+            .html('<p>Found it!</p>')
+            .fadeIn();
+          document.getElementsByClassName('btn')[0].disabled = false;
+          $("input[type='text']").prop('disabled', true);
+        } else { // couldn't find it!
           $('.validate')
             .toggleClass('error')
             .toggleClass('ajax_load')
@@ -41,7 +42,7 @@ $(document).ready(function() {
     //$('.error').html('Will there be an error here?');
   });
 
-  //http://stackoverflow.com/questions/13941055/add-a-string-of-text-into-an-input-field-when-user-clicks-a-button
-
+  // stackoj
+  ///questions/13941055/add-a-string-of-text-into-an-input-field-when-user-clicks-a-button
 
 });

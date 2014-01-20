@@ -51,84 +51,6 @@ class form_controller extends base_controller {
     Router::redirect('/preview/index/' . $id);
   }
 
-  /*-----------------------------------------------------------------
-  Accessed via http://localhost/index/index/
-  -----------------------------------------------------------------*/
-  public function index($id) {	
-  	
-    # Any method that loads a view will commonly start with this
-    # First, set the content of the template with a view file
-    $this->template->content = View::instance('v_form_index');
-  		
-    # Now set the <title> tag
-    $this->template->title = APP_NAME;
-  
-    $issue = Helpers::get_issue($id);
-    $this->template->content->issue = $issue;
-  
-    // add preview to view
-    $this->template->content->preview =
-      View::instance('v_preview_index');
-  
-    // give the main_body view everthing it needs
-    $this->template->content->preview->main =
-      View::instance('v_preview_main_body');
-    $this->template->content->preview->main->lead_in =
-      $issue['lead_in'];
-    $this->template->content->preview->main->kicker =
-      $issue['kicker'];
-    $this->template->content->preview->main->headline =
-      $issue['headline'];
-    $this->template->content->preview->main->resources =
-      $issue['resources'];
-  
-    // add style to p tags
-    $this->template->content->preview->main->main_body =
-      $issue['main_body'];
-  
-    // pass poll to view and set up
-    $this->template->content->preview->main->poll =
-      View::instance('v_preview_poll');
-    $this->template->content->preview->main->poll->poll_link =
-      $issue['poll_link'];
-    $this->template->content->preview->main->poll->poll_q =
-      $issue['poll_q'];
-  
-    // pass meet-your-peer to view and set up
-    $this->template->content->preview->peer =
-      View::instance('v_preview_peer');
-    $this->template->content->preview->peer->peer_name =
-      $issue['peer_name'];
-    $this->template->content->preview->peer->peer_occ =
-      $issue['peer_occ'];
-    $this->template->content->preview->peer->peer_school =
-      $issue['peer_school'];
-    $this->template->content->preview->peer->peer_inv =
-      $issue['peer_inv'];
-    $this->template->content->preview->peer->peer_rev =
-      $issue['peer_rev'];
-  
-    // pass footer to view
-    $this->template->content->preview->footer =
-      View::instance('v_preview_footer');
-  
-    # CSS/JS includes
-    $client_files_body = Array(
-      '/js/form_index.js',
-      '/js/preview_index.js'
-    );
-    $this->template->client_files_body = 
-      Utils::load_client_files($client_files_body);
-    	
-    //$client_files_body = Array("");
-    //$this->template->client_files_body = 
-      //Utils::load_client_files($client_files_body);   
-  
-    # Render the view
-    echo $this->template;
-  
-  } # End of method
-
   public function p_index($id) {
     $data = Helpers::distill_post($_POST);
 
@@ -309,34 +231,6 @@ class form_controller extends base_controller {
 
     Router::redirect('/preview/index/' . $id);
   }
-
-//  public function resources_modal($id) {
-//    $this->template->content =
-//      View::instance('v_form_resources_modal');
-//
-//    $this->template->content->id = $id;
-//    
-//    // add css; needed?
-//    $client_files_head = Array(
-//      '/css/main.css'
-//    );
-//    $this->template->client_files_head = 
-//      Utils::load_client_files($client_files_head);
-//
-//    // add js
-//    $client_files_body = Array(
-//      '/js/form_resources_modal.js'
-//    );
-//    $this->template->client_files_body = 
-//      Utils::load_client_files($client_files_body);
-//
-//    // render view
-//    echo $this->template;
-//  }
-
-//  public function p_resources_modal($id) {
-//    echo Debug::dump($_POST);
-//  }
 
   public function resources_edit($id) {
     $this->template->content = 
