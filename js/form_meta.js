@@ -27,7 +27,8 @@ $(document).ready(function() {
             .html('<p>Found it!</p>')
             .fadeIn();
           document.getElementsByClassName('btn')[0].disabled = false;
-          $("input[type='text']").prop('disabled', true);
+          //$("input[type='text']").prop('disabled', true);
+          $("input[type='text']").prop('readonly', true);
         } else { // couldn't find it!
           $('.validate')
             .toggleClass('error')

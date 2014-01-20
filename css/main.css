@@ -531,8 +531,8 @@ label {
 }
 
 .CodeMirror-scroll {
-  /*overflow-y: hidden;*/
-  /*overflow-x: auto;  */
+  overflow-y: hidden;
+  overflow-x: auto;  
 }
 
 /*http://css3pie.com/demos/gradient-patterns/*/

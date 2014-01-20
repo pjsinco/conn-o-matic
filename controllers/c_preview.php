@@ -111,6 +111,8 @@ class preview_controller extends base_controller {
       $issue['peer_inv'];
     $this->template->content->peer->peer_rev =
       $issue['peer_rev'];
+    $this->template->content->peer->peer_photo =
+      (IMAGE_LINK . $issue['peer_photo']);
 
     // pass footer to view
     $this->template->content->footer =

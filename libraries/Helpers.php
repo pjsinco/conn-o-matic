@@ -4,9 +4,39 @@ include_once(APP_PATH . '/config/constants.php');
 
 class Helpers
 {
+  //http://shiflett.org/blog/2005/oct/convert-smart-quotes-with-php
+  public static function convert_chars($str) {
+    $search = array(
+      chr(145),
+      chr(146),
+      chr(147),
+      chr(148),
+      chr(150),
+      chr(151),
+      chr(160),
+    );
+
+    $replace = array(
+      "&#8216;",
+      "&#8217;",
+      '&#8220;',
+      '&#8221;',
+      '&#8211;',
+      '&#8212;',
+      ' '
+    );
+
+    return str_replace($search, $replace, $str);
+    
+    
+  }
+
   /**
    * Checkes to see if file was exists on Informz
-   *
+   * @param
+   *  $file - the file to check
+   * @returns
+   *  boolean - whether the file exists
    */
   public static function verify_file($file) {
     $ch = curl_init(IMAGE_LINK . $file);

@@ -40,7 +40,8 @@ class form_controller extends base_controller {
     $data = array(
       'edition' => $_POST['edition'],
       'quarter' => $_POST['quarter'],
-      'year' => $_POST['year']
+      'year' => $_POST['year'],
+      'peer_photo' => $_POST['peer_photo']
     );
 
     $id = DB::instance(DB_NAME)->insert_row('issue', $data);
@@ -124,6 +125,11 @@ class form_controller extends base_controller {
   }
 
   public function p_main_body_edit($id) {
+    //echo Debug::dump($_POST);
+    //foreach ($_POST as $key => $value) {
+      //$value = Helpers::convert_chars($value);
+    //}
+    //echo Debug::dump($_POST);
 
     $result = 
       Helpers::distill_post_and_update($_POST, 'issue', $id);
