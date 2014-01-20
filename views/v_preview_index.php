@@ -71,6 +71,7 @@
   </div> <!-- end etoc -->
 </div> <!-- end .etoc_wrapper prefix_2 grid_8 -->
 <?=$control_panel_preview?>
+<?=$control_panel_code?>
 <!-- <div id='res_modify'> -->
 <!--   <img src="/css/images/add.gif" alt=""> -->
 <!--   <img src="/css/images/delete.gif" alt=""> -->

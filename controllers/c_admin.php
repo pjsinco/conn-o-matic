@@ -38,5 +38,16 @@ class admin_controller extends base_controller {
     //Router::redirect('/preview/page');
   }
 
+  public function control_panel_code($id) {
+    $this->template->content =
+      View::instance('v_admin_control_panel_code');
+
+    $client_files_head = Array(
+      '/css/main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);   
+    
+  }
 
 } # End of class

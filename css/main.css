@@ -30,6 +30,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
+  position: relative;
 }
 
 /* Grid >> Global
@@ -564,17 +565,18 @@ label {
 .etoc_wrapper {
   position: relative;
 }
-
-#admin {
+/*#control_panel {*/
+  /*position: relative;*/
+  /*left: 720px;*/
+  /*top: 20px;*/
+/*}*/
+.admin {
   cursor: pointer;
   width: 100px;
   height: 30px;
   background-color: ghostwhite;
   /*color: #ffffff;*/
   border: 2px solid #C0ACD3;
-  position: absolute;
-  top: 20px;
-  left: 860px;
   -webkit-border-top-right-radius: 25px;
   -webkit-border-bottom-right-radius: 25px;
   -moz-border-radius-topright: 25px;
@@ -582,18 +584,32 @@ label {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
 }
-#admin span {
+.admin span {
   display: inline-block;
-  position: absolute;
-  top: 7px;
-  left: 78px;
 }
-#admin p {
+.admin p {
   font-size: 14px;
   /*margin-left: 20px;*/
   position: relative;
   top: -10px;
   left: 19px;
+}
+.admin {
+  position: absolute;
+  left: 715px;
+}
+#preview {
+  /*position: absolute;*/
+  top: 30px;
+}
+#code {
+  position: absolute;
+  top: 77px;
+}
+.admin span {
+  position: absolute;
+  top: 7px;
+  left: 78px;
 }
 .ui-icon-eyeball {
   background-image: url('/css/images/eye.png');
@@ -652,3 +668,4 @@ label {
 input[type='text']:disabled {
   opacity: 0.4;
 }
+
