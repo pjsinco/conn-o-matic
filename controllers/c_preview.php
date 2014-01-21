@@ -26,8 +26,7 @@ class preview_controller extends base_controller {
       '/js/jquery.form.js',
       '/js/form_resources.js',
       '/js/preview_index.js',
-      '/js/admin_control_panel_preview.js',
-      '/js/admin_control_panel_code.js'
+      '/js/admin_control_panel_preview.js'
     );
     $this->template->client_files_body = 
       Utils::load_client_files($client_files_body);   
