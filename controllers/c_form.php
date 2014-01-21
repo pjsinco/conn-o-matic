@@ -262,12 +262,14 @@ class form_controller extends base_controller {
   }
 
   public function p_resources_delete($id, $res_id) {
-    $where = "WHERE id = $res_id";
-    $result = 
-      DB::instance(DB_NAME)->delete('resource', $where);
+    echo Debug::dump($id);
+    echo Debug::dump($res_id);
+    //$where = "WHERE id = $res_id";
+    //$result = 
+      //DB::instance(DB_NAME)->delete('resource', $where);
       
     //echo Debug::dump($result);
-    return $result;
+    //return $result;
       //Router::redirect('/preview/index/' . $_POST['conn_id']);
 
 
