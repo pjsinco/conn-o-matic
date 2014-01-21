@@ -274,7 +274,7 @@ $(document).ready(function() {
 
 
 
-          console.log('resid: ' + resid + '; action: ' + action + '; connId: ' + connId);
+          console.log('resid: ' + resId + '; action: ' + action + '; connId: ' + connId);
 
 
           // take the appropriate action
