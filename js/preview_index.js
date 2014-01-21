@@ -272,6 +272,11 @@ $(document).ready(function() {
           // get the connections id by parsing the page location
           var connId = parseInt(window.location.href.split('/').pop());
 
+
+
+          console.log('resid: ' + resid + '; action: ' + action + '; connId: ' + connId);
+
+
           // take the appropriate action
           switch (action) {
             case 'res_edit': // EDIT a res-to-ref
@@ -299,7 +304,6 @@ $(document).ready(function() {
                 modal: true,
                 buttons: {
                   "Delete this resource": function() {
-                    console.log('deleting resource');
                     $.ajax({
                       type: 'POST',
                       url: '/form/p_resources_delete/' 
