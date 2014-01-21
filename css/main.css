@@ -536,6 +536,11 @@ label {
   overflow-x: auto;  
 }
 
+.CodeMirror pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
 /*http://css3pie.com/demos/gradient-patterns/*/
 .etoc_create {
   background: url('/css/images/grid.png');
