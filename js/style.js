@@ -46,6 +46,7 @@ $(document).ready(function() {
   var mainH1Tag = {
     'color'         : '#111f4c',
     'font-size'     : '15px',
+    'line-height'   : '20px',
     'margin-bottom' : '0px',
     'margin-left'   : '20px',
     'margin-right'  : '20px',
