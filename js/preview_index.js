@@ -299,6 +299,7 @@ $(document).ready(function() {
                 modal: true,
                 buttons: {
                   "Delete this resource": function() {
+                    console.log('deleting resource');
                     $.ajax({
                       type: 'POST',
                       url: '/form/p_resources_delete/' 
