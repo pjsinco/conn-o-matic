@@ -277,16 +277,16 @@ $(document).ready(function() {
             case 'res_edit': // EDIT a res-to-ref
               var text = $(this).parent().prev().text();
               var link = $(this).parent().prev().attr('href');
-              $("input[name='id'").val(resId);
-              $("input[name='res'").val(text);
-              $("input[name='res_link'").val(link);
-              $("input[name='conn_id'").val(connId);
+              $("input[name='id']").val(resId);
+              $("input[name='res']").val(text);
+              $("input[name='res_link']").val(link);
+              $("input[name='conn_id']").val(connId);
               $('#resources_edit').dialog('open');
               break;
             case 'res_create': // CREATE a res-to-ref
-              $("input[name='conn_id'").val(connId);
-              $("input[name='res'").val('');
-              $("input[name='res_link'").val('');
+              $("input[name='conn_id']").val(connId);
+              $("input[name='res']").val('');
+              $("input[name='res_link']").val('');
               $('#resources_create').dialog('open');
               break;
             case 'res_delete': // DELETE a res-to-ref
