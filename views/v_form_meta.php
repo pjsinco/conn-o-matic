@@ -1,6 +1,6 @@
 <div class="prefix_2 grid_8 suffix_2">
   <div id="welcome">
-    <h1>Automatic <span><em>Connections</em> edition</span></h1>
+    <h1>Templatr <span><em>Connections</em> edition</span></h1>
     <form action="/form/p_meta" method="POST" accept-charset="utf-8">
         <label class='title' for='edition'>Edition:</label>
         <select id='edition' name='edition'>

@@ -4,12 +4,12 @@ $(document).ready(function() {
   $('.admin').hover(function(event) {
     //console.log($(this)[0].id);
     //console.log($(this).prop('id'));
-    $(this).css('background-color', 'darkorange');
+    //$(this).css('background-color', 'darkorange');
     $(this).animate({
       left: '778px'
     }, 'fast');
   }, function () {
-    $(this).css('background-color', 'ghostwhite');
+    //$(this).css('background-color', 'ghostwhite');
     $(this).animate({
       left: '715px'
     }, 'fast');
