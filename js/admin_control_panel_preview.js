@@ -6,12 +6,12 @@ $(document).ready(function() {
     //console.log($(this).prop('id'));
     //$(this).css('background-color', 'darkorange');
     $(this).animate({
-      left: '778px'
+      left: '890px'
     }, 'fast');
   }, function () {
     //$(this).css('background-color', 'ghostwhite');
     $(this).animate({
-      left: '715px'
+      left: '828px'
     }, 'fast');
   }
   );

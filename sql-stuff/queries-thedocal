@@ -1,0 +1,46 @@
+insert into docal_user (f_name, l_name, title, email)
+  values ('Carolyn', 'Schierhorn', 'Staff Editor', 'cschierhorn@osteopathic.org')
+
+  values ('Patrick', 'Sinco', 'Managing Editor', 'psinco@osteopathic.org')
+
+insert into docal_article (title, month, year, desc)
+  values("How osteopathic medicine crossed the Atlantic
+", 
+
+
+
+
+CREATE TABLE docal_article (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title varchar(256),
+  created INT,
+  modified INT,
+  month ENUM('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+  `year` YEAR(4),
+  `desc` TEXT
+) ENGINE InnoDB CHARSET=utf8 AUTO_INCREMENT=5
+
+CREATE TABLE docal_user (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_name VARCHAR(32),
+  f_name VARCHAR(128),
+  l_name VARCHAR(128),
+  title VARCHAR(128),
+  created INT,
+  modified INT,
+  token VARCHAR(64),
+  password VARCHAR(64),
+  last_login INT, 
+  timezone VARCHAR(64),
+  email VARCHAR(128),
+  location VARCHAR(128)
+) ENGINE InnoDB CHARSET=utf8 AUTO_INCREMENT=5
+
+CREATE TABLE docal_works_on (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  role VARCHAR(128),
+  user_id INT,
+  article_id INT,
+  FOREIGN KEY (user_id) references docal_user(id),
+  FOREIGN KEY (article_id) references docal_article(id)
+) ENGINE InnoDB CHARSET=utf8 AUTO_INCREMENT=5

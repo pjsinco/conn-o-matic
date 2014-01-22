@@ -576,6 +576,8 @@ label {
   /*top: 20px;*/
 /*}*/
 .admin {
+  position: absolute;
+  left: 828px;
   cursor: pointer;
   width: 100px;
   height: 30px;
@@ -600,8 +602,6 @@ label {
   left: 19px;
 }
 .admin {
-  position: absolute;
-  left: 715px;
 }
 #preview {
   /*position: absolute;*/
