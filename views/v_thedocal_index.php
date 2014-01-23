@@ -5,6 +5,43 @@
     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div> <!-- end jumbotron -->
   
+  <h3>January <small>2014</small></h3>
+  <div class="panel-group" id='accordion'>
+    <div class='panel panel-default'>
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle='collapse' data-parent='#accordion' href="#collapse-1">
+            Cross the Atlantic
+          </a>
+        </h4>
+      </div> <!-- end panel-heading -->
+      <div id="collapse-1" class='panel-collapse collapse in'>
+        <div class="panel-body">
+          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        </div> <!-- end panel-body -->
+      </div> <!-- end collapse-1 -->
+    </div> <!-- end panel-default -->
+
+    <div class='panel panel-default'>
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle='collapse' data-parent='#accordion' href="#collapse-2">
+            Sem Dolor Condimentum
+          </a>
+        </h4>
+      </div> <!-- end panel-heading -->
+      <div id="collapse-2" class='panel-collapse collapse in'>
+        <div class="panel-body">
+          Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod.</p>
+        </div> <!-- end panel-body -->
+      </div> <!-- end collapse-2-->
+    </div> <!-- end panel-default -->
+
+  </div> <!-- end panel-group -->
+
+
+
+
   <div class="row marketing">
     <div class="col-lg-12">
       <h3>January <small>2014</small><span class='text-info pull-right'><small>Expand all</small></span></h3>

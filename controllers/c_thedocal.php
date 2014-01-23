@@ -17,7 +17,6 @@ class thedocal_controller extends base_controller {
 
     $client_files_head = Array(
       '/css/bootstrap.css',
-      '/css/bootstrap-theme.css',
       '/css/thedocal_main.css'
     );
     $this->template->client_files_head = 
@@ -29,8 +28,6 @@ class thedocal_controller extends base_controller {
     );
     $this->template->client_files_body = 
       Utils::load_client_files($client_files_body);   
-
-    
   
     // render view
     echo $this->template;
@@ -43,12 +40,10 @@ class thedocal_controller extends base_controller {
 
     $client_files_head = Array(
       '/css/bootstrap.css',
-      '/css/bootstrap-theme.css',
       '/css/thedocal_main.css'
     );
     $this->template->client_files_head = 
       Utils::load_client_files($client_files_head);   
-
     
     $article = CalHelpers::get_article($id);
     echo Debug::dump($article);
@@ -70,7 +65,6 @@ class thedocal_controller extends base_controller {
 
     $client_files_head = Array(
       '/css/bootstrap.css',
-      '/css/bootstrap-theme.css',
       '/css/thedocal_main.css'
     );
     $this->template->client_files_head = 
@@ -84,6 +78,10 @@ class thedocal_controller extends base_controller {
 
     // render view
     echo $this->template;
+  }
+
+  public function admin() {
+        
 
   }
   	
