@@ -1,6 +1,11 @@
+select *
+from thedocal_article
+where str_to_date(month, '%M') >= str_to_date('February', '%M')
+
 select
-from 
-where
+from thedocal_article a inner join thedocal_user u
+  on a.author = u.id 
+    or a.editor = u.id
 
 
 select *

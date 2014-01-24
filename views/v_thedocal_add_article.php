@@ -5,12 +5,12 @@
 
   <div class="row">
     <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-      <h3>All articles</h3>
-      <ul class='list-group'>
-      <?php foreach($articles as $article): ?>
-        <li class='list-group-item'><?=$article['title']?><span class='pull-right'></span></li>
-      <?php endforeach; ?>      
-      </ul>
+<!--       <h3>All articles</h3> -->
+<!--       <ul class='list-group'> -->
+<!--       <?php //foreach($articles as $article): ?> -->
+<!--         <li class='list-group-item'><?=$article['title']?><span class='pull-right'></span></li> -->
+      <?php //endforeach; ?>      
+<!--       </ul> -->
     </div> <!-- end col-3 -->
 
     <!--     start form -->

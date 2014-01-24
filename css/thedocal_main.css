@@ -2,7 +2,11 @@ body {
   font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 }
 
-.jumbotron h1 {
+#edit_cal.jumbotron  {
   /*text-align: center;*/
+}
+
+.panel-group h4 {
+  line-height: 1.4em;
 }
 

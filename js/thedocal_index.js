@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log('arsenal');
 
-  $('.collapse').collapse();
+  //$('.collapse').collapse();
 
 //  $(function() {
 //    $('.accordion').accordion({
