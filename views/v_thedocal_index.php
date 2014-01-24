@@ -14,9 +14,9 @@
           <div class='panel panel-primary'>
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a data-toggle='collapse' data-parent='#accordion' href="#collapse-<?=$article['id']?>">
+<!--                 <a data-toggle='collapse' data-parent='#accordion' href="#collapse-<?//=$article['id']?>"> -->
                   <?=$article['title']?>
-                </a>
+<!--                 </a> -->
               </h4>
             </div> <!-- end panel-heading -->
             <div id="collapse-<?=$article['id']?>" class='panel-collapse collapse in'>
