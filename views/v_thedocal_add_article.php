@@ -4,7 +4,6 @@
   </div> <!-- end row -->
 
   <div class="row">
-    <?php echo Debug::dump($articles); ?>
     <div class="col-3 col-sm-3 col-md-3 col-lg-3">
       <h3>All articles</h3>
       <ul class='list-group'>
@@ -57,8 +56,8 @@
         <div class="form-group">
           <label for="author">Author</label>
           <select name="author" id="author" class='form-control'>
-            <?php foreach($authors as $author): ?>
-            <option value="<?=$author['id']?>"><?=$author['f_name']?></option>
+            <?php foreach($users as $user): ?>
+            <option value="<?=$user['id']?>"><?=$user['f_name']?></option>
             <?php endforeach; ?>
           </select>
         </div> <!-- end form-group -->
@@ -66,8 +65,8 @@
         <div class="form-group">
           <label for="editor">Editor</label>
           <select name="editor" id="year" class='form-control'>
-            <?php foreach($authors as $author): ?>
-            <option value="<?=$author['id']?>"><?=$author['f_name']?></option>
+            <?php foreach($users as $user): ?>
+            <option value="<?=$user['id']?>"><?=$user['f_name']?></option>
             <?php endforeach; ?>
           </select>
         </div> <!-- end form-group -->

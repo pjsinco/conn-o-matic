@@ -8,7 +8,7 @@ class CalHelpers
     
   }
 
-  public static function get_authors() {
+  public static function get_users() {
     $q = "
       SELECT *
       FROM thedocal_user
@@ -19,21 +19,57 @@ class CalHelpers
     return $results;
   }
 
+//  public static function get_articles_by_month($month, $year) {
+//    $q = "
+//      SELECT * 
+//      FROM thedocal_article 
+//      WHERE month = '$month'
+//        AND yr = '$year'
+//    ";
+//
+//    $articles = DB::instance(DB_NAME)->select_rows($q);
+//
+//    for ($i = 0; $i < count($articles); $i++) {
+//      $q = "
+//        select f_name
+//        from thedocal_user
+//        where id = " . $articles[$i]['author'];
+//
+//      $articles[$i]['author'] 
+//        = DB::instance(DB_NAME)->select_field($q);
+//
+//      $q = "
+//        select f_name
+//        from thedocal_user
+//        where id = " . $articles[$i]['editor'];
+//
+//      $articles[$i]['editor'] 
+//        = DB::instance(DB_NAME)->select_field($q);
+//    }
+//
+//    return $articles;
+//    
+//  }
+
+  public function add_roles($article) {
+
+  }
+
+
+  // returns a 2D array of articles, indexed by month
   public static function get_articles() {
-    // get articles
+    // get upcoming articles
+    $cur_month = date('F', Time::now());
     $q = "
       SELECT * 
-      FROM thedocal_article 
+      FROM thedocal_article
+      WHERE str_to_date(month, '%M') >= str_to_date('$cur_month', '%M')
     ";
 
     $articles = DB::instance(DB_NAME)->select_rows($q);
-    //echo Debug::dump($articles);
-    //echo Debug::dump(count($articles));
-    //echo Debug::dump($articles[0]['author']);
-    //echo Debug::dump($articles[0]['editor']);
+
 
     for ($i = 0; $i < count($articles); $i++) {
-      
       $q = "
         select f_name
         from thedocal_user
@@ -51,39 +87,42 @@ class CalHelpers
         = DB::instance(DB_NAME)->select_field($q);
     }
 
-    return $articles;
-//    // get roles
-//    $q = "
-//      select w.role, u.f_name, w.article_id
-//      from thedocal_works_on w inner join thedocal_user u
-//        on w.user_id = u.id
-//      where w.article_id in (
-//        select id
-//        from thedocal_article
-//      )
-//    ";
-//
-//    $roles = DB::instance(DB_NAME)->select_rows($q);
-//
-//
-//
-//    // author comes before editor;
-//    // see query's 'order by'
-//    for ($i = 0; $i < count($articles); $i++) {
-//      for ($j = $i; $j < count; $j += 2) {
-//        $articles[$i]['author'] = $roles[$j]['f_name']; 
-//        $articles[$i]['editor'] = $roles[$j + 1]['f_name']; 
-//      }
-//    }
-//
-    //foreach ($articles as $article) {
-      //$article['author'] = $roles[0]['f_name'];
-      //$article['editor'] = $roles[1]['f_name'];
-    //}
-    //$articles[0]['author'] = $roles[0]['f_name'];
-    //$articles[0]['editor'] = $roles[1]['f_name'];
+    foreach ($articles as $article) {
+      $final_month = strtotime($cur_month);
+      //echo Debug::dump(strtotime($article['month']));
+      if (strtotime($article['month']) > $final_month) {
+        $final_month = strtotime($article['month']);
+      }
+    }
 
-    return $articles;
+    // sort articles by month
+    $by_month = array(
+      'January' => array(),
+      'February' => array(),
+      'March' => array(),
+      'April' => array(),
+      'May' => array(),
+      'June' => array(),
+      'July' => array(),
+      'August' => array(),
+      'September' => array(),
+      'October' => array(),
+      'November' => array(),
+      'December' => array()
+    );
+
+    foreach ($articles as $article) {
+      array_push($by_month[$article['month']], $article);
+    }
+
+    // strip empty months
+    foreach ($by_month as $key => $value) {
+      if (empty($by_month[$key])) {
+        unset($by_month[$key]);
+      }
+    }
+
+    return $by_month;
   }
 
   public static function get_article($a_id) {

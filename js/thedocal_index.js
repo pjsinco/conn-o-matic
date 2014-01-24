@@ -1,14 +1,14 @@
 $(document).ready(function() {
   console.log('arsenal');
 
-  //$('.collapse').collapse();
+  $('.collapse').collapse();
 
-  $(function() {
-    $('.accordion').accordion({
-      active: false,
-      collapsible: true,
-      heightStyle: 'content'
-    });
-  });
+//  $(function() {
+//    $('.accordion').accordion({
+//      active: false,
+//      collapsible: true,
+//      heightStyle: 'content'
+//    });
+//  });
 
 });
