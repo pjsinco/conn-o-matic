@@ -1,3 +1,36 @@
+select
+from 
+where
+
+
+select *
+from thedocal_article a inner join thedocal_works_on w
+  on a.id = w.article_id
+
+where a.author_id = (
+  select id
+  from thedocal_user
+  where 
+)
+
+from thedocal_user u inner join thedocal
+
+select
+from thedocal_works_on w
+where w.
+
+
+select
+from
+where
+
+insert into thedocal_works_on (role, user_id, article_id)
+  values ('Author', 6, 5)
+
+
+alter table thedocal_article
+  change content blurb TEXT
+
 insert into thedocal_article (title, month, yr, content)
   values(
     "Q&A: Dr. Hahn",
@@ -30,7 +63,11 @@ CREATE TABLE thedocal_article (
   modified INT,
   month ENUM('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
   yr YEAR(4),
-  content TEXT
+  blurb TEXT,
+  author INT,
+  editor INT,
+  foreign key (author) references thedocal_user(id),
+  foreign key (editor) references thedocal_user(id)
 ) ENGINE InnoDB CHARSET=utf8 AUTO_INCREMENT=5
 
 CREATE TABLE thedocal_user (
@@ -54,6 +91,6 @@ CREATE TABLE thedocal_works_on (
   role VARCHAR(128),
   user_id INT,
   article_id INT,
-  FOREIGN KEY (user_id) references docal_user(id),
-  FOREIGN KEY (article_id) references docal_article(id)
+  FOREIGN KEY (user_id) references thedocal_user(id),
+  FOREIGN KEY (article_id) references thedocal_article(id)
 ) ENGINE InnoDB CHARSET=utf8 AUTO_INCREMENT=5
