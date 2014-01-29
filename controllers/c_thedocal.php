@@ -39,6 +39,33 @@ class thedocal_controller extends base_controller {
 
   }
 
+  public function advertisers() {
+    $this->template->content =
+      View::instance('v_thedocal_advertisers');
+
+    $client_files_head = Array(
+      '/css/bootstrap.css',
+      '/css/thedocal_main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);   
+
+    // pass all articles to view
+    $articles_by_month = CalHelpers::get_articles();
+
+    $this->template->content->articles_by_month = $articles_by_month;
+    
+    $client_files_body = Array(
+      '/js/bootstrap.min.js'
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);   
+
+    // render view
+    echo $this->template;
+    
+  }
+
   public function article($id) {
     $this->template->content =
       View::instance('v_thedocal_article');
