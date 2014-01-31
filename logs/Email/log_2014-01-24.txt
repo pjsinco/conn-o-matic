@@ -1,0 +1,30 @@
+2014-01-24 17:42:54 - INFO --> -------------------------- 
+2014-01-24 17:42:54 - INFO --> Controller/Method: thedocal/index 
+2014-01-24 17:42:54 - INFO --> From: Conn-O-Matic (psinco@osteopathic.org) 
+2014-01-24 17:42:54 - INFO --> To: Conn-O-Matic (psinco@osteopathic.org),  
+2014-01-24 17:42:54 - INFO --> CC:  
+2014-01-24 17:42:54 - INFO --> BCC:  
+2014-01-24 17:42:54 - INFO --> Subject: Conn-O-Matic SQL Error 
+2014-01-24 17:42:54 - INFO --> Body: <h2>SQL Error</h2> 
+      SELECT * 
+      FROM thedocal_article
+      WHERE str_to_date(month, '%M') >= str_to_date('January', '%M')
+     Table 'rempatri_work_10rempatrick_com.thedocal_article' doesn't exist<h2>Query History</h2>0 = 
+      SELECT * 
+      FROM thedocal_article
+      WHERE str_to_dat 
+2014-01-24 17:43:15 - INFO --> -------------------------- 
+2014-01-24 17:43:15 - INFO --> Controller/Method: thedocal/index 
+2014-01-24 17:43:15 - INFO --> From: Conn-O-Matic (psinco@osteopathic.org) 
+2014-01-24 17:43:15 - INFO --> To: Conn-O-Matic (psinco@osteopathic.org),  
+2014-01-24 17:43:15 - INFO --> CC:  
+2014-01-24 17:43:15 - INFO --> BCC:  
+2014-01-24 17:43:15 - INFO --> Subject: Conn-O-Matic SQL Error 
+2014-01-24 17:43:15 - INFO --> Body: <h2>SQL Error</h2> 
+      SELECT * 
+      FROM thedocal_article
+      WHERE str_to_date(month, '%M') >= str_to_date('January', '%M')
+     Table 'rempatri_work_10rempatrick_com.thedocal_article' doesn't exist<h2>Query History</h2>0 = 
+      SELECT * 
+      FROM thedocal_article
+      WHERE str_to_dat 
