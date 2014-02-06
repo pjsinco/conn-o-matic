@@ -171,7 +171,7 @@ class thedocal_controller extends base_controller {
       Utils::load_client_files($client_files_head);   
 
     $client_files_body = array(
-      '/js/boostrap.min.js'
+      '/js/bootsrap.min.js'
     );
     $this->template->client_files_body = 
       Utils::load_client_files($client_files_body);   
@@ -194,6 +194,36 @@ class thedocal_controller extends base_controller {
     $user_id = DB::instance(DB_NAME)->insert('thedocal_user', $_POST);
 
     echo 'You\'re signed up';
+  }
+
+  public function login() {
+    $this->template->content = 
+      View::instance('v_thedocal_login');
+  
+    $this->template->title = 'Log in';
+  
+    $client_files_head = array(
+      '/css/bootstrap.css',
+      '/css/thedocal_main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);   
+
+    $client_files_body = array(
+      '/js/bootsrap.min.js'
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);   
+
+    // render template
+    echo $this->template;
+
+  }
+
+  public function p_login() {
+
+    echo Debug::dump($_POST);
+
   }
   	
 } // eoc
