@@ -145,7 +145,6 @@ class thedocal_controller extends base_controller {
     
     //render view
     echo $this->template;
-
   }
 
   public function p_add_article() {
@@ -156,6 +155,45 @@ class thedocal_controller extends base_controller {
     $id = DB::instance(DB_NAME)->insert('thedocal_article', $_POST);
     
     Router::redirect('/thedocal/add_article');
+  }
+
+  public function signup() {
+    $this->template->content = 
+      View::instance('v_thedocal_signup');
+  
+    $this->template->title = 'Sign up';
+  
+    $client_files_head = array(
+      '/css/bootstrap.css',
+      '/css/thedocal_main.css'
+    );
+    $this->template->client_files_head = 
+      Utils::load_client_files($client_files_head);   
+
+    $client_files_body = array(
+      '/js/boostrap.min.js'
+    );
+    $this->template->client_files_body = 
+      Utils::load_client_files($client_files_body);   
+
+    // render template
+    echo $this->template;
+  }
+
+  public function p_signup() {
+    //echo Debug::dump($_POST); 
+
+    $_POST['created'] = Time::now();
+    $_POST['modified'] = Time::now();
+    $_POST['password'] = sha1(PASSWORD_SALT . $_POST['password']);
+    $_POST['token'] = 
+      sha1(TOKEN_SALT . $_POST['email'] . 
+        Utils::generate_random_string());
+
+    // insert user into db
+    $user_id = DB::instance(DB_NAME)->insert('thedocal_user', $_POST);
+
+    echo 'You\'re signed up';
   }
   	
 } // eoc
