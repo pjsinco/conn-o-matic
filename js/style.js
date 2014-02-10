@@ -47,7 +47,7 @@ $(document).ready(function() {
     'color'         : '#111f4c',
     'font-size'     : '15px',
     'line-height'   : '20px',
-    'margin-bottom' : '0px',
+    'margin-bottom' : '10px',
     'margin-left'   : '20px',
     'margin-right'  : '20px',
     'margin-top'    : '10px'
@@ -125,7 +125,7 @@ $(document).ready(function() {
 
   // style kicker p tags
   $('#main_body p').css(leadInPTag).attr({
-    'id': 'main_body_text_to_edit',
+    'class': 'main_body_text_to_edit',
     //'class': 'selectable'
   });
 

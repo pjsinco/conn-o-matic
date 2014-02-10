@@ -8,7 +8,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td height="0" width="212" align="left" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;"><img src="<?=$peer_photo?>" height="139" width="117" style="margin-top: 0px; margin-bottom: 0px;" alt="#" title=""></td>
+                      <td height="0" width="212" align="left" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;"><img src="<?=$peer_photo?>" height="139" width="117" style="margin-top: 0px; margin-bottom: 0px;" alt="#" title="" /></td>
                     </tr>
                     <tr>
                       <td height="0" width="212" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;">

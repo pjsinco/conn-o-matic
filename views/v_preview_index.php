@@ -33,13 +33,13 @@
                   <tr>
                     <td class='selectable' id='connections_flag' height="0" width="612" align="left" valign="top" colspan="2">
                       <a href="http://www.jaoa.org/" title="JAOA--The Journal of the American Osteopathic Association: Connections Newsletter: <?=$connections_date?>" style="color: #111f43;">
-                        <img src="<?=$connections_flag?>" alt="JAOA flag" width="612" height="135" style="border: none; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" title="JAOA flag">
+                        <img src="<?=$connections_flag?>" alt="JAOA flag" width="612" height="135" style="border: none; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" title="JAOA flag" />
                       </a>
                     </td>
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td class='selectable' id='connections_edition_flag' height="0" width="612" align="left" valign="bottom" colspan="2"><img src="<?=$connections_quarter_flag?>" alt="Connections" width="612" height="33" title="Connections - <?=$connections_quarter?>"></td>
+                    <td class='selectable' id='connections_edition_flag' height="0" width="612" align="left" valign="bottom" colspan="2"><img src="<?=$connections_quarter_flag?>" alt="Connections" width="612" height="33" title="Connections - <?=$connections_quarter?>" /></td>
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
