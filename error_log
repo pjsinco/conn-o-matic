@@ -1,9 +1,0 @@
-[23-Jan-2014 09:58:00 America/Chicago] PHP Warning:  Missing argument 1 for form_controller::p_meta_verify() in /home/rempatri/public_html/work.10rempatrick.com/controllers/c_form.php on line 29
-[23-Jan-2014 09:58:00 America/Chicago] PHP Notice:  Undefined variable: file in /home/rempatri/public_html/work.10rempatrick.com/controllers/c_form.php on line 31
-[23-Jan-2014 09:58:03 America/Chicago] PHP Warning:  Missing argument 1 for form_controller::p_meta_verify() in /home/rempatri/public_html/work.10rempatrick.com/controllers/c_form.php on line 29
-[23-Jan-2014 09:58:03 America/Chicago] PHP Notice:  Undefined variable: file in /home/rempatri/public_html/work.10rempatrick.com/controllers/c_form.php on line 31
-[27-Jan-2014 13:57:56 America/Chicago] PHP Notice:  Undefined variable: article in /home/rempatri/public_html/work.10rempatrick.com/views/v_thedocal_add_article.php on line 11
-[27-Jan-2014 13:58:42 America/Chicago] PHP Notice:  Undefined variable: article in /home/rempatri/public_html/work.10rempatrick.com/views/v_thedocal_add_article.php on line 11
-[27-Jan-2014 13:59:12 America/Chicago] PHP Notice:  Undefined variable: article in /home/rempatri/public_html/work.10rempatrick.com/views/v_thedocal_add_article.php on line 11
-[31-Jan-2014 15:28:29 America/Chicago] PHP Notice:  Undefined variable: article in /home/rempatri/public_html/work.10rempatrick.com/views/v_thedocal_add_article.php on line 11
-[31-Jan-2014 15:31:46 America/Chicago] PHP Notice:  Undefined variable: article in /home/rempatri/public_html/work.10rempatrick.com/views/v_thedocal_add_article.php on line 11
