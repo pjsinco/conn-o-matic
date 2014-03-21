@@ -28,6 +28,7 @@ class form_controller extends base_controller {
 
   public function p_meta_verify($file) {
     //return $file;
+    // return a 1 if true
     echo Helpers::verify_file($file);
   }
 

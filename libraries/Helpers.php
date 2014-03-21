@@ -44,22 +44,17 @@ class Helpers
     // return as a string
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
+
     $ret = curl_exec($ch);
+    $info = curl_getinfo($ch);
+    curl_close($ch);
 
-    //http://us2.php.net/manual/en/function.curl-getinfo.php
-    if (empty($ret)) {
-      die(curl_error($ch));
-      curl_close($ch);
-    } else {
-      $info = curl_getinfo($ch);
-      curl_close($ch);
-    }
-
-    if ($info['http_code'] == 200) {
+    // if we got an image, not 'text/html'
+    if ($info['content_type'] == 'image/jpeg') {
       return true;
-    } 
-
-    return false;
+    } else {
+      return false;
+    }
   }
 
   /**

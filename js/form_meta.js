@@ -20,8 +20,8 @@ $(document).ready(function() {
         // put up the spinner while we're waiting
         $('.validate').toggleClass('ajax_load').fadeIn();
       },
-      success: function(response) { // found it!
-        if (response == 1) {
+      success: function(data) { // found it!
+        if (data) {
           $('.validate')
             .toggleClass('success ajax_load')
             .html('<p>Found it!</p>')
