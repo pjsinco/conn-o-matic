@@ -217,13 +217,33 @@ $(document).ready(function() {
    */
   $('#poll').click(function() {
     var pollLink = $(this).find('a').attr('href');
+    var pollHead = $('#poll_h').first().text().trim();
     var pollQ = $('#poll_q').html().trim();
 
+    console.log(pollQ);
+    console.log(pollHead);
     $('#poll_q_text').val(pollQ);
     $('#poll_link_text').val(pollLink);
+    $('#poll_head_text').val(pollHead);
+
+    // set up code-editor textarea for editing headline
+//    var cmHead = 
+//      CodeMirror.fromTextArea(document.getElementById('poll_head_text'),
+//      {
+//        mode: {
+//          name: 'xml',
+//          htmlMode: true
+//        }, 
+//        tabMode: 'indent',
+//        tabSize: 2,
+//        lineNumbers: true,
+//        lineWrapping: true,
+//        keyMap: 'default',
+//        theme: 'eclipse'
+//      });
 
     // set up with code editor
-    var cm = 
+    var cmBody = 
       CodeMirror.fromTextArea(document.getElementById('poll_q_text'), 
       {
         mode: {
@@ -239,7 +259,9 @@ $(document).ready(function() {
       });
 
     $('#poll_edit').dialog('open');
-    cm.refresh();
+
+    //cmHead.refresh();
+    cmBody.refresh();
   });
 
 

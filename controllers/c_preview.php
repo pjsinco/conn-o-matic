@@ -87,6 +87,8 @@ class preview_controller extends base_controller {
     // pass poll to view and set up
     $this->template->content->main->poll =
       View::instance('v_preview_poll');
+    $this->template->content->main->poll->poll_head =
+      $issue['poll_head'];
     $this->template->content->main->poll->poll_link =
       $issue['poll_link'];
     $this->template->content->main->poll->poll_q =

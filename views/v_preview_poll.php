@@ -3,7 +3,9 @@
                           <tbody>
                             <tr>
                               <td class='selectable' id='poll' height="0" width="400">
-                                <h2 style="color: #111f43; font-size: 15px; margin-top: 10px; margin-right: 20px; margin-bottom: 3px; margin-left: 15px;"><a href="<?=$poll_link?>" title="Online poll" style="color: #111f43;">Take Our Online Poll</a></h2>
+                                <div id="poll_h">
+                                  <h2 style='color: #111f43; font-size: 15px; margin-top: 10px; margin-right: 20px; margin-bottom: 3px; margin-left: 15px'><?=$poll_head?></h2>
+                                </div>
                                 <div id="poll_q">
                                   <?=$poll_q?>
                                 </div>

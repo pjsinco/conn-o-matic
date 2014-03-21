@@ -25,7 +25,7 @@
   
           <label for="peer_photo_file">Peer photo file name</label><br>
           <input type='text' name="peer_photo" id="peer_photo_file" required><br>
-          <input disabled class='btn' type="submit" value="Set">
+          <input disabled class='btn' type="submit" value="Get started">
           <div class="validate"></div>
       </form>
   

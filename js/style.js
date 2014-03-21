@@ -78,6 +78,15 @@ $(document).ready(function() {
     'color' : '#111f43'
   };
 
+//  var pollH2Tag = {
+//    'color'         : '#111f43',
+//    'font-size'     : '15px',
+//    'margin-top'    : '10px',
+//    'margin-right'  : '20px',
+//    'margin-bottom' : '3px',
+//    'margin-left'  : '15px'
+//  };
+
   var pollPTag = {
     'font-size'     : '13px',
     'color'         : '#333333',
@@ -149,6 +158,9 @@ $(document).ready(function() {
 
   // style poll p tag
   $('#poll p').css(pollPTag);
+
+  // style poll h2 tag
+  //$('#poll h2').css(pollH2Tag);
 
   // style peer h2 tag (name)
   $('#peer_name h2').css(peerH2Tag);
