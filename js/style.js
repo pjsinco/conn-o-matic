@@ -97,8 +97,12 @@ $(document).ready(function() {
     'margin-bottom' : '10px',
     'margin-left'   : '15px',
     'text-align'    : 'left'
-
   };
+
+  var pollATag = {
+    'color'         : 'rgb(17, 31, 67)'
+  };
+  
 
   var peerH2Tag = {
     'margin-bottom' : '10px',
@@ -158,6 +162,9 @@ $(document).ready(function() {
 
   // style poll p tag
   $('#poll p').css(pollPTag);
+
+  // style poll p tag
+  $('#poll a').css(pollATag);
 
   // style poll h2 tag
   //$('#poll h2').css(pollH2Tag);
