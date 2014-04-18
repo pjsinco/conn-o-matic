@@ -13,7 +13,7 @@
           <?php foreach ($articles as $article): ?>
           <div class='panel panel-primary'>
             <div class="panel-heading">
-              <h4 class="panel-title">
+              <h4 class="panel-title" title="<?=$article['id']?>">
 <!--                 <a data-toggle='collapse' data-parent='#accordion' href="#collapse-<?//=$article['id']?>"> -->
                   <?=$article['title']?>
 <!--                 </a> -->
