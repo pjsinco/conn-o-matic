@@ -3,7 +3,7 @@
                   <tbody>
                     <tr>
                       <td height="0" width="212" align="left" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;">
-                        <div id='peer_title'><?=$peer_title?></div>
+                        <div id='peer_title' style='height: 16px'><?=$peer_title?></div>
                         <div id="peer_name"><?=$peer_name?></div>
                       </td>
                     </tr>
