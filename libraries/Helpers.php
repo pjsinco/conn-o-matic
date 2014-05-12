@@ -229,6 +229,7 @@ class Helpers
       'poll_head'   => '***FEEDBACK*REQUEST*HEAD***',
       'poll_q'      => '<p>***FEEDBACK*REQUEST*TEXT***</p>',
       'poll_link'   => 'http://',
+      'peer_title'  => '<h3>***MEET*YOUR*PEER**</h3>',
       'peer_name'   => '<h2>***PEER*NAME***</h2>',
       'peer_occ'    => '<p>***PEER*OCCUPATION***</p>',
       'peer_school' => '<p>***PEER*SCHOOL***</p>',

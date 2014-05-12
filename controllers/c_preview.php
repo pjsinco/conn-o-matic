@@ -103,6 +103,8 @@ class preview_controller extends base_controller {
     // pass meet-your-peer to view and set up
     $this->template->content->peer =
       View::instance('v_preview_peer');
+    $this->template->content->peer->peer_title =
+      $issue['peer_title'];
     $this->template->content->peer->peer_name =
       $issue['peer_name'];
     $this->template->content->peer->peer_occ =

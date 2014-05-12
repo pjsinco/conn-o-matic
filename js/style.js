@@ -103,12 +103,19 @@ $(document).ready(function() {
     'color'         : 'rgb(17, 31, 67)'
   };
   
-
   var peerH2Tag = {
     'margin-bottom' : '10px',
     'font-size'     : '17px',
     'color'         : '#111f43',
     'margin-top'    : '3px'
+  };
+
+  var peerH3Tag = {
+    'margin-bottom': '0px', 
+    'font-size': '14px', 
+    'color': '#913a20',
+    'margin-top': '10px',
+    'text-transform': 'uppercase'
   };
 
   var peerPTag = {
@@ -168,6 +175,9 @@ $(document).ready(function() {
 
   // style poll h2 tag
   //$('#poll h2').css(pollH2Tag);
+  
+  // style peer h2 tag (name)
+  $('#peer_title h3').css(peerH3Tag);
 
   // style peer h2 tag (name)
   $('#peer_name h2').css(peerH2Tag);

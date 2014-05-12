@@ -362,10 +362,32 @@ $(document).ready(function() {
    * Edit peer
    */
   $('#peer').click(function() {
+    // set up title
+    var peerTitle = $('#peer_title').html().trim();
+    $('#peer_title_text').val(peerTitle);
+
+    // set up with code editor
+    var cmTitle = 
+      CodeMirror.fromTextArea(document.getElementById('peer_title_text'), 
+      {
+        mode: {
+          name: 'xml',
+          htmlMode: true
+        }, 
+        tabMode: 'indent',
+        tabSize: 2,
+        lineNumbers: true,
+        lineWrapping: true,
+        keyMap: 'default',
+        theme: 'eclipse'
+      });
+
 
     // set up name
     var peerName = $('#peer_name').html().trim();
     $('#peer_name_text').val(peerName);
+
+    console.log(peerName);
 
     // set up with code editor
     var cmName = 
@@ -470,6 +492,7 @@ $(document).ready(function() {
     $('#peer_edit').dialog('open');
 
     // fresh all code editors so they show up 
+    cmTitle.refresh();
     cmName.refresh();
     cmOcc.refresh();
     cmSchool.refresh();

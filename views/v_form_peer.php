@@ -1,7 +1,10 @@
 <form action="/form/p_peer_edit/<?=$id;?>" method="POST" accept-charset="utf-8">
 <fieldset>
-  <legend>Meet Your Peer</legend>
+  <legend>Meet Your ...</legend>
   <p>
+    <label for="peer_title_text">&lt;h3&gt;MEET YOUR ...&lt;/h3&gt;</label><br>
+    <textarea class='peer' name="peer_title" rows='3' id="peer_title_text" required></textarea><br>
+
     <label for="peer_name_text">&lt;h2&gt;Name&lt;/h2&gt;</label><br>
     <textarea class='peer' name="peer_name" rows='3' id="peer_name_text" required></textarea><br>
 

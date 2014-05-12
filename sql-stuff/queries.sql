@@ -1,4 +1,4 @@
-alter table issu
+alter table issue
   modify edition ENUM('Peer Reviewers', 'Editorial Board', 'Editorial Advisory Board') NOT NULL
 
 alter table issue
