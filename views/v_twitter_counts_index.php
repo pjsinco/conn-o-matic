@@ -1,2 +1,2 @@
 <?=$message?>
-<?=$followers?>
+<?php var_dump($followers); ?>
