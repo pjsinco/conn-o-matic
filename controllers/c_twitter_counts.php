@@ -33,8 +33,10 @@ class twitter_counts_controller extends base_controller {
     $this->template->content->followers = 
       TCHelpers::instance('TheDOmagazine')->get_followers();
 
-    Debug::dump(TCHelpers::instance('TheDOmagazine')->get_followers());
+    //echo Debug::dump(TCHelpers::instance('TheDOmagazine')->get_followers());
+    echo Debug::dump(TCHelpers::instance('TheDOmagazine')->get_retweets());
 
+    
 
     // render view
     echo $this->template;

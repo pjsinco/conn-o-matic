@@ -14,6 +14,10 @@ class TCHelpers
   private $screen_name;
   private $cache_get_followers;
   private $cache_get_followers_id;
+  private $cache_get_retweets;
+  private $cache_get_retweets_id;
+  private $cache_get_mentions;
+  private $cache_get_mentions_id;
   private static $instance;
 
   public function __construct($screen_name = NULL) {
@@ -21,12 +25,19 @@ class TCHelpers
     $this->screen_name = $screen_name;
 
     // set up caches
-    $cache_get_followers_opts = Array(
+    $cache_options = Array(
       'cacheDir' => '/tmp/',
       'lifeTime' => 3600
     );
+
     $this->cache_get_followers_id = 'get_followers';
-    $this->cache_get_followers = new Cache_Lite($cache_get_followers_opts);
+    $this->cache_get_followers = new Cache_Lite($cache_options);
+
+    $this->cache_get_retweets_id = 'get_retweets';
+    $this->cache_get_retweets = new Cache_Lite($cache_options);
+
+    $this->cache_get_mentions_id = 'get_mentions';
+    $this->cache_get_mentions = new Cache_Lite($cache_options);
 
     $this->settings = Array(
       'oauth_access_token' => TWITTER_OAUTH_ACCESS_TOKEN,
@@ -85,8 +96,40 @@ class TCHelpers
     }
 
     return json_decode($data);
-  }
 
+  } // end get_followers
+
+  private function get_cache_data($cache, $id) {
+    
+  } 
+
+  public function get_retweets() {
+    
+    if ($data = 
+      $this->cache_get_retweets->get($this->cache_get_retweets_id)) {
+      // cache hit; $data stores the cache content
+    } else {
+      ob_start();
+
+      $url = 
+        'https://api.twitter.com/1.1/statuses/retweets_of_me.json';
+
+      $request_method = 'GET';
+      $get_field = '?count=100';
+
+      $data = $this->twitter->setGetfield($get_field)
+        ->buildOauth($url, $request_method)
+        ->performRequest();
+
+      $this->cache_get_retweets->save($data, $this->cache_get_retweets_id);
+    
+      ob_get_clean();
+
+    }
+
+    return json_decode($data);
+
+  } // end get_retweets
   
 
 } // end class
