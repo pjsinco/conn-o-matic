@@ -1,7 +1,7 @@
 <?php  
 
 include_once(APP_PATH . '/config/constants.php');
-require_once('Cache/Lite.php');
+require_once(PHP_LOC . 'Cache/Lite.php');
 
 /**
  * Uses this library: https://github.com/J7mbo/twitter-api-php
