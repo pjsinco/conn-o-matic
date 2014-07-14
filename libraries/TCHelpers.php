@@ -18,6 +18,7 @@ class TCHelpers
   private $cache_get_retweets_id;
   private $cache_get_mentions;
   private $cache_get_mentions_id;
+  private $followers;
   private static $instance;
 
   public function __construct($screen_name = NULL) {
@@ -48,6 +49,7 @@ class TCHelpers
 
     $this->twitter = new TwitterAPIExchange($this->settings);
     
+    $this->followers = $this->get_followers();
   }
 
   // singleton pattern
@@ -69,6 +71,15 @@ class TCHelpers
   public function hello($name) {
     return 'hello, ' . $name . ', from ' . $this->screen_name;
   }
+
+  /*
+   * Returns count of followers
+   */
+  public function get_followers_count() {
+
+    return count($this->followers->ids);
+
+  } // end get_followers_count
 
 
   // help from:

@@ -34,12 +34,15 @@ class twitter_counts_controller extends base_controller {
       TCHelpers::instance('TheDOmagazine')->get_followers();
 
     //echo Debug::dump(TCHelpers::instance('TheDOmagazine')->get_followers());
-    echo Debug::dump(TCHelpers::instance('TheDOmagazine')->get_retweets());
-
-    
+    echo Debug::dump(TCHelpers::instance('TheDOmagazine')->get_followers());
+    echo Debug::dump(TCHelpers::instance('TheDOmagazine')->get_followers_count());
 
     // render view
     echo $this->template;
+  }
+
+  public function p_index() {
+    
   }
 
 

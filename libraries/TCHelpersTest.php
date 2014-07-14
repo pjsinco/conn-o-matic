@@ -1,14 +1,24 @@
 <?php  
 
-require_once('TCHelpers.php');
+require_once(APP_PATH . '/vendors/simpletest/autorun.php');
 
-class TCHelpersTest extends PHPUnit_Framework_TestCase
+
+// simpletest documentation:
+// http://simpletest.org/en/unit_test_documentation.html
+
+class TCHelpersTest extends UnitTestCase
 {
+
+  function __construct() {
+    
+  }
 
   function test_hello() {
 
-    $this->assertStringStartsWith('hello,', 
-      TCHelpers::instance('TheDOmagazine')->hello('pj'));
+    $this->assertTrue(
+      TCHelpers::instance('TheDOmagazine')->hello('pj') === 
+        'hello, pj, from TheDOmagazine'
+    );
 
   }
 
