@@ -25,6 +25,15 @@ class twitter_counts_controller extends base_controller {
     $this->template->client_files_body = 
       Utils::load_client_files($client_files_body);
 
+
+    // REFRESHER!
+    $this->template->content->message = 
+      TCHelpers::instance('TheDOmagazine')->hello('pj');
+    
+    $this->template->content->followers = 
+      TCHelpers::instance('TheDOmagazine')->get_followers();
+
+
     // render view
     echo $this->template;
   }
