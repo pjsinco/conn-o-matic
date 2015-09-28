@@ -214,30 +214,30 @@ class form_controller extends base_controller {
     Router::redirect('/preview/index/' . $id);
   }
 
-  public function poll_edit($id) {
-    $this->template->content = 
-      View::instance('v_form_poll');
-    
-    // pass id to view
-    $this->template->content->id = $id;
-
-    $client_files_head = Array(
-      '/css/main.css'
-    );
-    $this->template->client_files_head = 
-      Utils::load_client_files($client_files_head);
-
-    // render view
-    echo $this->template;
-  }
-
-  public function p_poll_edit($id) {
-    //update the poll
-    $result = 
-      Helpers::distill_post_and_update($_POST, 'issue', $id);
-
-    Router::redirect('/preview/index/' . $id);
-  }
+//  public function poll_edit($id) {
+//    $this->template->content = 
+//      View::instance('v_form_poll');
+//    
+//    // pass id to view
+//    $this->template->content->id = $id;
+//
+//    $client_files_head = Array(
+//      '/css/main.css'
+//    );
+//    $this->template->client_files_head = 
+//      Utils::load_client_files($client_files_head);
+//
+//    // render view
+//    echo $this->template;
+//  }
+//
+//  public function p_poll_edit($id) {
+//    //update the poll
+//    $result = 
+//      Helpers::distill_post_and_update($_POST, 'issue', $id);
+//
+//    Router::redirect('/preview/index/' . $id);
+//  }
 
   public function resources_edit($id) {
     $this->template->content = 
