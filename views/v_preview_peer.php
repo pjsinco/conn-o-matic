@@ -21,7 +21,7 @@
                         <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">What I value most about the <em>JAOA’s</em> Peer Reviewers ...</p>
                         <div class='peer_response' id='peer_inv'><?=$peer_inv?></div>
 
-                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">A tip for the <em>JAOA’s</em> Peer<br />Reviewer ...</p>
+                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">A tip for the <em>JAOA’s</em> Peer<br />Reviewers ...</p>
                         <div class='peer_response' id='peer_rev'><?=$peer_rev?></div>
 
                       </td>
