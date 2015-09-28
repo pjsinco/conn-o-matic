@@ -17,10 +17,10 @@
 <!--     <label for="peer_class_yr_text">&lt;p&gt;Class year&lt;/p&gt;</label><br> -->
 <!--     <input type='text' class='peer' name="peer_class_yr" id="peer_class_yr_text" rows='1'><br> -->
 
-    <label for="peer_inv_text">&lt;p&gt;I am involved because&lt;/p&gt;</label><br>
+    <label for="peer_inv_text">&lt;p&gt;What I value most ...&lt;/p&gt;</label><br>
     <textarea class='peer' name="peer_inv" id="peer_inv_text" rows='6' required></textarea><br>
 
-    <label for="peer_rev_text">&lt;p&gt;When reviewing a manuscript&lt;/p&gt;</label><br>
+    <label for="peer_rev_text">&lt;p&gt;A tip ...&lt;/p&gt;</label><br>
     <textarea class='peer' name="peer_rev" id="peer_rev_text" rows='6' required></textarea><br>
   </p>
     <input class='btn' type="submit" value="Set">

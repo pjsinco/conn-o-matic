@@ -233,8 +233,8 @@ class Helpers
       'peer_name'   => '<h2>***PEER*NAME***</h2>',
       'peer_occ'    => '<p>***PEER*OCCUPATION***</p>',
       'peer_school' => '<p>***PEER*SCHOOL***</p>',
-      'peer_inv'    => '<p>***PEER*INVOLVED*BECAUSE***</p>',
-      'peer_rev'    => '<p>***PEER*WHEN*REVIEWING***</p>'
+      'peer_inv'    => '<p>***PEER*VALUE*MOST***</p>',
+      'peer_rev'    => '<p>***PEER*A*TIP***</p>'
     );
 
     array_push($results, DB::instance(DB_NAME)->update_row('issue', $data, "WHERE id = $id"));

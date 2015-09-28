@@ -103,9 +103,9 @@
   <?=$main_body_edit?>
 </div>
 
-<div id="poll_edit" class="dialog-form" title='Edit poll'>
-  <?=$poll_edit ?>
-</div>
+<!-- <div id="poll_edit" class="dialog-form" title='Edit poll'> -->
+  <?php //=$poll_edit ?>
+<!-- </div> -->
 
 <!-- <div id="resources_modal" class="dialog-form" title='Resource'> -->
   <?//=$resources_modal ?>

@@ -21,13 +21,13 @@
                         </div>      
                       </td>
                     </tr>
-                    <tr>
-                      <td height="0" width="400" bgcolor="#ffffff">
+<!--                     <tr> -->
+<!--                       <td height="0" width="400" bgcolor="#ffffff"> -->
                         <!-- table4 -->
-                        <?=$poll;?>
+                        <?php //=$poll;?>
                         <!-- end table4 -->
-                      </td>
-                    </tr>
+<!--                       </td> -->
+<!--                     </tr> -->
                     <tr>
                       <td height="0" width="400" bgcolor="#ffffff">
                           <?=$resources?>

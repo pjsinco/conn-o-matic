@@ -18,10 +18,10 @@
                         <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">School/Class</p>
                         <div class='peer_response' id='peer_school'><?=$peer_school?></div>
 
-                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">I am involved with the <i>JAOA</i> <br />because ...</p>
+                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">What I value most about the <em>JAOA’s</em> Peer Reviewers ...</p>
                         <div class='peer_response' id='peer_inv'><?=$peer_inv?></div>
 
-                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">When reviewing a manuscript, <br />I consider ...</p>
+                        <p class="heading" style="font-size: 13px; color: #913a20; line-height: 17px; margin-top: 5px; margin-right: 0; margin-bottom: 0; margin-left: 0;">A tip for the <em>JAOA’s</em> Peer<br />Reviewer ...</p>
                         <div class='peer_response' id='peer_rev'><?=$peer_rev?></div>
 
                       </td>
