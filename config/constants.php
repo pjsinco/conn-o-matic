@@ -6,9 +6,9 @@
   DEFINE('IMAGE_LINK', 
     'http://aoa-do.informz.net/aoa-do/data/images/connections/');
   
-  DEFINE('PR_FILE', 'jaoa-flag-pr.gif'); // Peer Reviewer flag
-  DEFINE('EB_FILE', 'jaoa-flag-eb.gif'); // Editorial Board flag
-  DEFINE('EAB_FILE', 'jaoa-flag-eab.gif'); // Editorial Adv. Board flag
+  DEFINE('PR_FILE', 'conn-flag-pr.png'); // Peer Reviewer flag
+  DEFINE('EB_FILE', 'conn-flag-eb.png'); // Editorial Board flag
+  DEFINE('EAB_FILE', 'conn-flag-eab.png'); // Editorial Adv. Board flag
 
   /*
    * for twitter_counts
